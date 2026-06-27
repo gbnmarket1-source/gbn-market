@@ -7,7 +7,7 @@
 <meta name="description" content="GBN Market provides virtual SMS numbers, eSIMs, gift card trading, social media boosting and more."/>
 <link rel="preconnect" href="https://fonts.googleapis.com"/>
 <link href="https://fonts.googleapis.com/css2?family=Inter:wght@400;500;600;700;800&display=swap" rel="stylesheet"/>
-<script src="https://cdn.jsdelivr.net/npm/@supabase/supabase-js@2/dist/umd/supabase.js"></script>
+<!-- Supabase loaded async below -->
 <style>
 *{margin:0;padding:0;box-sizing:border-box}
 :root{
@@ -1352,20 +1352,26 @@ function copyCode(btn, code){
 const SUPA_URL = 'https://pjcmnbylaitmulcozwaj.supabase.co';
 const SUPA_KEY = 'eyJhbGciOiJIUzI1NiIsInR5cCI6IkpXVCJ9.eyJpc3MiOiJzdXBhYmFzZSIsInJlZiI6InBqY21uYnlsYWl0bXVsY296d2FqIiwicm9sZSI6ImFub24iLCJpYXQiOjE3ODI1Njg4NDcsImV4cCI6MjA5ODE0NDg0N30.FiqhMEOH9QD4_OAlExpujSE9pRhuvCmVoCKE-WFGtA4';
 let _sb = null;
+
 function initSupabase(){
-  try {
-    if(typeof supabase !== 'undefined' && supabase.createClient){
+  // Dynamically load Supabase so it never blocks page render
+  const script = document.createElement('script');
+  script.src = 'https://cdn.jsdelivr.net/npm/@supabase/supabase-js@2/dist/umd/supabase.js';
+  script.async = true;
+  script.onload = function(){
+    try {
       _sb = supabase.createClient(SUPA_URL, SUPA_KEY);
-      // listen for auth changes once client is ready
       _sb.auth.onAuthStateChange((event, session) => { updateNavForAuth(session); });
       (async()=>{
         const { data:{ session } } = await _sb.auth.getSession();
         updateNavForAuth(session);
       })();
-    } else {
-      console.warn('Supabase not loaded — auth disabled');
-    }
-  } catch(e){ console.error('Supabase init error:', e); }
+    } catch(e){ console.warn('Supabase init failed:', e); }
+  };
+  script.onerror = function(){
+    console.warn('Supabase CDN failed to load — auth disabled. Site still works.');
+  };
+  document.head.appendChild(script);
 }
 
 // ── TOAST ──
