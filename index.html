@@ -7,6 +7,7 @@
 <meta name="description" content="GBN Market provides virtual SMS numbers, eSIMs, gift card trading, social media boosting and more."/>
 <link rel="preconnect" href="https://fonts.googleapis.com"/>
 <link href="https://fonts.googleapis.com/css2?family=Inter:wght@400;500;600;700;800&display=swap" rel="stylesheet"/>
+<script src="https://cdn.jsdelivr.net/npm/@supabase/supabase-js@2"></script>
 <style>
 *{margin:0;padding:0;box-sizing:border-box}
 :root{
@@ -56,12 +57,7 @@ p{color:var(--text-2)}
 .badge-purple{background:var(--accent-light);color:var(--accent)}
 .badge-dot{width:5px;height:5px;border-radius:50%;background:currentColor;flex-shrink:0}
 
-/* TICKER */
-.ticker-wrap{background:var(--primary);overflow:hidden;padding:10px 0}
-.ticker-track{display:flex;gap:3rem;white-space:nowrap;animation:tick 30s linear infinite}
-@keyframes tick{0%{transform:translateX(0)}100%{transform:translateX(-50%)}}
-.ticker-item{display:inline-flex;align-items:center;gap:8px;color:rgba(255,255,255,.65);font-size:.78rem;font-weight:500}
-.ticker-dot{width:5px;height:5px;border-radius:50%;background:var(--accent-mid);flex-shrink:0}
+
 
 /* NAV */
 .nav{position:sticky;top:0;z-index:200;background:rgba(255,255,255,.92);backdrop-filter:blur(16px);border-bottom:1px solid var(--border)}
@@ -286,55 +282,123 @@ footer{background:var(--primary);color:#fff;padding:64px 0 32px}
 .page.active{display:block}
 @keyframes fadeIn{from{opacity:0;transform:translateY(8px)}to{opacity:1;transform:translateY(0)}}
 
-/* RESPONSIVE */
+/* ===== RESPONSIVE — TABLET (≤1024px) ===== */
 @media(max-width:1024px){
   .footer-grid{grid-template-columns:1fr 1fr 1fr;gap:32px}
   .footer-grid>div:first-child{grid-column:1/-1}
-  .auth-wrap{grid-template-columns:1fr}
+  .auth-wrap{grid-template-columns:1fr;min-height:100vh}
   .auth-left{display:none}
-  .home-hero{grid-template-columns:1fr;gap:40px}
-  .app-inner{grid-template-columns:1fr}
+  .auth-right{padding:48px 40px;min-height:100vh}
+  .home-hero{grid-template-columns:1fr;gap:48px;padding:64px 0 48px}
+  .hero-visual{justify-content:flex-start}
+  .app-inner{grid-template-columns:1fr;padding:56px 0}
   .app-mockup{display:none}
+  .grid-4{grid-template-columns:repeat(2,1fr)}
+  .grid-3{grid-template-columns:repeat(2,1fr)}
+  .services-grid{grid-template-columns:repeat(2,1fr)}
+  .testi-grid{grid-template-columns:repeat(2,1fr)}
+  .stock-grid{grid-template-columns:repeat(2,1fr)}
+  .platform-cards{grid-template-columns:repeat(3,1fr)}
+  .for-grid{grid-template-columns:repeat(2,1fr)}
+  .steps{grid-template-columns:repeat(2,1fr)}
 }
+
+/* ===== RESPONSIVE — MOBILE (≤768px) ===== */
 @media(max-width:768px){
-  h1{font-size:2.1rem}h2{font-size:1.65rem}
-  .nav-links,.nav-right .btn-outline{display:none}
+  h1{font-size:1.9rem;letter-spacing:-.02em}
+  h2{font-size:1.5rem}
+  h3{font-size:1rem}
+  .section{padding:48px 0}
+  .section-head{margin-bottom:2rem}
+  .section-head p{font-size:.95rem}
+  .nav-links{display:none}
+  .nav-right{display:none}
   .hamburger{display:flex}
-  .footer-grid{grid-template-columns:1fr 1fr}
-  .section{padding:56px 0}
-  .steps{grid-template-columns:1fr}
-  .form-row{grid-template-columns:1fr}
+  .nav-inner{height:58px}
+  .home-hero{grid-template-columns:1fr;gap:32px;padding:48px 0 36px}
+  .hero-visual{display:none}
+  .hero-lead{font-size:1rem;margin-bottom:1.5rem}
+  .hero-ctas{gap:10px}
+  .hero-ctas .btn-lg{padding:12px 20px;font-size:.9rem}
+  .hero-stats{gap:1.25rem;margin-top:1.75rem;padding-top:1.75rem}
+  .stat strong{font-size:1.35rem}
+  .stat span{font-size:.72rem}
+  .hero-dark{padding:48px 0 40px}
+  .hero-dark h1{font-size:1.9rem}
+  .hero-dark .lead{font-size:.95rem}
+  .hero-dark .hero-ctas .btn-lg{padding:12px 20px;font-size:.9rem}
+  .grid-4{grid-template-columns:1fr}
+  .grid-3{grid-template-columns:1fr}
   .services-grid{grid-template-columns:1fr}
-}
-@media(max-width:480px){
-  .footer-grid{grid-template-columns:1fr}
-  .auth-right{padding:32px 20px}
   .testi-grid{grid-template-columns:1fr}
   .stock-grid{grid-template-columns:1fr}
+  .for-grid{grid-template-columns:1fr}
+  .platform-cards{grid-template-columns:repeat(2,1fr)}
+  .steps{grid-template-columns:1fr}
+  .card{padding:20px}
+  .card-icon{width:38px;height:38px;font-size:1.1rem;margin-bottom:12px}
+  .service-img{height:140px}
+  .marquee-wrap{padding:18px 0}
+  .marquee-item{padding:5px 12px;font-size:.78rem}
+  .country-table{font-size:.8rem}
+  .country-table th,.country-table td{padding:10px}
+  .country-table th:nth-child(2),.country-table td:nth-child(2){display:none}
+  .faq-list{max-width:100%}
+  .faq-q{font-size:.9rem}
+  .footer-grid{grid-template-columns:1fr 1fr;gap:24px}
+  .footer-grid>div:first-child{grid-column:1/-1}
+  .footer-bottom{flex-direction:column;align-items:flex-start;gap:8px}
+  .app-inner{padding:40px 0;gap:24px}
+  .store-btns{gap:10px}
+  .cta-band{padding:48px 0}
+  .cta-band p{font-size:.95rem}
+  .cta-band .btn-lg{padding:12px 24px;font-size:.9rem}
+  .auth-right{padding:36px 24px}
+  .auth-form-wrap h2{font-size:1.5rem}
+  .form-row{grid-template-columns:1fr}
+}
+
+/* ===== RESPONSIVE — SMALL MOBILE (≤480px) ===== */
+@media(max-width:480px){
+  .container{padding:0 4%}
+  h1{font-size:1.7rem}
+  h2{font-size:1.35rem}
+  .section{padding:40px 0}
+  .logo{font-size:1rem}
+  .logo-mark{width:30px;height:30px;font-size:13px}
+  .home-hero{padding:36px 0 28px}
+  .hero-ctas{flex-direction:column}
+  .hero-ctas .btn{width:100%;justify-content:center}
+  .hero-stats{flex-wrap:wrap;gap:1rem}
+  .stat strong{font-size:1.2rem}
   .platform-cards{grid-template-columns:1fr 1fr}
-  .hero-visual{display:none}
+  .footer-grid{grid-template-columns:1fr}
+  .service-body{padding:16px}
+  .service-img{height:120px}
+  .step{padding:20px}
+  .step::before{font-size:1.5rem}
+  .country-table th:last-child,.country-table td:last-child{display:none}
+  .stock-card-head{padding:14px 16px 12px}
+  .stock-card-body{padding:12px 16px}
+  .stock-card-foot{padding:10px 16px}
+  .auth-right{padding:28px 16px}
+  .auth-form-wrap h2{font-size:1.35rem}
+  .auth-form-wrap .sub{font-size:.83rem;margin-bottom:1.5rem}
+  .form-group input{padding:10px 12px;font-size:.85rem}
+  .mobile-menu{padding:72px 4% 32px}
+  footer{padding:48px 0 24px}
+  .cta-band{padding:40px 0}
+  .cta-band h2{font-size:1.4rem}
+  .marquee-item{padding:4px 10px;font-size:.75rem}
+  .platform-service{padding:12px 8px}
+  .platform-service .icon{font-size:1.4rem;margin-bottom:6px}
+  .platform-service h3{font-size:.78rem}
+  .platform-service p{font-size:.68rem}
 }
 </style>
 </head>
 <body>
 
-<!-- TICKER -->
-<div class="ticker-wrap">
-  <div class="ticker-track">
-    <span class="ticker-item"><span class="ticker-dot"></span>Someone just verified their Instagram with a US number</span>
-    <span class="ticker-item"><span class="ticker-dot"></span>New gift card trade completed — ₦52,000 paid instantly</span>
-    <span class="ticker-item"><span class="ticker-dot"></span>eSIM activated in Dubai in under 30 seconds</span>
-    <span class="ticker-item"><span class="ticker-dot"></span>200k+ orders processed this month</span>
-    <span class="ticker-item"><span class="ticker-dot"></span>WhatsApp verification · UK number · just now</span>
-    <span class="ticker-item"><span class="ticker-dot"></span>Telegram group · 5,000 members added today</span>
-    <span class="ticker-item"><span class="ticker-dot"></span>Someone just verified their Instagram with a US number</span>
-    <span class="ticker-item"><span class="ticker-dot"></span>New gift card trade completed — ₦52,000 paid instantly</span>
-    <span class="ticker-item"><span class="ticker-dot"></span>eSIM activated in Dubai in under 30 seconds</span>
-    <span class="ticker-item"><span class="ticker-dot"></span>200k+ orders processed this month</span>
-    <span class="ticker-item"><span class="ticker-dot"></span>WhatsApp verification · UK number · just now</span>
-    <span class="ticker-item"><span class="ticker-dot"></span>Telegram group · 5,000 members added today</span>
-  </div>
-</div>
 
 <!-- NAV -->
 <nav class="nav">
@@ -847,7 +911,7 @@ footer{background:var(--primary);color:#fff;padding:64px 0 32px}
           <label class="form-check" style="margin:0"><input type="checkbox"/> Remember me</label>
           <a style="font-size:.82rem;color:var(--accent);font-weight:600;cursor:pointer">Forgot password?</a>
         </div>
-        <button class="btn btn-primary" style="width:100%;padding:13px;font-size:.95rem" onclick="handleAuth(this,'Signing in…','Sign in')">Sign in</button>
+        <button class="btn btn-primary" style="width:100%;padding:13px;font-size:.95rem" onclick="handleLogin(this)">Sign in</button>
         <p class="form-note" style="margin-top:20px">Need help? <a>Contact support</a></p>
         <p class="form-note" style="margin-top:8px">🔒 Secure connection &nbsp;·&nbsp; <a>Privacy</a> &nbsp;·&nbsp; <a>Terms</a></p>
       </div>
@@ -891,7 +955,7 @@ footer{background:var(--primary);color:#fff;padding:64px 0 32px}
         </div>
         <div class="form-group"><label>Referral code <span style="color:var(--text-4);font-weight:400">(Optional)</span></label><input type="text" placeholder="Enter code"/></div>
         <label class="form-check"><input type="checkbox"/> I agree to the <a style="color:var(--accent)">Terms of Service</a> and <a style="color:var(--accent)">Privacy Policy</a></label>
-        <button class="btn btn-primary" style="width:100%;padding:13px;font-size:.95rem;margin-top:6px" onclick="handleAuth(this,'Creating account…','Create account')">Create account</button>
+        <button class="btn btn-primary" style="width:100%;padding:13px;font-size:.95rem;margin-top:6px" onclick="handleRegister(this)">Create account</button>
         <p class="form-note" style="margin-top:16px">Need help? <a>Contact support</a></p>
         <p class="form-note" style="margin-top:8px">🔒 Secure connection &nbsp;·&nbsp; <a>Privacy</a> &nbsp;·&nbsp; <a>Terms</a></p>
       </div>
@@ -1000,12 +1064,122 @@ function copyCode(btn, code){
   setTimeout(()=>{ btn.textContent = '📋 Copy Code'; }, 2000);
 }
 
-// ── AUTH BUTTONS ──
-function handleAuth(btn, loading, reset){
-  btn.textContent = loading;
-  btn.disabled = true;
-  setTimeout(()=>{ btn.textContent = reset; btn.disabled = false; }, 2000);
+// ── SUPABASE INIT ──
+const _sb = supabase.createClient(
+  'https://pjcmnbylaitmulcozwaj.supabase.co',
+  'eyJhbGciOiJIUzI1NiIsInR5cCI6IkpXVCJ9.eyJpc3MiOiJzdXBhYmFzZSIsInJlZiI6InBqY21uYnlsYWl0bXVsY296d2FqIiwicm9sZSI6ImFub24iLCJpYXQiOjE3ODI1Njg4NDcsImV4cCI6MjA5ODE0NDg0N30.FiqhMEOH9QD4_OAlExpujSE9pRhuvCmVoCKE-WFGtA4'
+);
+
+// ── TOAST ──
+function toast(msg, ok=true){
+  let t = document.getElementById('gbn-toast');
+  if(!t){
+    t = document.createElement('div');
+    t.id = 'gbn-toast';
+    t.style.cssText = 'position:fixed;bottom:28px;left:50%;transform:translateX(-50%);padding:12px 24px;border-radius:10px;font-size:.875rem;font-weight:600;z-index:9999;transition:opacity .3s;font-family:Inter,sans-serif;box-shadow:0 8px 32px rgba(0,0,0,.18)';
+    document.body.appendChild(t);
+  }
+  t.textContent = msg;
+  t.style.background = ok ? '#059669' : '#DC2626';
+  t.style.color = '#fff';
+  t.style.opacity = '1';
+  clearTimeout(t._hide);
+  t._hide = setTimeout(()=>{ t.style.opacity='0'; }, 3500);
 }
+
+// ── REGISTER ──
+async function handleRegister(btn){
+  const wrap = document.getElementById('page-register');
+  const fullname = wrap.querySelector('input[placeholder="John Doe"]').value.trim();
+  const username = wrap.querySelector('input[placeholder="johndoe"]').value.trim();
+  const email    = wrap.querySelector('input[type="email"]').value.trim();
+  const phone    = wrap.querySelector('input[type="tel"]').value.trim();
+  const pwd      = wrap.querySelectorAll('input[type="password"]')[0].value;
+  const pwd2     = wrap.querySelectorAll('input[type="password"]')[1].value;
+  const agreed   = wrap.querySelector('input[type="checkbox"]').checked;
+
+  if(!fullname || !username || !email || !pwd){ toast('Please fill in all required fields.', false); return; }
+  if(pwd !== pwd2){ toast('Passwords do not match.', false); return; }
+  if(pwd.length < 8){ toast('Password must be at least 8 characters.', false); return; }
+  if(!agreed){ toast('Please agree to the Terms of Service.', false); return; }
+
+  btn.textContent = 'Creating account…';
+  btn.disabled = true;
+
+  const { error } = await _sb.auth.signUp({
+    email, password: pwd,
+    options: { data: { full_name: fullname, username, phone } }
+  });
+
+  if(error){
+    toast(error.message, false);
+  } else {
+    toast('✅ Account created! Check your email to confirm.');
+    setTimeout(()=> go('login'), 2000);
+  }
+  btn.textContent = 'Create account';
+  btn.disabled = false;
+}
+
+// ── LOGIN ──
+async function handleLogin(btn){
+  const wrap  = document.getElementById('page-login');
+  const email = wrap.querySelector('input[type="text"]').value.trim();
+  const pwd   = wrap.querySelector('input[type="password"]').value;
+
+  if(!email || !pwd){ toast('Please enter your email and password.', false); return; }
+
+  btn.textContent = 'Signing in…';
+  btn.disabled = true;
+
+  const { data, error } = await _sb.auth.signInWithPassword({ email, password: pwd });
+
+  if(error){
+    toast(error.message, false);
+  } else {
+    toast('✅ Welcome back!');
+    setTimeout(()=> go('home'), 1500);
+  }
+  btn.textContent = 'Sign in';
+  btn.disabled = false;
+}
+
+// ── LOGOUT ──
+async function handleLogout(){
+  await _sb.auth.signOut();
+  toast('Signed out successfully.');
+  go('home');
+  updateNavForAuth(null);
+}
+
+// ── UPDATE NAV BASED ON AUTH STATE ──
+function updateNavForAuth(session){
+  const navRight = document.querySelector('.nav-right');
+  if(session){
+    const email = session.user.email;
+    const name  = session.user.user_metadata?.full_name || email;
+    navRight.innerHTML = `
+      <span style="font-size:.8rem;color:var(--text-3);font-weight:500;max-width:140px;overflow:hidden;text-overflow:ellipsis;white-space:nowrap">${name}</span>
+      <button class="btn btn-outline btn-sm" onclick="handleLogout()">Sign Out</button>
+    `;
+  } else {
+    navRight.innerHTML = `
+      <button class="btn btn-outline btn-sm" onclick="go('login')">Sign In</button>
+      <button class="btn btn-primary btn-sm" onclick="go('register')">Sign Up</button>
+    `;
+  }
+}
+
+// ── LISTEN TO AUTH STATE CHANGES ──
+_sb.auth.onAuthStateChange((event, session) => {
+  updateNavForAuth(session);
+});
+
+// ── CHECK SESSION ON LOAD ──
+(async ()=>{
+  const { data: { session } } = await _sb.auth.getSession();
+  updateNavForAuth(session);
+})();
 </script>
 </body>
 </html>
