@@ -282,6 +282,30 @@ footer{background:var(--primary);color:#fff;padding:64px 0 32px}
 .page.active{display:block}
 @keyframes fadeIn{from{opacity:0;transform:translateY(8px)}to{opacity:1;transform:translateY(0)}}
 
+/* ===== LATEST READ BAR ===== */
+.latest-bar{background:var(--primary);padding:9px 0;overflow:hidden}
+.latest-bar-inner{display:flex;align-items:center;gap:0}
+.latest-label{background:var(--accent);color:#fff;font-size:.72rem;font-weight:700;padding:4px 12px;border-radius:4px;white-space:nowrap;flex-shrink:0;margin-right:16px;letter-spacing:.03em;text-transform:uppercase}
+.latest-scroll-wrap{overflow:hidden;flex:1}
+.latest-scroll{display:flex;gap:3rem;white-space:nowrap;animation:latestTick 18s linear infinite}
+.latest-scroll:hover{animation-play-state:paused}
+@keyframes latestTick{0%{transform:translateX(0)}100%{transform:translateX(-50%)}}
+.latest-scroll span{color:rgba(255,255,255,.7);font-size:.8rem;font-weight:500;cursor:default}
+
+/* ===== TYPEWRITER HERO ===== */
+.hero-h1{margin-bottom:1.25rem}
+.hero-typed{color:var(--accent);display:inline-block;min-width:2px;border-right:3px solid var(--accent);padding-right:4px;animation:blink .75s step-end infinite}
+@keyframes blink{0%,100%{border-color:var(--accent)}50%{border-color:transparent}}
+
+/* ===== SOCIAL PROOF ===== */
+.hero-social-proof{display:flex;align-items:center;gap:14px;margin:1.5rem 0 1.75rem;padding:14px 18px;background:var(--surface);border:1px solid var(--border);border-radius:12px;width:fit-content}
+.proof-avatars{display:flex}
+.proof-avatars img{width:32px;height:32px;border-radius:50%;border:2px solid #fff;margin-left:-8px;object-fit:cover}
+.proof-avatars img:first-child{margin-left:0}
+.proof-text{font-size:.82rem;color:var(--text-2);line-height:1.5}
+.proof-text strong{color:var(--text);font-weight:700}
+.proof-quote{display:block;font-size:.75rem;color:var(--text-3);margin-top:2px;font-style:italic}
+
 /* ===== RESPONSIVE — TABLET (≤1024px) ===== */
 @media(max-width:1024px){
   .footer-grid{grid-template-columns:1fr 1fr 1fr;gap:32px}
@@ -444,19 +468,51 @@ footer{background:var(--primary);color:#fff;padding:64px 0 32px}
 <div class="page active" id="page-home">
 
   <div class="container">
+    <!-- LATEST READ BAR -->
+  <div class="latest-bar">
+    <div class="container">
+      <div class="latest-bar-inner">
+        <span class="latest-label">Latest Read</span>
+        <div class="latest-scroll-wrap">
+          <div class="latest-scroll" id="latestScroll">
+            <span>GBN Market processed over 200,000 orders this month »</span>
+            <span>New eSIM coverage added for 12 African countries »</span>
+            <span>Gift card rates updated — trade yours now for best value »</span>
+            <span>GBN Market processed over 200,000 orders this month »</span>
+            <span>New eSIM coverage added for 12 African countries »</span>
+            <span>Gift card rates updated — trade yours now for best value »</span>
+          </div>
+        </div>
+      </div>
+    </div>
+  </div>
+
+  <div class="container">
     <div class="home-hero">
-      <div>
+      <div class="hero-left">
         <span class="eyebrow">Trusted by 50,000+ Africans</span>
-        <h1>All-in-one platform for <span style="color:var(--accent)">SMS Virtual Numbers</span></h1>
+        <h1 class="hero-h1">All-in-one platform for <br><span class="hero-typed" id="heroTyped"></span></h1>
         <p class="hero-lead">At GBN Market, we provide virtual SMS numbers, social media account logs, gift card trading, and powerful social media boosting to help you grow online.</p>
         <div class="hero-ctas">
           <button class="btn btn-primary btn-lg" onclick="go('register')">Get Started</button>
           <button class="btn btn-outline btn-lg" onclick="document.getElementById('home-services').scrollIntoView({behavior:'smooth'})">Explore Services</button>
         </div>
+        <div class="hero-social-proof">
+          <div class="proof-avatars">
+            <img src="https://images.unsplash.com/photo-1633332755192-727a05c4013d?w=40&h=40&fit=crop" alt=""/>
+            <img src="https://images.unsplash.com/photo-1494790108377-be9c29b29330?w=40&h=40&fit=crop" alt=""/>
+            <img src="https://images.unsplash.com/photo-1599566150163-29194dcaad36?w=40&h=40&fit=crop" alt=""/>
+            <img src="https://images.unsplash.com/photo-1531123897727-8f129e1688ce?w=40&h=40&fit=crop" alt=""/>
+          </div>
+          <div class="proof-text">
+            <strong>10 users</strong> received SMS codes today
+            <span class="proof-quote">"Someone just verified their Instagram"</span>
+          </div>
+        </div>
         <div class="hero-stats">
-          <div class="stat"><strong>10</strong><span>SMS codes received today</span></div>
-          <div class="stat"><strong>180+</strong><span>Countries available</span></div>
+          <div class="stat"><strong>180+</strong><span>Countries</span></div>
           <div class="stat"><strong>200k</strong><span>Active orders</span></div>
+          <div class="stat"><strong>50k+</strong><span>Happy users</span></div>
         </div>
       </div>
       <div class="hero-visual">
@@ -1169,6 +1225,45 @@ function updateNavForAuth(session){
     `;
   }
 }
+
+// ── TYPEWRITER ──
+(function(){
+  const words = [
+    'SMS Virtual Numbers',
+    'Social Media Boosting',
+    'Gift Card Trading',
+    'eSIM Activation',
+    'Social Accounts',
+    'Crypto Conversion',
+    'Bill Payments',
+  ];
+  const el = document.getElementById('heroTyped');
+  if(!el) return;
+  let wi = 0, ci = 0, deleting = false;
+  function type(){
+    const word = words[wi];
+    if(!deleting){
+      el.textContent = word.slice(0, ci+1);
+      ci++;
+      if(ci === word.length){
+        deleting = true;
+        setTimeout(type, 1800);
+        return;
+      }
+    } else {
+      el.textContent = word.slice(0, ci-1);
+      ci--;
+      if(ci === 0){
+        deleting = false;
+        wi = (wi + 1) % words.length;
+        setTimeout(type, 400);
+        return;
+      }
+    }
+    setTimeout(type, deleting ? 45 : 85);
+  }
+  setTimeout(type, 600);
+})();
 
 // ── LISTEN TO AUTH STATE CHANGES ──
 _sb.auth.onAuthStateChange((event, session) => {
