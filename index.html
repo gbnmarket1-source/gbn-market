@@ -306,282 +306,118 @@ footer{background:var(--primary);color:#fff;padding:64px 0 32px}
 .proof-text strong{color:var(--text);font-weight:700}
 .proof-quote{display:block;font-size:.75rem;color:var(--text-3);margin-top:2px;font-style:italic}
 
-/* ═══════════════════════════════════════
-   RESPONSIVE — DESKTOP LARGE (≥1280px)
-═══════════════════════════════════════ */
-@media(min-width:1280px){
-  .home-hero{gap:80px}
-  .services-grid{grid-template-columns:repeat(3,1fr)}
-  .grid-4{grid-template-columns:repeat(4,1fr)}
-  .grid-3{grid-template-columns:repeat(3,1fr)}
-  .testi-grid{grid-template-columns:repeat(3,1fr)}
-  .stock-grid{grid-template-columns:repeat(3,1fr)}
-  .for-grid{grid-template-columns:repeat(4,1fr)}
-  .platform-cards{grid-template-columns:repeat(4,1fr)}
-  .steps{grid-template-columns:repeat(4,1fr)}
-}
-
-/* ═══════════════════════════════════════
-   RESPONSIVE — TABLET (≤1024px)
-═══════════════════════════════════════ */
+/* ===== RESPONSIVE — TABLET (≤1024px) ===== */
 @media(max-width:1024px){
-  /* LAYOUT */
-  .container{padding:0 5%}
-  .section{padding:64px 0}
-
-  /* HERO */
-  .home-hero{grid-template-columns:1fr;gap:48px;padding:56px 0 48px}
-  .hero-visual{justify-content:flex-start}
-  .hero-left{max-width:600px}
-
-  /* GRIDS */
-  .services-grid{grid-template-columns:repeat(2,1fr)}
-  .grid-4{grid-template-columns:repeat(2,1fr)}
-  .grid-3{grid-template-columns:repeat(2,1fr)}
-  .testi-grid{grid-template-columns:repeat(2,1fr)}
-  .stock-grid{grid-template-columns:repeat(2,1fr)}
-  .for-grid{grid-template-columns:repeat(2,1fr)}
-  .platform-cards{grid-template-columns:repeat(3,1fr)}
-  .steps{grid-template-columns:repeat(2,1fr)}
-
-  /* DARK HERO PAGES */
-  .hero-dark{padding:56px 0 48px}
-
-  /* APP */
-  .app-inner{grid-template-columns:1fr;padding:56px 0;gap:32px}
-  .app-mockup{display:none}
-
-  /* AUTH */
+  .footer-grid{grid-template-columns:1fr 1fr 1fr;gap:32px}
+  .footer-grid>div:first-child{grid-column:1/-1}
   .auth-wrap{grid-template-columns:1fr;min-height:100vh}
   .auth-left{display:none}
-  .auth-right{padding:48px 40px;min-height:100vh;justify-content:flex-start;padding-top:60px}
-
-  /* FOOTER */
-  .footer-grid{grid-template-columns:2fr 1fr 1fr;gap:40px}
-  .footer-grid>div:nth-child(4),.footer-grid>div:nth-child(5){display:none}
-
-  /* COUNTRY TABLE */
-  .country-table th:nth-child(2),.country-table td:nth-child(2){display:none}
+  .auth-right{padding:48px 40px;min-height:100vh}
+  .home-hero{grid-template-columns:1fr;gap:48px;padding:64px 0 48px}
+  .hero-visual{justify-content:flex-start}
+  .app-inner{grid-template-columns:1fr;padding:56px 0}
+  .app-mockup{display:none}
+  .grid-4{grid-template-columns:repeat(2,1fr)}
+  .grid-3{grid-template-columns:repeat(2,1fr)}
+  .services-grid{grid-template-columns:repeat(2,1fr)}
+  .testi-grid{grid-template-columns:repeat(2,1fr)}
+  .stock-grid{grid-template-columns:repeat(2,1fr)}
+  .platform-cards{grid-template-columns:repeat(3,1fr)}
+  .for-grid{grid-template-columns:repeat(2,1fr)}
+  .steps{grid-template-columns:repeat(2,1fr)}
 }
 
-/* ═══════════════════════════════════════
-   RESPONSIVE — MOBILE (≤768px)
-═══════════════════════════════════════ */
+/* ===== RESPONSIVE — MOBILE (≤768px) ===== */
 @media(max-width:768px){
-  /* TYPOGRAPHY */
-  h1{font-size:2rem;letter-spacing:-.025em;line-height:1.2}
-  h2{font-size:1.55rem;line-height:1.25}
-  h3{font-size:.98rem}
+  h1{font-size:1.9rem;letter-spacing:-.02em}
+  h2{font-size:1.5rem}
+  h3{font-size:1rem}
   .section{padding:48px 0}
-  .section-head{margin-bottom:1.75rem}
-  .section-head p{font-size:.92rem}
-
-  /* NAV */
+  .section-head{margin-bottom:2rem}
+  .section-head p{font-size:.95rem}
   .nav-links{display:none}
   .nav-right{display:none}
   .hamburger{display:flex}
-  .nav-inner{height:56px}
-  .logo{font-size:1rem}
-
-  /* LATEST BAR */
-  .latest-bar{padding:8px 0}
-  .latest-label{font-size:.65rem;padding:3px 9px}
-  .latest-scroll span{font-size:.75rem}
-
-  /* HOME HERO */
-  .home-hero{grid-template-columns:1fr;gap:28px;padding:40px 0 32px}
+  .nav-inner{height:58px}
+  .home-hero{grid-template-columns:1fr;gap:32px;padding:48px 0 36px}
   .hero-visual{display:none}
-  .hero-h1{font-size:2rem;margin-bottom:1rem}
-  .hero-lead{font-size:.95rem;margin-bottom:1.25rem;max-width:100%}
-  .hero-ctas{gap:10px;flex-wrap:wrap}
-  .hero-ctas .btn-lg{padding:12px 22px;font-size:.9rem}
-  .hero-social-proof{padding:12px 14px;gap:10px;width:100%;max-width:100%}
-  .proof-text{font-size:.78rem}
-  .hero-stats{gap:1.5rem;margin-top:1.5rem;padding-top:1.5rem;flex-wrap:wrap}
-  .stat strong{font-size:1.4rem}
+  .hero-lead{font-size:1rem;margin-bottom:1.5rem}
+  .hero-ctas{gap:10px}
+  .hero-ctas .btn-lg{padding:12px 20px;font-size:.9rem}
+  .hero-stats{gap:1.25rem;margin-top:1.75rem;padding-top:1.75rem}
+  .stat strong{font-size:1.35rem}
   .stat span{font-size:.72rem}
-
-  /* DARK HERO PAGES */
-  .hero-dark{padding:40px 0 36px}
-  .hero-dark h1{font-size:2rem}
-  .hero-dark .lead{font-size:.95rem;max-width:100%}
-  .hero-dark .hero-ctas .btn-lg{padding:12px 22px;font-size:.9rem}
-
-  /* MARQUEE */
-  .marquee-wrap{padding:16px 0}
-  .marquee-item{padding:5px 12px;font-size:.78rem}
-
-  /* ALL GRIDS → 1 COLUMN */
-  .services-grid{grid-template-columns:1fr}
+  .hero-dark{padding:48px 0 40px}
+  .hero-dark h1{font-size:1.9rem}
+  .hero-dark .lead{font-size:.95rem}
+  .hero-dark .hero-ctas .btn-lg{padding:12px 20px;font-size:.9rem}
   .grid-4{grid-template-columns:1fr}
   .grid-3{grid-template-columns:1fr}
+  .services-grid{grid-template-columns:1fr}
   .testi-grid{grid-template-columns:1fr}
   .stock-grid{grid-template-columns:1fr}
-  .for-grid{grid-template-columns:repeat(2,1fr)}
+  .for-grid{grid-template-columns:1fr}
   .platform-cards{grid-template-columns:repeat(2,1fr)}
   .steps{grid-template-columns:1fr}
-
-  /* CARDS */
-  .card{padding:18px}
+  .card{padding:20px}
   .card-icon{width:38px;height:38px;font-size:1.1rem;margin-bottom:12px}
-
-  /* SERVICE CARDS */
-  .service-img{height:160px}
-  .service-body{padding:18px}
-
-  /* STOCK CARDS */
-  .stock-card-head{padding:14px 18px 12px}
-  .stock-card-body{padding:12px 18px}
-  .stock-card-foot{padding:10px 18px;flex-wrap:wrap;gap:8px}
-
-  /* PLATFORM SERVICES GRID (numbers page) */
-  div.platform-services-wrap{grid-template-columns:repeat(3,1fr) !important}
-
-  /* COUNTRY TABLE */
-  .country-table{display:block;overflow-x:auto;-webkit-overflow-scrolling:touch}
-  .country-table th,.country-table td{padding:10px 12px;font-size:.8rem;white-space:nowrap}
-
-  /* STEPS */
-  .step{padding:20px}
-  .step::before{font-size:1.6rem}
-
-  /* FAQ */
+  .service-img{height:140px}
+  .marquee-wrap{padding:18px 0}
+  .marquee-item{padding:5px 12px;font-size:.78rem}
+  .country-table{font-size:.8rem}
+  .country-table th,.country-table td{padding:10px}
+  .country-table th:nth-child(2),.country-table td:nth-child(2){display:none}
   .faq-list{max-width:100%}
-  .faq-q{font-size:.88rem;padding:15px 0}
-
-  /* APP SECTION */
-  .app-inner{padding:40px 0;gap:20px}
-  .store-btns{gap:10px}
-  .store-btn{padding:10px 16px;flex:1;justify-content:center}
-
-  /* CTA BAND */
-  .cta-band{padding:48px 0}
-  .cta-band h2{font-size:1.6rem}
-  .cta-band p{font-size:.92rem;padding:0 8px}
-  .cta-band .btn-lg{padding:12px 28px;font-size:.9rem}
-
-  /* FOOTER */
-  .footer-grid{grid-template-columns:1fr 1fr;gap:28px}
+  .faq-q{font-size:.9rem}
+  .footer-grid{grid-template-columns:1fr 1fr;gap:24px}
   .footer-grid>div:first-child{grid-column:1/-1}
-  .footer-grid>div:nth-child(4),.footer-grid>div:nth-child(5){display:block}
-  .footer-bottom{flex-direction:column;align-items:flex-start;gap:6px;font-size:.75rem}
-  footer{padding:48px 0 28px}
-
-  /* AUTH */
-  .auth-right{padding:40px 28px;justify-content:flex-start;padding-top:60px;min-height:100vh}
+  .footer-bottom{flex-direction:column;align-items:flex-start;gap:8px}
+  .app-inner{padding:40px 0;gap:24px}
+  .store-btns{gap:10px}
+  .cta-band{padding:48px 0}
+  .cta-band p{font-size:.95rem}
+  .cta-band .btn-lg{padding:12px 24px;font-size:.9rem}
+  .auth-right{padding:36px 24px}
   .auth-form-wrap h2{font-size:1.5rem}
-  .auth-form-wrap .sub{font-size:.85rem;margin-bottom:1.5rem}
   .form-row{grid-template-columns:1fr}
 }
 
-/* ═══════════════════════════════════════
-   RESPONSIVE — SMALL MOBILE (≤480px)
-═══════════════════════════════════════ */
+/* ===== RESPONSIVE — SMALL MOBILE (≤480px) ===== */
 @media(max-width:480px){
   .container{padding:0 4%}
-  h1{font-size:1.75rem}
+  h1{font-size:1.7rem}
   h2{font-size:1.35rem}
-  h3{font-size:.95rem}
   .section{padding:40px 0}
-  .eyebrow{font-size:.68rem}
-
-  /* NAV */
+  .logo{font-size:1rem}
   .logo-mark{width:30px;height:30px;font-size:13px}
-  .logo{font-size:.95rem}
-
-  /* LATEST BAR */
-  .latest-label{display:none}
-
-  /* HOME HERO */
-  .home-hero{padding:32px 0 28px}
-  .hero-h1{font-size:1.75rem}
+  .home-hero{padding:36px 0 28px}
   .hero-ctas{flex-direction:column}
-  .hero-ctas .btn{width:100%;justify-content:center;padding:13px}
-  .hero-social-proof{flex-direction:column;align-items:flex-start;gap:10px}
-  .hero-stats{gap:1rem}
+  .hero-ctas .btn{width:100%;justify-content:center}
+  .hero-stats{flex-wrap:wrap;gap:1rem}
   .stat strong{font-size:1.2rem}
-
-  /* DARK HERO */
-  .hero-dark{padding:36px 0 32px}
-  .hero-dark h1{font-size:1.75rem}
-  .hero-dark .hero-ctas{flex-direction:column}
-  .hero-dark .hero-ctas .btn{width:100%;justify-content:center;padding:13px}
-
-  /* GRIDS */
-  .for-grid{grid-template-columns:1fr}
-  .platform-cards{grid-template-columns:repeat(2,1fr)}
+  .platform-cards{grid-template-columns:1fr 1fr}
   .footer-grid{grid-template-columns:1fr}
-
-  /* MARQUEE */
-  .marquee-item{padding:4px 10px;font-size:.73rem}
-
-  /* SERVICE CARDS */
-  .service-img{height:130px}
-  .service-body{padding:14px}
-  .service-body h3{font-size:.95rem}
-  .service-body p{font-size:.82rem}
-
-  /* PLATFORM SERVICES (numbers page) */
-  .platform-service{padding:12px 8px}
-  .platform-service .icon{font-size:1.4rem;margin-bottom:5px}
-  .platform-service h3{font-size:.76rem}
-  .platform-service p{font-size:.66rem}
-
-  /* FOR CARDS */
-  .for-card{padding:18px}
-  .for-card-icon{font-size:1.6rem;margin-bottom:10px}
-
-  /* STOCK CARDS */
-  .stock-card-head{padding:12px 14px 10px}
-  .stock-card-body{padding:10px 14px}
-  .stock-card-foot{padding:10px 14px}
-  .stock-price{font-size:.88rem}
-  .stock-icon{font-size:1.3rem}
-
-  /* TESTIMONIALS */
-  .testi-card{padding:18px}
-  .testi-text{font-size:.82rem}
-
-  /* COUNTRY TABLE */
+  .service-body{padding:16px}
+  .service-img{height:120px}
+  .step{padding:20px}
+  .step::before{font-size:1.5rem}
   .country-table th:last-child,.country-table td:last-child{display:none}
-  .country-table th,.country-table td{font-size:.75rem;padding:9px 10px}
-
-  /* STEPS */
-  .step{padding:18px}
-  .step::before{font-size:1.4rem;top:14px;right:14px}
-  .step h3{font-size:.92rem}
-
-  /* FAQ */
-  .faq-q{font-size:.85rem}
-
-  /* CTA */
-  .cta-band{padding:40px 0}
-  .cta-band h2{font-size:1.3rem}
-  .cta-band .btn-lg{width:100%;justify-content:center}
-
-  /* APP */
-  .store-btns{flex-direction:column}
-  .store-btn{justify-content:center}
-
-  /* FOOTER */
-  footer{padding:40px 0 24px}
-  .footer-col h4{font-size:.68rem}
-  .footer-col a,.footer-col span{font-size:.82rem;margin-bottom:8px}
-
-  /* AUTH */
-  .auth-right{padding:32px 16px;padding-top:48px}
-  .auth-form-wrap h2{font-size:1.3rem}
-  .auth-form-wrap .sub{font-size:.8rem;margin-bottom:1.25rem}
-  .form-group{margin-bottom:12px}
-  .form-group label{font-size:.75rem}
+  .stock-card-head{padding:14px 16px 12px}
+  .stock-card-body{padding:12px 16px}
+  .stock-card-foot{padding:10px 16px}
+  .auth-right{padding:28px 16px}
+  .auth-form-wrap h2{font-size:1.35rem}
+  .auth-form-wrap .sub{font-size:.83rem;margin-bottom:1.5rem}
   .form-group input{padding:10px 12px;font-size:.85rem}
-  .form-check{font-size:.78rem}
-  .back-link{font-size:.78rem;margin-bottom:1.5rem}
-  .btn-sm{padding:7px 14px;font-size:.78rem}
-
-  /* MOBILE MENU */
   .mobile-menu{padding:72px 4% 32px}
-  .mobile-menu span,.mobile-menu a{font-size:.95rem;padding:13px 0}
+  footer{padding:48px 0 24px}
+  .cta-band{padding:40px 0}
+  .cta-band h2{font-size:1.4rem}
+  .marquee-item{padding:4px 10px;font-size:.75rem}
+  .platform-service{padding:12px 8px}
+  .platform-service .icon{font-size:1.4rem;margin-bottom:6px}
+  .platform-service h3{font-size:.78rem}
+  .platform-service p{font-size:.68rem}
 }
 </style>
 </head>
@@ -750,27 +586,27 @@ footer{background:var(--primary);color:#fff;padding:64px 0 32px}
       </div>
       <div class="services-grid">
         <div class="service-card" onclick="go('numbers')">
-          <div class="service-img"><img src="https://images.unsplash.com/photo-1512941937669-90a1b58e7e9c?w=800&h=400&fit=crop&auto=format&q=80" alt="Virtual Numbers"/></div>
+          <div class="service-img"><img src="https://images.unsplash.com/photo-1556742049-0cfed4f6a45d?w=600&h=320&fit=crop&auto=format" alt="Virtual Numbers"/></div>
           <div class="service-body"><h3>SMS Virtual Numbers</h3><p>Get a real phone number from 180+ countries instantly. Verify any platform without a physical SIM card.</p><span class="service-link">Get a number →</span></div>
         </div>
         <div class="service-card" onclick="go('register')">
-          <div class="service-img"><img src="https://images.unsplash.com/photo-1488085061387-422e29b40080?w=800&h=400&fit=crop&auto=format&q=80" alt="eSIM"/></div>
+          <div class="service-img"><img src="https://images.unsplash.com/photo-1544197150-b99a580bb7a8?w=600&h=320&fit=crop&auto=format" alt="eSIM"/></div>
           <div class="service-body"><h3>Buy eSIM</h3><p>Activate global eSIMs instantly and stay connected anywhere. No airport SIM cards needed ever again.</p><span class="service-link">Buy eSIM →</span></div>
         </div>
         <div class="service-card" onclick="go('register')">
-          <div class="service-img"><img src="https://images.unsplash.com/photo-1607082348824-0a96f2a4b9da?w=800&h=400&fit=crop&auto=format&q=80" alt="Gift Cards"/></div>
+          <div class="service-img"><img src="https://images.unsplash.com/photo-1608543915088-2a7d1f4f5d39?w=600&h=320&fit=crop&auto=format" alt="Gift Cards"/></div>
           <div class="service-body"><h3>Gift Card Trading</h3><p>Buy and sell gift cards at competitive rates. Instant transactions, reliable payouts in Naira.</p><span class="service-link">Trade gift cards →</span></div>
         </div>
         <div class="service-card" onclick="go('register')">
-          <div class="service-img"><img src="https://images.unsplash.com/photo-1622630998477-20aa696ecb05?w=800&h=400&fit=crop&auto=format&q=80" alt="Crypto"/></div>
+          <div class="service-img"><img src="https://images.unsplash.com/photo-1518546305927-5a555bb7020d?w=600&h=320&fit=crop&auto=format" alt="Crypto"/></div>
           <div class="service-body"><h3>Crypto to Naira</h3><p>Convert BTC, USDT, ETH and more to Naira instantly. Mid-market rates, no hidden fees.</p><span class="service-link">Convert crypto →</span></div>
         </div>
         <div class="service-card" onclick="go('smm')">
-          <div class="service-img"><img src="https://images.unsplash.com/photo-1611162616305-c69b3fa7fbe0?w=800&h=400&fit=crop&auto=format&q=80" alt="SMM"/></div>
+          <div class="service-img"><img src="https://images.unsplash.com/photo-1611162617213-7d7a39e9b1d7?w=600&h=320&fit=crop&auto=format" alt="SMM"/></div>
           <div class="service-body"><h3>Social Media Boosting</h3><p>Grow your Instagram, TikTok, YouTube organically. Real followers, likes and views — no drops.</p><span class="service-link">Boost socials →</span></div>
         </div>
         <div class="service-card" onclick="go('register')">
-          <div class="service-img"><img src="https://images.unsplash.com/photo-1558618666-fcd25c85cd64?w=800&h=400&fit=crop&auto=format&q=80" alt="Bills"/></div>
+          <div class="service-img"><img src="https://images.unsplash.com/photo-1590283603385-17ffb3a7f29f?w=600&h=320&fit=crop&auto=format" alt="Bills"/></div>
           <div class="service-body"><h3>Bill Payments</h3><p>Pay electricity, airtime, and TV cable subscriptions instantly in one place. Tokens in seconds.</p><span class="service-link">Pay bills →</span></div>
         </div>
       </div>
