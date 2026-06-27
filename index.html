@@ -7,7 +7,7 @@
 <meta name="description" content="GBN Market provides virtual SMS numbers, eSIMs, gift card trading, social media boosting and more."/>
 <link rel="preconnect" href="https://fonts.googleapis.com"/>
 <link href="https://fonts.googleapis.com/css2?family=Inter:wght@400;500;600;700;800&display=swap" rel="stylesheet"/>
-<script src="https://cdn.jsdelivr.net/npm/@supabase/supabase-js@2"></script>
+<script src="https://cdn.jsdelivr.net/npm/@supabase/supabase-js@2/dist/umd/supabase.js"></script>
 <style>
 *{margin:0;padding:0;box-sizing:border-box}
 :root{
@@ -247,7 +247,7 @@ footer{background:var(--primary);color:#fff;padding:64px 0 32px}
 .stock-price{font-weight:700;font-size:.95rem;color:var(--accent)}
 
 /* AUTH */
-.auth-wrap{display:grid;grid-template-columns:420px 1fr;min-height:calc(100vh - 120px)}
+.auth-wrap{display:grid;grid-template-columns:420px 1fr;min-height:100vh}
 .auth-left{background:var(--primary);padding:48px;display:flex;flex-direction:column}
 .auth-left-content{flex:1;display:flex;flex-direction:column;justify-content:center;padding:32px 0}
 .auth-feature{display:flex;align-items:flex-start;gap:14px;margin-bottom:26px}
@@ -257,7 +257,7 @@ footer{background:var(--primary);color:#fff;padding:64px 0 32px}
 .auth-stats{display:flex;gap:24px;padding-top:28px;border-top:1px solid rgba(255,255,255,.1)}
 .auth-stat strong{display:block;font-size:1.4rem;font-weight:800;color:#fff}
 .auth-stat span{font-size:.75rem;color:rgba(255,255,255,.35)}
-.auth-right{padding:48px;display:flex;flex-direction:column;justify-content:center;align-items:center;background:#fff}
+.auth-right{padding:48px;display:flex;flex-direction:column;justify-content:center;align-items:center;background:#fff;min-height:100vh}
 .auth-form-wrap{width:100%;max-width:400px}
 .auth-form-wrap h2{font-size:1.75rem;margin-bottom:.4rem}
 .auth-form-wrap .sub{color:var(--text-3);font-size:.9rem;margin-bottom:2rem}
@@ -282,118 +282,370 @@ footer{background:var(--primary);color:#fff;padding:64px 0 32px}
 .page.active{display:block}
 @keyframes fadeIn{from{opacity:0;transform:translateY(8px)}to{opacity:1;transform:translateY(0)}}
 
-/* ===== RESPONSIVE — TABLET (≤1024px) ===== */
-@media(max-width:1024px){
-  .footer-grid{grid-template-columns:1fr 1fr 1fr;gap:32px}
-  .footer-grid>div:first-child{grid-column:1/-1}
-  .auth-wrap{grid-template-columns:1fr;min-height:100vh}
-  .auth-left{display:none}
-  .auth-right{padding:48px 40px;min-height:100vh}
-  .home-hero{grid-template-columns:1fr;gap:48px;padding:64px 0 48px}
-  .hero-visual{justify-content:flex-start}
-  .app-inner{grid-template-columns:1fr;padding:56px 0}
-  .app-mockup{display:none}
-  .grid-4{grid-template-columns:repeat(2,1fr)}
-  .grid-3{grid-template-columns:repeat(2,1fr)}
-  .services-grid{grid-template-columns:repeat(2,1fr)}
-  .testi-grid{grid-template-columns:repeat(2,1fr)}
-  .stock-grid{grid-template-columns:repeat(2,1fr)}
-  .platform-cards{grid-template-columns:repeat(3,1fr)}
-  .for-grid{grid-template-columns:repeat(2,1fr)}
-  .steps{grid-template-columns:repeat(2,1fr)}
+/* ===== LATEST READ BAR ===== */
+.latest-bar{background:var(--primary);padding:9px 0;overflow:hidden}
+.latest-bar-inner{display:flex;align-items:center;gap:0}
+.latest-label{background:var(--accent);color:#fff;font-size:.72rem;font-weight:700;padding:4px 12px;border-radius:4px;white-space:nowrap;flex-shrink:0;margin-right:16px;letter-spacing:.03em;text-transform:uppercase}
+.latest-scroll-wrap{overflow:hidden;flex:1}
+.latest-scroll{display:flex;gap:3rem;white-space:nowrap;animation:latestTick 18s linear infinite}
+.latest-scroll:hover{animation-play-state:paused}
+@keyframes latestTick{0%{transform:translateX(0)}100%{transform:translateX(-50%)}}
+.latest-scroll span{color:rgba(255,255,255,.7);font-size:.8rem;font-weight:500;cursor:default}
+
+/* ===== TYPEWRITER HERO ===== */
+.hero-h1{margin-bottom:1.25rem}
+.hero-typed{color:var(--accent);display:inline-block;min-width:2px;border-right:3px solid var(--accent);padding-right:4px;animation:blink .75s step-end infinite}
+@keyframes blink{0%,100%{border-color:var(--accent)}50%{border-color:transparent}}
+
+/* ===== SOCIAL PROOF ===== */
+.hero-social-proof{display:flex;align-items:center;gap:14px;margin:1.5rem 0 1.75rem;padding:14px 18px;background:var(--surface);border:1px solid var(--border);border-radius:12px;width:fit-content}
+.proof-avatars{display:flex}
+.proof-avatars img{width:32px;height:32px;border-radius:50%;border:2px solid #fff;margin-left:-8px;object-fit:cover}
+.proof-avatars img:first-child{margin-left:0}
+.proof-text{font-size:.82rem;color:var(--text-2);line-height:1.5}
+.proof-text strong{color:var(--text);font-weight:700}
+.proof-quote{display:block;font-size:.75rem;color:var(--text-3);margin-top:2px;font-style:italic}
+
+/* ════════════════════════════════════════
+   DESKTOP LARGE  ≥1280px
+════════════════════════════════════════ */
+@media(min-width:1280px){
+  .home-hero{gap:80px}
+  .services-grid{grid-template-columns:repeat(3,1fr)}
+  .grid-4{grid-template-columns:repeat(4,1fr)}
+  .grid-3{grid-template-columns:repeat(3,1fr)}
+  .testi-grid{grid-template-columns:repeat(3,1fr)}
+  .stock-grid{grid-template-columns:repeat(3,1fr)}
+  .for-grid{grid-template-columns:repeat(4,1fr)}
+  .platform-cards{grid-template-columns:repeat(4,1fr)}
+  .steps{grid-template-columns:repeat(4,1fr)}
+  .faq-list{max-width:680px}
 }
 
-/* ===== RESPONSIVE — MOBILE (≤768px) ===== */
+/* ════════════════════════════════════════
+   DESKTOP STANDARD  1025px – 1279px
+════════════════════════════════════════ */
+@media(min-width:1025px) and (max-width:1279px){
+  .services-grid{grid-template-columns:repeat(3,1fr)}
+  .grid-4{grid-template-columns:repeat(2,1fr)}
+  .grid-3{grid-template-columns:repeat(3,1fr)}
+  .testi-grid{grid-template-columns:repeat(3,1fr)}
+  .stock-grid{grid-template-columns:repeat(3,1fr)}
+  .for-grid{grid-template-columns:repeat(2,1fr)}
+  .platform-cards{grid-template-columns:repeat(4,1fr)}
+  .steps{grid-template-columns:repeat(4,1fr)}
+}
+
+/* ════════════════════════════════════════
+   TABLET  ≤1024px
+════════════════════════════════════════ */
+@media(max-width:1024px){
+  /* LAYOUT */
+  .container{padding:0 5%}
+  .section{padding:64px 0}
+  .section-head p{font-size:1rem}
+
+  /* HERO — stacks vertically */
+  .home-hero{grid-template-columns:1fr;gap:48px;padding:56px 0 48px}
+  .hero-visual{justify-content:flex-start}
+  .hero-left{max-width:620px}
+
+  /* GRIDS — 2 columns */
+  .services-grid{grid-template-columns:repeat(2,1fr)}
+  .grid-4{grid-template-columns:repeat(2,1fr)}
+  .grid-3{grid-template-columns:repeat(2,1fr)}
+  .testi-grid{grid-template-columns:repeat(2,1fr)}
+  .stock-grid{grid-template-columns:repeat(2,1fr)}
+  .for-grid{grid-template-columns:repeat(2,1fr)}
+  .platform-cards{grid-template-columns:repeat(3,1fr)}
+  .steps{grid-template-columns:repeat(2,1fr)}
+
+  /* DARK HERO PAGES */
+  .hero-dark{padding:56px 0 48px}
+
+  /* APP SECTION */
+  .app-inner{grid-template-columns:1fr;padding:56px 0;gap:32px}
+  .app-mockup{display:none}
+  .store-btns{display:flex;gap:12px}
+
+  /* AUTH — hide left panel, right fills full */
+  .auth-wrap{grid-template-columns:1fr;min-height:100vh}
+  .auth-left{display:none}
+  .auth-right{padding:60px 48px;min-height:100vh;justify-content:center}
+  .auth-form-wrap{max-width:480px}
+
+  /* FOOTER */
+  .footer-grid{grid-template-columns:2fr 1fr 1fr;gap:40px}
+  .footer-grid>div:nth-child(4),.footer-grid>div:nth-child(5){display:none}
+
+  /* COUNTRY TABLE */
+  .country-table th:nth-child(2),.country-table td:nth-child(2){display:none}
+
+  /* HERO STATS */
+  .hero-stats{gap:2rem}
+
+  /* SOCIAL PROOF */
+  .hero-social-proof{width:auto;display:inline-flex}
+}
+
+/* ════════════════════════════════════════
+   MOBILE  ≤768px
+════════════════════════════════════════ */
 @media(max-width:768px){
-  h1{font-size:1.9rem;letter-spacing:-.02em}
-  h2{font-size:1.5rem}
-  h3{font-size:1rem}
+  /* TYPOGRAPHY */
+  h1{font-size:2rem;letter-spacing:-.02em;line-height:1.18}
+  h2{font-size:1.55rem;line-height:1.22}
+  h3{font-size:.98rem}
+  p{font-size:.9rem}
   .section{padding:48px 0}
-  .section-head{margin-bottom:2rem}
-  .section-head p{font-size:.95rem}
+  .section-head{margin-bottom:1.75rem}
+  .section-head p{font-size:.92rem}
+  .eyebrow{font-size:.7rem}
+
+  /* NAV */
   .nav-links{display:none}
   .nav-right{display:none}
   .hamburger{display:flex}
-  .nav-inner{height:58px}
-  .home-hero{grid-template-columns:1fr;gap:32px;padding:48px 0 36px}
+  .nav-inner{height:56px}
+  .logo{font-size:1rem;gap:8px}
+  .logo-mark{width:30px;height:30px;font-size:13px}
+
+  /* LATEST BAR */
+  .latest-bar{padding:8px 0}
+  .latest-label{font-size:.65rem;padding:3px 8px}
+  .latest-scroll span{font-size:.74rem}
+
+  /* HOME HERO */
+  .home-hero{grid-template-columns:1fr;gap:28px;padding:40px 0 32px}
   .hero-visual{display:none}
-  .hero-lead{font-size:1rem;margin-bottom:1.5rem}
-  .hero-ctas{gap:10px}
-  .hero-ctas .btn-lg{padding:12px 20px;font-size:.9rem}
-  .hero-stats{gap:1.25rem;margin-top:1.75rem;padding-top:1.75rem}
-  .stat strong{font-size:1.35rem}
-  .stat span{font-size:.72rem}
-  .hero-dark{padding:48px 0 40px}
-  .hero-dark h1{font-size:1.9rem}
-  .hero-dark .lead{font-size:.95rem}
-  .hero-dark .hero-ctas .btn-lg{padding:12px 20px;font-size:.9rem}
+  .hero-h1{font-size:2rem;margin-bottom:1rem}
+  .hero-lead{font-size:.95rem;margin-bottom:1.25rem;max-width:100%}
+  .hero-ctas{gap:10px;flex-wrap:wrap}
+  .hero-ctas .btn-lg{padding:12px 22px;font-size:.88rem}
+  .hero-social-proof{padding:12px 14px;gap:10px;width:100%;max-width:100%;flex-wrap:wrap}
+  .proof-avatars img{width:28px;height:28px}
+  .proof-text{font-size:.77rem}
+  .proof-quote{font-size:.72rem}
+  .hero-stats{gap:1.5rem;margin-top:1.5rem;padding-top:1.5rem;flex-wrap:wrap}
+  .stat strong{font-size:1.4rem}
+  .stat span{font-size:.7rem}
+
+  /* DARK HERO PAGES */
+  .hero-dark{padding:40px 0 36px}
+  .hero-dark h1{font-size:2rem}
+  .hero-dark .lead{font-size:.92rem;max-width:100%}
+  .hero-dark .hero-ctas{gap:10px;flex-wrap:wrap}
+  .hero-dark .hero-ctas .btn-lg{padding:12px 22px;font-size:.88rem}
+
+  /* MARQUEE */
+  .marquee-wrap{padding:16px 0}
+  .marquee-item{padding:5px 12px;font-size:.77rem}
+
+  /* ALL GRIDS → 1 COLUMN */
+  .services-grid{grid-template-columns:1fr}
   .grid-4{grid-template-columns:1fr}
   .grid-3{grid-template-columns:1fr}
-  .services-grid{grid-template-columns:1fr}
   .testi-grid{grid-template-columns:1fr}
   .stock-grid{grid-template-columns:1fr}
-  .for-grid{grid-template-columns:1fr}
+  .for-grid{grid-template-columns:repeat(2,1fr)}
   .platform-cards{grid-template-columns:repeat(2,1fr)}
   .steps{grid-template-columns:1fr}
-  .card{padding:20px}
-  .card-icon{width:38px;height:38px;font-size:1.1rem;margin-bottom:12px}
-  .service-img{height:140px}
-  .marquee-wrap{padding:18px 0}
-  .marquee-item{padding:5px 12px;font-size:.78rem}
-  .country-table{font-size:.8rem}
-  .country-table th,.country-table td{padding:10px}
-  .country-table th:nth-child(2),.country-table td:nth-child(2){display:none}
+
+  /* CARDS */
+  .card{padding:18px}
+  .card-icon{width:38px;height:38px;font-size:1.05rem;margin-bottom:12px}
+
+  /* SERVICE CARDS */
+  .service-img{height:160px}
+  .service-body{padding:18px}
+  .service-body h3{font-size:.98rem}
+  .service-body p{font-size:.84rem}
+
+  /* STOCK CARDS */
+  .stock-card-head{padding:14px 18px 12px;flex-wrap:wrap;gap:8px}
+  .stock-card-body{padding:12px 18px}
+  .stock-card-body li{font-size:.8rem}
+  .stock-card-foot{padding:12px 18px;flex-wrap:wrap;gap:8px}
+  .stock-price{font-size:.9rem}
+
+  /* PLATFORM SERVICES (numbers page) */
+  .platform-service{padding:14px 10px}
+  .platform-service .icon{font-size:1.6rem;margin-bottom:7px}
+  .platform-service h3{font-size:.82rem}
+  .platform-service p{font-size:.72rem}
+
+  /* COUNTRY TABLE — horizontal scroll */
+  .country-table{display:block;overflow-x:auto;-webkit-overflow-scrolling:touch;border-radius:12px}
+  .country-table th,.country-table td{padding:10px 12px;font-size:.8rem;white-space:nowrap}
+
+  /* STEPS */
+  .step{padding:20px}
+  .step::before{font-size:1.6rem;top:16px;right:16px}
+  .step h3{font-size:.95rem}
+  .step p{font-size:.84rem}
+
+  /* FAQ */
   .faq-list{max-width:100%}
-  .faq-q{font-size:.9rem}
-  .footer-grid{grid-template-columns:1fr 1fr;gap:24px}
-  .footer-grid>div:first-child{grid-column:1/-1}
-  .footer-bottom{flex-direction:column;align-items:flex-start;gap:8px}
-  .app-inner{padding:40px 0;gap:24px}
+  .faq-q{font-size:.88rem;padding:15px 0}
+
+  /* APP SECTION */
+  .app-inner{padding:40px 0;gap:20px}
   .store-btns{gap:10px}
+  .store-btn{padding:10px 16px;flex:1;justify-content:center}
+
+  /* CTA BAND */
   .cta-band{padding:48px 0}
-  .cta-band p{font-size:.95rem}
-  .cta-band .btn-lg{padding:12px 24px;font-size:.9rem}
-  .auth-right{padding:36px 24px}
+  .cta-band h2{font-size:1.55rem}
+  .cta-band p{font-size:.9rem;padding:0 8px}
+  .cta-band .btn-lg{padding:12px 28px;font-size:.9rem}
+
+  /* FOOTER */
+  .footer-grid{grid-template-columns:1fr 1fr;gap:28px}
+  .footer-grid>div:first-child{grid-column:1/-1}
+  .footer-grid>div:nth-child(4),.footer-grid>div:nth-child(5){display:block}
+  .footer-brand-desc{max-width:100%}
+  .footer-bottom{flex-direction:column;align-items:flex-start;gap:6px;font-size:.75rem}
+  footer{padding:48px 0 28px}
+  .footer-socials{margin-top:14px}
+
+  /* AUTH */
+  .auth-right{padding:48px 32px;justify-content:flex-start;padding-top:60px;min-height:100vh}
+  .auth-form-wrap{max-width:100%}
   .auth-form-wrap h2{font-size:1.5rem}
+  .auth-form-wrap .sub{font-size:.85rem;margin-bottom:1.5rem}
   .form-row{grid-template-columns:1fr}
+  .form-group input{padding:11px 13px}
+  .back-link{font-size:.8rem;margin-bottom:1.75rem}
+
+  /* MOBILE MENU */
+  .mobile-menu{padding:72px 5% 36px}
 }
 
-/* ===== RESPONSIVE — SMALL MOBILE (≤480px) ===== */
+/* ════════════════════════════════════════
+   SMALL MOBILE  ≤480px
+════════════════════════════════════════ */
 @media(max-width:480px){
   .container{padding:0 4%}
-  h1{font-size:1.7rem}
+  h1{font-size:1.75rem}
   h2{font-size:1.35rem}
+  h3{font-size:.95rem}
+  p{font-size:.875rem}
   .section{padding:40px 0}
-  .logo{font-size:1rem}
-  .logo-mark{width:30px;height:30px;font-size:13px}
-  .home-hero{padding:36px 0 28px}
+  .eyebrow{font-size:.67rem;letter-spacing:.08em}
+
+  /* NAV */
+  .logo{font-size:.9rem;gap:7px}
+  .logo-mark{width:28px;height:28px;font-size:12px;border-radius:7px}
+
+  /* LATEST BAR */
+  .latest-label{display:none}
+  .latest-scroll span{font-size:.72rem}
+
+  /* HOME HERO */
+  .home-hero{padding:32px 0 28px}
+  .hero-h1{font-size:1.75rem}
+  .hero-lead{font-size:.9rem}
   .hero-ctas{flex-direction:column}
-  .hero-ctas .btn{width:100%;justify-content:center}
-  .hero-stats{flex-wrap:wrap;gap:1rem}
-  .stat strong{font-size:1.2rem}
-  .platform-cards{grid-template-columns:1fr 1fr}
+  .hero-ctas .btn{width:100%;justify-content:center;padding:13px}
+  .hero-social-proof{flex-direction:row;align-items:center;gap:10px}
+  .hero-stats{gap:1.2rem}
+  .stat strong{font-size:1.25rem}
+  .stat span{font-size:.68rem}
+
+  /* DARK HERO */
+  .hero-dark{padding:36px 0 32px}
+  .hero-dark h1{font-size:1.75rem}
+  .hero-dark .hero-ctas{flex-direction:column}
+  .hero-dark .hero-ctas .btn{width:100%;justify-content:center;padding:13px}
+
+  /* GRIDS */
+  .for-grid{grid-template-columns:1fr}
+  .platform-cards{grid-template-columns:repeat(2,1fr)}
   .footer-grid{grid-template-columns:1fr}
-  .service-body{padding:16px}
-  .service-img{height:120px}
-  .step{padding:20px}
-  .step::before{font-size:1.5rem}
-  .country-table th:last-child,.country-table td:last-child{display:none}
-  .stock-card-head{padding:14px 16px 12px}
-  .stock-card-body{padding:12px 16px}
-  .stock-card-foot{padding:10px 16px}
-  .auth-right{padding:28px 16px}
-  .auth-form-wrap h2{font-size:1.35rem}
-  .auth-form-wrap .sub{font-size:.83rem;margin-bottom:1.5rem}
-  .form-group input{padding:10px 12px;font-size:.85rem}
-  .mobile-menu{padding:72px 4% 32px}
-  footer{padding:48px 0 24px}
-  .cta-band{padding:40px 0}
-  .cta-band h2{font-size:1.4rem}
-  .marquee-item{padding:4px 10px;font-size:.75rem}
+
+  /* MARQUEE */
+  .marquee-item{padding:4px 10px;font-size:.72rem}
+
+  /* SERVICE CARDS */
+  .service-img{height:130px}
+  .service-body{padding:14px}
+  .service-body h3{font-size:.92rem}
+  .service-body p{font-size:.81rem}
+  .service-link{font-size:.8rem}
+
+  /* FOR CARDS */
+  .for-card{padding:18px}
+  .for-card-icon{font-size:1.6rem;margin-bottom:10px}
+  .for-card h3{font-size:.95rem}
+  .for-card p{font-size:.82rem}
+
+  /* PLATFORM SERVICES (numbers page) */
   .platform-service{padding:12px 8px}
-  .platform-service .icon{font-size:1.4rem;margin-bottom:6px}
-  .platform-service h3{font-size:.78rem}
-  .platform-service p{font-size:.68rem}
+  .platform-service .icon{font-size:1.4rem;margin-bottom:5px}
+  .platform-service h3{font-size:.75rem}
+  .platform-service p{font-size:.65rem}
+
+  /* STOCK CARDS */
+  .stock-card-head{padding:12px 14px 10px}
+  .stock-card-body{padding:10px 14px}
+  .stock-card-body li{font-size:.78rem}
+  .stock-card-foot{padding:10px 14px}
+  .stock-price{font-size:.88rem}
+  .stock-icon{font-size:1.3rem}
+
+  /* TESTIMONIALS */
+  .testi-card{padding:16px}
+  .testi-text{font-size:.82rem}
+  .testi-name{font-size:.82rem}
+
+  /* COUNTRY TABLE */
+  .country-table th:last-child,.country-table td:last-child{display:none}
+  .country-table th,.country-table td{font-size:.75rem;padding:9px 10px}
+
+  /* STEPS */
+  .step{padding:18px}
+  .step::before{font-size:1.4rem;top:14px;right:14px}
+  .step h3{font-size:.9rem}
+  .step p{font-size:.81rem}
+
+  /* FAQ */
+  .faq-q{font-size:.84rem;padding:14px 0}
+  .faq-a{font-size:.82rem}
+
+  /* CTA */
+  .cta-band{padding:40px 0}
+  .cta-band h2{font-size:1.3rem}
+  .cta-band p{font-size:.85rem}
+  .cta-band .btn-lg{width:100%;justify-content:center;padding:13px}
+
+  /* APP */
+  .store-btns{flex-direction:column}
+  .store-btn{justify-content:center;flex:unset;width:100%}
+
+  /* FOOTER */
+  footer{padding:40px 0 24px}
+  .footer-col h4{font-size:.67rem}
+  .footer-col a,.footer-col span{font-size:.8rem;margin-bottom:8px}
+  .footer-social{width:30px;height:30px;font-size:.8rem}
+  .footer-bottom{font-size:.72rem}
+
+  /* AUTH */
+  .auth-right{padding:40px 16px;padding-top:48px}
+  .auth-form-wrap h2{font-size:1.3rem}
+  .auth-form-wrap .sub{font-size:.8rem;margin-bottom:1.25rem}
+  .form-group{margin-bottom:12px}
+  .form-group label{font-size:.75rem}
+  .form-group input{padding:10px 12px;font-size:.84rem;border-radius:8px}
+  .form-check{font-size:.77rem;gap:7px}
+  .form-check input{width:15px;height:15px}
+  .form-note{font-size:.74rem}
+  .back-link{font-size:.76rem;margin-bottom:1.25rem}
+  .btn-sm{padding:7px 13px;font-size:.77rem}
+  .badge{font-size:.68rem;padding:3px 9px}
+
+  /* MOBILE MENU */
+  .mobile-menu{padding:68px 4% 32px}
+  .mobile-menu span,.mobile-menu a{font-size:.92rem;padding:12px 0}
 }
 </style>
 </head>
@@ -444,19 +696,51 @@ footer{background:var(--primary);color:#fff;padding:64px 0 32px}
 <div class="page active" id="page-home">
 
   <div class="container">
+    <!-- LATEST READ BAR -->
+  <div class="latest-bar">
+    <div class="container">
+      <div class="latest-bar-inner">
+        <span class="latest-label">Latest Read</span>
+        <div class="latest-scroll-wrap">
+          <div class="latest-scroll" id="latestScroll">
+            <span>GBN Market processed over 200,000 orders this month »</span>
+            <span>New eSIM coverage added for 12 African countries »</span>
+            <span>Gift card rates updated — trade yours now for best value »</span>
+            <span>GBN Market processed over 200,000 orders this month »</span>
+            <span>New eSIM coverage added for 12 African countries »</span>
+            <span>Gift card rates updated — trade yours now for best value »</span>
+          </div>
+        </div>
+      </div>
+    </div>
+  </div>
+
+  <div class="container">
     <div class="home-hero">
-      <div>
+      <div class="hero-left">
         <span class="eyebrow">Trusted by 50,000+ Africans</span>
-        <h1>All-in-one platform for <span style="color:var(--accent)">SMS Virtual Numbers</span></h1>
+        <h1 class="hero-h1">All-in-one platform for <br><span class="hero-typed" id="heroTyped"></span></h1>
         <p class="hero-lead">At GBN Market, we provide virtual SMS numbers, social media account logs, gift card trading, and powerful social media boosting to help you grow online.</p>
         <div class="hero-ctas">
           <button class="btn btn-primary btn-lg" onclick="go('register')">Get Started</button>
           <button class="btn btn-outline btn-lg" onclick="document.getElementById('home-services').scrollIntoView({behavior:'smooth'})">Explore Services</button>
         </div>
+        <div class="hero-social-proof">
+          <div class="proof-avatars">
+            <img src="https://images.unsplash.com/photo-1633332755192-727a05c4013d?w=40&h=40&fit=crop" alt=""/>
+            <img src="https://images.unsplash.com/photo-1494790108377-be9c29b29330?w=40&h=40&fit=crop" alt=""/>
+            <img src="https://images.unsplash.com/photo-1599566150163-29194dcaad36?w=40&h=40&fit=crop" alt=""/>
+            <img src="https://images.unsplash.com/photo-1531123897727-8f129e1688ce?w=40&h=40&fit=crop" alt=""/>
+          </div>
+          <div class="proof-text">
+            <strong>10 users</strong> received SMS codes today
+            <span class="proof-quote">"Someone just verified their Instagram"</span>
+          </div>
+        </div>
         <div class="hero-stats">
-          <div class="stat"><strong>10</strong><span>SMS codes received today</span></div>
-          <div class="stat"><strong>180+</strong><span>Countries available</span></div>
+          <div class="stat"><strong>180+</strong><span>Countries</span></div>
           <div class="stat"><strong>200k</strong><span>Active orders</span></div>
+          <div class="stat"><strong>50k+</strong><span>Happy users</span></div>
         </div>
       </div>
       <div class="hero-visual">
@@ -530,27 +814,27 @@ footer{background:var(--primary);color:#fff;padding:64px 0 32px}
       </div>
       <div class="services-grid">
         <div class="service-card" onclick="go('numbers')">
-          <div class="service-img"><img src="https://images.unsplash.com/photo-1556742049-0cfed4f6a45d?w=600&h=320&fit=crop&auto=format" alt="Virtual Numbers"/></div>
+          <div class="service-img"><img src="https://images.unsplash.com/photo-1512941937669-90a1b58e7e9c?w=800&h=400&fit=crop&crop=center&auto=format&q=80" alt="Virtual Numbers"/></div>
           <div class="service-body"><h3>SMS Virtual Numbers</h3><p>Get a real phone number from 180+ countries instantly. Verify any platform without a physical SIM card.</p><span class="service-link">Get a number →</span></div>
         </div>
         <div class="service-card" onclick="go('register')">
-          <div class="service-img"><img src="https://images.unsplash.com/photo-1544197150-b99a580bb7a8?w=600&h=320&fit=crop&auto=format" alt="eSIM"/></div>
+          <div class="service-img"><img src="https://images.unsplash.com/photo-1488085061387-422e29b40080?w=800&h=400&fit=crop&crop=center&auto=format&q=80" alt="eSIM"/></div>
           <div class="service-body"><h3>Buy eSIM</h3><p>Activate global eSIMs instantly and stay connected anywhere. No airport SIM cards needed ever again.</p><span class="service-link">Buy eSIM →</span></div>
         </div>
         <div class="service-card" onclick="go('register')">
-          <div class="service-img"><img src="https://images.unsplash.com/photo-1608543915088-2a7d1f4f5d39?w=600&h=320&fit=crop&auto=format" alt="Gift Cards"/></div>
+          <div class="service-img"><img src="https://images.unsplash.com/photo-1549465220-1a8b9238cd48?w=800&h=400&fit=crop&crop=center&auto=format&q=80" alt="Gift Cards"/></div>
           <div class="service-body"><h3>Gift Card Trading</h3><p>Buy and sell gift cards at competitive rates. Instant transactions, reliable payouts in Naira.</p><span class="service-link">Trade gift cards →</span></div>
         </div>
         <div class="service-card" onclick="go('register')">
-          <div class="service-img"><img src="https://images.unsplash.com/photo-1518546305927-5a555bb7020d?w=600&h=320&fit=crop&auto=format" alt="Crypto"/></div>
+          <div class="service-img"><img src="https://images.unsplash.com/photo-1640340434855-6084b1f4901c?w=800&h=400&fit=crop&crop=center&auto=format&q=80" alt="Crypto"/></div>
           <div class="service-body"><h3>Crypto to Naira</h3><p>Convert BTC, USDT, ETH and more to Naira instantly. Mid-market rates, no hidden fees.</p><span class="service-link">Convert crypto →</span></div>
         </div>
         <div class="service-card" onclick="go('smm')">
-          <div class="service-img"><img src="https://images.unsplash.com/photo-1611162617213-7d7a39e9b1d7?w=600&h=320&fit=crop&auto=format" alt="SMM"/></div>
+          <div class="service-img"><img src="https://images.unsplash.com/photo-1611162617213-7d7a39e9b1d7?w=800&h=400&fit=crop&crop=center&auto=format&q=80" alt="SMM"/></div>
           <div class="service-body"><h3>Social Media Boosting</h3><p>Grow your Instagram, TikTok, YouTube organically. Real followers, likes and views — no drops.</p><span class="service-link">Boost socials →</span></div>
         </div>
         <div class="service-card" onclick="go('register')">
-          <div class="service-img"><img src="https://images.unsplash.com/photo-1590283603385-17ffb3a7f29f?w=600&h=320&fit=crop&auto=format" alt="Bills"/></div>
+          <div class="service-img"><img src="https://images.unsplash.com/photo-1473341304170-971dccb5ac1e?w=800&h=400&fit=crop&crop=center&auto=format&q=80" alt="Bills"/></div>
           <div class="service-body"><h3>Bill Payments</h3><p>Pay electricity, airtime, and TV cable subscriptions instantly in one place. Tokens in seconds.</p><span class="service-link">Pay bills →</span></div>
         </div>
       </div>
@@ -1065,10 +1349,24 @@ function copyCode(btn, code){
 }
 
 // ── SUPABASE INIT ──
-const _sb = supabase.createClient(
-  'https://pjcmnbylaitmulcozwaj.supabase.co',
-  'eyJhbGciOiJIUzI1NiIsInR5cCI6IkpXVCJ9.eyJpc3MiOiJzdXBhYmFzZSIsInJlZiI6InBqY21uYnlsYWl0bXVsY296d2FqIiwicm9sZSI6ImFub24iLCJpYXQiOjE3ODI1Njg4NDcsImV4cCI6MjA5ODE0NDg0N30.FiqhMEOH9QD4_OAlExpujSE9pRhuvCmVoCKE-WFGtA4'
-);
+const SUPA_URL = 'https://pjcmnbylaitmulcozwaj.supabase.co';
+const SUPA_KEY = 'eyJhbGciOiJIUzI1NiIsInR5cCI6IkpXVCJ9.eyJpc3MiOiJzdXBhYmFzZSIsInJlZiI6InBqY21uYnlsYWl0bXVsY296d2FqIiwicm9sZSI6ImFub24iLCJpYXQiOjE3ODI1Njg4NDcsImV4cCI6MjA5ODE0NDg0N30.FiqhMEOH9QD4_OAlExpujSE9pRhuvCmVoCKE-WFGtA4';
+let _sb = null;
+function initSupabase(){
+  try {
+    if(typeof supabase !== 'undefined' && supabase.createClient){
+      _sb = supabase.createClient(SUPA_URL, SUPA_KEY);
+      // listen for auth changes once client is ready
+      _sb.auth.onAuthStateChange((event, session) => { updateNavForAuth(session); });
+      (async()=>{
+        const { data:{ session } } = await _sb.auth.getSession();
+        updateNavForAuth(session);
+      })();
+    } else {
+      console.warn('Supabase not loaded — auth disabled');
+    }
+  } catch(e){ console.error('Supabase init error:', e); }
+}
 
 // ── TOAST ──
 function toast(msg, ok=true){
@@ -1106,6 +1404,7 @@ async function handleRegister(btn){
   btn.textContent = 'Creating account…';
   btn.disabled = true;
 
+  if(!_sb){ toast('Service unavailable. Please try again shortly.', false); btn.textContent='Create account'; btn.disabled=false; return; }
   const { error } = await _sb.auth.signUp({
     email, password: pwd,
     options: { data: { full_name: fullname, username, phone } }
@@ -1132,6 +1431,7 @@ async function handleLogin(btn){
   btn.textContent = 'Signing in…';
   btn.disabled = true;
 
+  if(!_sb){ toast('Service unavailable. Please try again shortly.', false); btn.textContent='Sign in'; btn.disabled=false; return; }
   const { data, error } = await _sb.auth.signInWithPassword({ email, password: pwd });
 
   if(error){
@@ -1146,7 +1446,7 @@ async function handleLogin(btn){
 
 // ── LOGOUT ──
 async function handleLogout(){
-  await _sb.auth.signOut();
+  if(_sb) await _sb.auth.signOut();
   toast('Signed out successfully.');
   go('home');
   updateNavForAuth(null);
@@ -1170,16 +1470,47 @@ function updateNavForAuth(session){
   }
 }
 
-// ── LISTEN TO AUTH STATE CHANGES ──
-_sb.auth.onAuthStateChange((event, session) => {
-  updateNavForAuth(session);
-});
-
-// ── CHECK SESSION ON LOAD ──
-(async ()=>{
-  const { data: { session } } = await _sb.auth.getSession();
-  updateNavForAuth(session);
+// ── TYPEWRITER ──
+(function(){
+  const words = [
+    'SMS Virtual Numbers',
+    'Social Media Boosting',
+    'Gift Card Trading',
+    'eSIM Activation',
+    'Social Accounts',
+    'Crypto Conversion',
+    'Bill Payments',
+  ];
+  const el = document.getElementById('heroTyped');
+  if(!el) return;
+  let wi = 0, ci = 0, deleting = false;
+  function type(){
+    const word = words[wi];
+    if(!deleting){
+      el.textContent = word.slice(0, ci+1);
+      ci++;
+      if(ci === word.length){
+        deleting = true;
+        setTimeout(type, 1800);
+        return;
+      }
+    } else {
+      el.textContent = word.slice(0, ci-1);
+      ci--;
+      if(ci === 0){
+        deleting = false;
+        wi = (wi + 1) % words.length;
+        setTimeout(type, 400);
+        return;
+      }
+    }
+    setTimeout(type, deleting ? 45 : 85);
+  }
+  setTimeout(type, 600);
 })();
+
+// ── INIT ON LOAD ──
+window.addEventListener('load', initSupabase);
 </script>
 </body>
 </html>
