@@ -278,19 +278,84 @@ footer{background:var(--primary);color:#fff;padding:64px 0 32px}
 .back-link:hover{color:var(--accent)}
 
 
-/* SHOWCASE CARDS */
-.showcase-card{background:rgba(255,255,255,.06);border:1px solid rgba(255,255,255,.08);border-radius:14px;padding:16px;display:flex;gap:14px;align-items:flex-start;transition:background .2s}
-.showcase-card:hover{background:rgba(255,255,255,.1)}
-.showcase-icon{width:40px;height:40px;background:rgba(108,71,255,.3);border-radius:10px;display:flex;align-items:center;justify-content:center;font-size:1.1rem;flex-shrink:0}
-.showcase-card strong{display:block;font-size:.85rem;font-weight:700;color:#fff;margin-bottom:5px}
-.showcase-card p{font-size:.78rem;color:rgba(255,255,255,.5);line-height:1.55;margin:0}
-.showcase-author{display:flex;align-items:center;gap:7px;margin-top:10px;font-size:.72rem;color:rgba(255,255,255,.4);font-weight:600}
-.showcase-author img{width:22px;height:22px;border-radius:50%;object-fit:cover;opacity:.8}
-@media(max-width:900px){
-  #showcase-left,#showcase-right{display:none}
-  #page-dashboard .container>div[style*="grid-template-columns:repeat(auto-fill,minmax(180px"]{grid-template-columns:repeat(2,1fr)}
+/* ---- SCROLLING SHOWCASE ---- */
+.showcase-section{background:var(--primary);padding:80px 0;overflow:hidden}
+.showcase-inner{display:grid;grid-template-columns:1fr 290px 1fr;gap:28px;align-items:center;max-width:1160px;margin:0 auto;padding:0 5%}
+.sc-col-wrap{overflow:hidden;height:440px;-webkit-mask-image:linear-gradient(to bottom,transparent,black 12%,black 88%,transparent);mask-image:linear-gradient(to bottom,transparent,black 12%,black 88%,transparent)}
+.sc-col-a{animation:scUp 20s linear infinite;display:flex;flex-direction:column;gap:14px}
+.sc-col-b{animation:scDn 24s linear infinite;display:flex;flex-direction:column;gap:14px}
+@keyframes scUp{0%{transform:translateY(0)}100%{transform:translateY(-50%)}}
+@keyframes scDn{0%{transform:translateY(-50%)}100%{transform:translateY(0)}}
+.sc-card{background:rgba(255,255,255,.06);border:1px solid rgba(255,255,255,.09);border-radius:14px;padding:16px;flex-shrink:0}
+.sc-card strong{display:block;font-size:.85rem;font-weight:700;color:#fff;margin-bottom:5px}
+.sc-card p{font-size:.78rem;color:rgba(255,255,255,.5);line-height:1.55;margin:0}
+.sc-author{display:flex;align-items:center;gap:8px;margin-top:10px}
+.sc-author img{width:22px;height:22px;border-radius:50%;opacity:.8;object-fit:cover}
+.sc-author span{font-size:.72rem;color:rgba(255,255,255,.4);font-weight:600}
+.sc-phone{background:#111;border:2px solid rgba(255,255,255,.1);border-radius:30px;overflow:hidden;box-shadow:0 32px 80px rgba(0,0,0,.6)}
+.sc-notch{background:rgba(255,255,255,.04);padding:10px 0 6px;text-align:center}
+.sc-notch-bar{width:60px;height:4px;background:rgba(255,255,255,.12);border-radius:2px;margin:0 auto}
+.sc-screen{padding:14px 14px 20px}
+/* ---- SERVICE ROWS ---- */
+.svc-showcase{display:flex;flex-direction:column}
+.svc-row{display:grid;grid-template-columns:1fr 1fr;align-items:center;min-height:340px;overflow:hidden}
+.svc-row-rev{direction:rtl}
+.svc-row-rev .svc-text{direction:ltr}
+.svc-img{height:340px;overflow:hidden;position:relative}
+.svc-img img{width:100%;height:100%;object-fit:cover}
+.svc-img::after{content:'';position:absolute;inset:0;background:linear-gradient(135deg,rgba(108,71,255,.12),rgba(0,0,0,.07))}
+.svc-text{padding:48px;direction:ltr}
+.svc-text h2{font-size:clamp(1.3rem,2.2vw,1.85rem);margin:8px 0 12px}
+.svc-text p{font-size:.95rem;line-height:1.7;margin-bottom:1.5rem}
+.svc-tags{display:flex;flex-wrap:wrap;gap:7px;margin-bottom:1.5rem}
+.svc-tag{background:var(--surface);border:1px solid var(--border);border-radius:100px;padding:4px 12px;font-size:.75rem;font-weight:500;color:var(--text-3)}
+/* ---- CRYPTO ---- */
+.crypto-section{background:var(--surface2);border-top:1px solid var(--border)}
+.crypto-grid{display:grid;grid-template-columns:1fr 420px;gap:60px;align-items:center}
+.crypto-widget{background:#fff;border:1px solid var(--border);border-radius:20px;padding:28px;box-shadow:var(--shadow)}
+.crypto-label{font-size:.72rem;font-weight:600;text-transform:uppercase;letter-spacing:.08em;color:var(--text-4);margin-bottom:7px;display:block}
+.crypto-row{background:var(--surface);border:1.5px solid var(--border);border-radius:10px;padding:12px 14px;display:flex;align-items:center;gap:10px;margin-bottom:8px}
+.crypto-row select{background:none;border:none;font-weight:700;font-size:.95rem;font-family:var(--font);color:var(--text);outline:none;cursor:pointer}
+.crypto-row input{flex:1;background:none;border:none;font-size:1.1rem;font-weight:700;text-align:right;outline:none;font-family:var(--font);color:var(--text)}
+.crypto-out{background:var(--accent-light);border:1.5px solid var(--accent-mid);border-radius:10px;padding:14px;margin-bottom:16px}
+.crypto-out .amt{font-size:1.5rem;font-weight:800;color:var(--accent)}
+.crypto-fees-box{border-top:1px solid var(--border);padding-top:14px;font-size:.8rem;color:var(--text-3)}
+.crypto-fee-row{display:flex;justify-content:space-between;margin-bottom:5px}
+.crypto-fee-total{display:flex;justify-content:space-between;font-weight:700;color:var(--text);border-top:1px solid var(--border);padding-top:8px;margin-top:4px}
+/* ---- DASHBOARD ---- */
+.dash-wrap{min-height:100vh;background:var(--surface2)}
+.dash-topbar{background:#fff;border-bottom:1px solid var(--border)}
+.dash-top-inner{display:flex;align-items:center;justify-content:space-between;height:52px}
+.dash-tab{padding:6px 14px;border-radius:7px;font-size:.82rem;font-weight:600;color:var(--text-3);cursor:pointer;border:none;background:none;font-family:var(--font);transition:all .15s}
+.dash-tab:hover{color:var(--text);background:var(--surface)}
+.dash-tab.active{background:var(--accent-light);color:var(--accent)}
+.dash-pill{background:var(--accent-light);color:var(--accent);font-weight:700;font-size:.8rem;padding:5px 13px;border-radius:100px}
+.dash-stat-grid{display:grid;grid-template-columns:repeat(auto-fill,minmax(200px,1fr));gap:16px;margin-bottom:28px}
+.dash-stat{background:#fff;border:1px solid var(--border);border-radius:14px;padding:20px}
+.dash-stat-label{font-size:.72rem;font-weight:600;text-transform:uppercase;letter-spacing:.08em;color:var(--text-4);margin-bottom:8px}
+.dash-stat-val{font-size:1.6rem;font-weight:800;letter-spacing:-.03em}
+.dash-actions{display:grid;grid-template-columns:repeat(auto-fill,minmax(155px,1fr));gap:12px;margin-bottom:28px}
+.dash-act{background:#fff;border:1px solid var(--border);border-radius:12px;padding:18px;text-align:center;cursor:pointer;transition:all .18s}
+.dash-act:hover{border-color:var(--accent);box-shadow:var(--shadow);transform:translateY(-2px)}
+.dash-act-icon{font-size:1.75rem;margin-bottom:8px}
+.dash-act h3{font-size:.85rem;font-weight:600;margin-bottom:3px}
+.dash-act p{font-size:.75rem;color:var(--text-4)}
+.dash-empty{padding:48px;text-align:center;color:var(--text-4)}
+@media(max-width:1024px){
+  .showcase-inner{grid-template-columns:1fr 240px 1fr}
+  .crypto-grid{grid-template-columns:1fr}
+  .svc-row,.svc-row-rev{grid-template-columns:1fr;direction:ltr}
+  .svc-img{height:200px}
+  .svc-text{padding:32px}
 }
-
+@media(max-width:768px){
+  .showcase-inner{grid-template-columns:1fr}
+  .sc-col-wrap{display:none}
+  .svc-img{height:180px}
+  .svc-text{padding:22px}
+  .dash-stat-grid{grid-template-columns:repeat(2,1fr)}
+  .dash-actions{grid-template-columns:repeat(3,1fr)}
+}
 /* ROUTING */
 .page{display:none;animation:fadeIn .25s ease}
 .page.active{display:block}
@@ -674,8 +739,8 @@ footer{background:var(--primary);color:#fff;padding:64px 0 32px}
       <li class="nav-dropdown">
         <span class="nav-dropdown-toggle">Products</span>
         <div class="dropdown-menu">
-          <div class="dropdown-item" onclick="go('numbers')"><div class="dropdown-icon">📱</div><div class="dropdown-item-text"><strong>Phone Numbers</strong><span>Virtual numbers for global SMS verification</span></div></div>
-          <div class="dropdown-item" onclick="go('smm')"><div class="dropdown-icon">📈</div><div class="dropdown-item-text"><strong>SMM Boosting</strong><span>Boost followers, likes and views on every platform</span></div></div>
+          <div class="dropdown-item" onclick="goCTA('numbers')"><div class="dropdown-icon">📱</div><div class="dropdown-item-text"><strong>Phone Numbers</strong><span>Virtual numbers for global SMS verification</span></div></div>
+          <div class="dropdown-item" onclick="goCTA('smm')"><div class="dropdown-icon">📈</div><div class="dropdown-item-text"><strong>SMM Boosting</strong><span>Boost followers, likes and views on every platform</span></div></div>
           <div class="dropdown-item" onclick="go('accounts')"><div class="dropdown-icon">👤</div><div class="dropdown-item-text"><strong>Social Media Accounts</strong><span>Buy aged accounts with full login credentials</span></div></div>
         </div>
       </li>
@@ -684,7 +749,7 @@ footer{background:var(--primary);color:#fff;padding:64px 0 32px}
     </ul>
     <div class="nav-right">
       <button class="btn btn-outline btn-sm" onclick="go('login')">Sign In</button>
-      <button class="btn btn-primary btn-sm" onclick="go('register')">Sign Up</button>
+      <button class="btn btn-primary btn-sm" onclick="goCTA('register')">Sign Up</button>
     </div>
     <button class="hamburger" onclick="toggleMobile()"><span></span><span></span><span></span></button>
   </div>
@@ -735,7 +800,7 @@ footer{background:var(--primary);color:#fff;padding:64px 0 32px}
         <h1 class="hero-h1">All-in-one platform for <br><span class="hero-typed" id="heroTyped"></span></h1>
         <p class="hero-lead">At GBN Market, we provide virtual SMS numbers, social media account logs, gift card trading, and powerful social media boosting to help you grow online.</p>
         <div class="hero-ctas">
-          <button class="btn btn-primary btn-lg" onclick="go('register')">Get Started</button>
+          <button class="btn btn-primary btn-lg" onclick="goCTA('register')">Get Started</button>
           <button class="btn btn-outline btn-lg" onclick="document.getElementById('home-services').scrollIntoView({behavior:'smooth'})">Explore Services</button>
         </div>
         <div class="hero-social-proof">
@@ -826,27 +891,27 @@ footer{background:var(--primary);color:#fff;padding:64px 0 32px}
         <p>From virtual numbers to eSIMs, gift cards, social media accounts, and utility payments — GBN Market is your single stop.</p>
       </div>
       <div class="services-grid">
-        <div class="service-card" onclick="go('numbers')">
+        <div class="service-card" onclick="goCTA('numbers')">
           <div class="service-img"><img src="https://images.unsplash.com/photo-1512941937669-90a1b58e7e9c?w=800&h=400&fit=crop&crop=center&auto=format&q=80" alt="Virtual Numbers"/></div>
           <div class="service-body"><h3>SMS Virtual Numbers</h3><p>Get a real phone number from 180+ countries instantly. Verify any platform without a physical SIM card.</p><span class="service-link">Get a number →</span></div>
         </div>
-        <div class="service-card" onclick="go('register')">
+        <div class="service-card" onclick="goCTA('register')">
           <div class="service-img"><img src="https://images.unsplash.com/photo-1488085061387-422e29b40080?w=800&h=400&fit=crop&crop=center&auto=format&q=80" alt="eSIM"/></div>
           <div class="service-body"><h3>Buy eSIM</h3><p>Activate global eSIMs instantly and stay connected anywhere. No airport SIM cards needed ever again.</p><span class="service-link">Buy eSIM →</span></div>
         </div>
-        <div class="service-card" onclick="go('register')">
+        <div class="service-card" onclick="goCTA('register')">
           <div class="service-img"><img src="https://images.unsplash.com/photo-1549465220-1a8b9238cd48?w=800&h=400&fit=crop&crop=center&auto=format&q=80" alt="Gift Cards"/></div>
           <div class="service-body"><h3>Gift Card Trading</h3><p>Buy and sell gift cards at competitive rates. Instant transactions, reliable payouts in Naira.</p><span class="service-link">Trade gift cards →</span></div>
         </div>
-        <div class="service-card" onclick="go('register')">
+        <div class="service-card" onclick="goCTA('register')">
           <div class="service-img"><img src="https://images.unsplash.com/photo-1640340434855-6084b1f4901c?w=800&h=400&fit=crop&crop=center&auto=format&q=80" alt="Crypto"/></div>
           <div class="service-body"><h3>Crypto to Naira</h3><p>Convert BTC, USDT, ETH and more to Naira instantly. Mid-market rates, no hidden fees.</p><span class="service-link">Convert crypto →</span></div>
         </div>
-        <div class="service-card" onclick="go('smm')">
+        <div class="service-card" onclick="goCTA('smm')">
           <div class="service-img"><img src="https://images.unsplash.com/photo-1611162617213-7d7a39e9b1d7?w=800&h=400&fit=crop&crop=center&auto=format&q=80" alt="SMM"/></div>
           <div class="service-body"><h3>Social Media Boosting</h3><p>Grow your Instagram, TikTok, YouTube organically. Real followers, likes and views — no drops.</p><span class="service-link">Boost socials →</span></div>
         </div>
-        <div class="service-card" onclick="go('register')">
+        <div class="service-card" onclick="goCTA('register')">
           <div class="service-img"><img src="https://images.unsplash.com/photo-1473341304170-971dccb5ac1e?w=800&h=400&fit=crop&crop=center&auto=format&q=80" alt="Bills"/></div>
           <div class="service-body"><h3>Bill Payments</h3><p>Pay electricity, airtime, and TV cable subscriptions instantly in one place. Tokens in seconds.</p><span class="service-link">Pay bills →</span></div>
         </div>
@@ -855,166 +920,109 @@ footer{background:var(--primary);color:#fff;padding:64px 0 32px}
   </section>
 
 
-  <!-- ══ FEATURE SHOWCASE — replicating KS Store scrolling cards ══ -->
-  <section class="section" id="products" style="background:var(--primary);overflow:hidden">
-    <div class="container">
-      <div style="text-align:center;margin-bottom:3rem">
-        <span class="eyebrow" style="color:var(--accent-mid)">SMS · Accounts · Boosting — all supported</span>
-        <h2 style="color:#fff;margin-top:.5rem">Everything digital. In one place.</h2>
-      </div>
+  <!-- EVERYTHING DIGITAL scrolling showcase -->
+  <div class="showcase-section">
+    <div class="container" style="text-align:center;padding-bottom:3rem">
+      <span class="eyebrow" style="color:var(--accent-mid)">SMS &middot; Accounts &middot; Boosting &mdash; all supported</span>
+      <h2 style="color:#fff;margin-top:.5rem">Everything digital. In one place</h2>
+      <p style="color:rgba(255,255,255,.45);margin-top:.5rem">Access made simple, wherever you are.</p>
     </div>
-    <div style="display:grid;grid-template-columns:1fr 340px 1fr;gap:0;align-items:center;max-width:1160px;margin:0 auto;padding:0 5%">
-
-      <!-- Left scroll -->
-      <div style="display:flex;flex-direction:column;gap:14px;padding-right:24px" id="showcase-left">
-        <div class="showcase-card">
-          <div class="showcase-icon">🌐</div>
-          <div><strong>Buy eSIM</strong><p>"I landed in Dubai and activated my eSIM in seconds. No need for airport SIM cards anymore."</p><div class="showcase-author"><img src="https://images.unsplash.com/photo-1633332755192-727a05c4013d?w=40&h=40&fit=crop" alt=""/>Marcus T.</div></div>
-        </div>
-        <div class="showcase-card">
-          <div class="showcase-icon">📱</div>
-          <div><strong>Access Virtual Numbers</strong><p>"Used their US number for Telegram verification. The process was seamless."</p><div class="showcase-author"><img src="https://images.unsplash.com/photo-1494790108377-be9c29b29330?w=40&h=40&fit=crop" alt=""/>Nosa A.</div></div>
-        </div>
-        <div class="showcase-card">
-          <div class="showcase-icon">🎁</div>
-          <div><strong>Trade Gift Cards</strong><p>"The rates were affordable and payment was instant. That's all I needed."</p><div class="showcase-author"><img src="https://images.unsplash.com/photo-1599566150163-29194dcaad36?w=40&h=40&fit=crop" alt=""/>Kwesi O.</div></div>
-        </div>
-        <div class="showcase-card">
-          <div class="showcase-icon">📈</div>
-          <div><strong>Boost & Buy Socials</strong><p>"Bought an Instagram account with 15k followers from GBN Market. Already getting brand deals."</p><div class="showcase-author"><img src="https://images.unsplash.com/photo-1531123897727-8f129e1688ce?w=40&h=40&fit=crop" alt=""/>Janice I.</div></div>
-        </div>
-        <div class="showcase-card">
-          <div class="showcase-icon">₿</div>
-          <div><strong>Convert Crypto</strong><p>"Switching to GBN Market was the best decision I made. Everything in one place."</p><div class="showcase-author"><img src="https://images.unsplash.com/photo-1507003211169-0a1dd7228f2d?w=40&h=40&fit=crop" alt=""/>Daniel T.</div></div>
-        </div>
-        <div class="showcase-card">
-          <div class="showcase-icon">💡</div>
-          <div><strong>Make Bill Payments</strong><p>"My electricity token delivers instantly every single time. Very reliable."</p><div class="showcase-author"><img src="https://images.unsplash.com/photo-1438761681033-6461ffad8d80?w=40&h=40&fit=crop" alt=""/>Chisom O.</div></div>
-        </div>
-      </div>
-
-      <!-- Center phone mockup -->
-      <div style="position:relative;z-index:2;display:flex;justify-content:center">
-        <div style="background:#1a1a2e;border:2px solid rgba(255,255,255,.1);border-radius:36px;width:260px;height:520px;overflow:hidden;box-shadow:0 32px 80px rgba(0,0,0,.5);position:relative;flex-shrink:0">
-          <div style="position:absolute;top:12px;left:50%;transform:translateX(-50%);width:80px;height:6px;background:rgba(255,255,255,.1);border-radius:3px"></div>
-          <div style="padding:28px 16px 16px">
-            <div style="background:rgba(255,255,255,.05);border-radius:12px;padding:14px;margin-bottom:12px">
-              <div style="font-size:.65rem;color:rgba(255,255,255,.4);margin-bottom:6px;font-weight:600;text-transform:uppercase;letter-spacing:.06em">Wallet Balance</div>
-              <div style="font-size:1.5rem;font-weight:800;color:#fff">₦24,500.00</div>
-              <div style="display:flex;gap:8px;margin-top:10px">
-                <button style="flex:1;background:var(--accent);border:none;border-radius:8px;padding:7px;color:#fff;font-size:.7rem;font-weight:600;cursor:pointer">Fund</button>
-                <button style="flex:1;background:rgba(255,255,255,.1);border:none;border-radius:8px;padding:7px;color:#fff;font-size:.7rem;font-weight:600;cursor:pointer">Withdraw</button>
-              </div>
+    <div class="showcase-inner">
+      <div class="sc-col-wrap"><div class="sc-col-a">
+        <div class="sc-card"><strong>Buy eSIM</strong><p>I landed in Dubai and activated my eSIM in seconds. No more airport SIM hassle.</p><div class="sc-author"><img src="https://images.unsplash.com/photo-1633332755192-727a05c4013d?w=40&h=40&fit=crop" alt=""/><span>Marcus T.</span></div></div>
+        <div class="sc-card"><strong>Access Virtual Numbers</strong><p>Used their US number for Telegram verification. The process was completely seamless.</p><div class="sc-author"><img src="https://images.unsplash.com/photo-1494790108377-be9c29b29330?w=40&h=40&fit=crop" alt=""/><span>Nosa A.</span></div></div>
+        <div class="sc-card"><strong>Trade Gift Cards</strong><p>The rates were affordable and payment was instant. That's all I needed to be loyal.</p><div class="sc-author"><img src="https://images.unsplash.com/photo-1599566150163-29194dcaad36?w=40&h=40&fit=crop" alt=""/><span>Kwesi O.</span></div></div>
+        <div class="sc-card"><strong>Boost &amp; Buy Socials</strong><p>Bought an Instagram account with 15k followers. Already getting brand deals.</p><div class="sc-author"><img src="https://images.unsplash.com/photo-1531123897727-8f129e1688ce?w=40&h=40&fit=crop" alt=""/><span>Janice I.</span></div></div>
+        <div class="sc-card"><strong>Convert Crypto</strong><p>Switching to GBN Market was the best decision I made. Everything in one place.</p><div class="sc-author"><img src="https://images.unsplash.com/photo-1507003211169-0a1dd7228f2d?w=40&h=40&fit=crop" alt=""/><span>Daniel T.</span></div></div>
+        <div class="sc-card"><strong>Make Bill Payments</strong><p>My electricity token delivers instantly every single time. Very reliable platform.</p><div class="sc-author"><img src="https://images.unsplash.com/photo-1438761681033-6461ffad8d80?w=40&h=40&fit=crop" alt=""/><span>Chisom O.</span></div></div>
+        <div class="sc-card"><strong>Buy eSIM</strong><p>I landed in Dubai and activated my eSIM in seconds. No more airport SIM hassle.</p><div class="sc-author"><img src="https://images.unsplash.com/photo-1633332755192-727a05c4013d?w=40&h=40&fit=crop" alt=""/><span>Marcus T.</span></div></div>
+        <div class="sc-card"><strong>Access Virtual Numbers</strong><p>Used their US number for Telegram verification. The process was completely seamless.</p><div class="sc-author"><img src="https://images.unsplash.com/photo-1494790108377-be9c29b29330?w=40&h=40&fit=crop" alt=""/><span>Nosa A.</span></div></div>
+        <div class="sc-card"><strong>Trade Gift Cards</strong><p>The rates were affordable and payment was instant. That's all I needed to be loyal.</p><div class="sc-author"><img src="https://images.unsplash.com/photo-1599566150163-29194dcaad36?w=40&h=40&fit=crop" alt=""/><span>Kwesi O.</span></div></div>
+        <div class="sc-card"><strong>Boost &amp; Buy Socials</strong><p>Bought an Instagram account with 15k followers. Already getting brand deals.</p><div class="sc-author"><img src="https://images.unsplash.com/photo-1531123897727-8f129e1688ce?w=40&h=40&fit=crop" alt=""/><span>Janice I.</span></div></div>
+        <div class="sc-card"><strong>Convert Crypto</strong><p>Switching to GBN Market was the best decision I made. Everything in one place.</p><div class="sc-author"><img src="https://images.unsplash.com/photo-1507003211169-0a1dd7228f2d?w=40&h=40&fit=crop" alt=""/><span>Daniel T.</span></div></div>
+        <div class="sc-card"><strong>Make Bill Payments</strong><p>My electricity token delivers instantly every single time. Very reliable platform.</p><div class="sc-author"><img src="https://images.unsplash.com/photo-1438761681033-6461ffad8d80?w=40&h=40&fit=crop" alt=""/><span>Chisom O.</span></div></div>
+      </div></div>
+      <div class="sc-phone">
+        <div class="sc-notch"><div class="sc-notch-bar"></div></div>
+        <div class="sc-screen">
+          <div style="background:rgba(255,255,255,.07);border-radius:10px;padding:12px;margin-bottom:10px">
+            <div style="font-size:.6rem;color:rgba(255,255,255,.35);font-weight:600;text-transform:uppercase;margin-bottom:5px">Wallet</div>
+            <div style="font-size:1.3rem;font-weight:800;color:#fff">&#8358;24,500.00</div>
+            <div style="display:flex;gap:6px;margin-top:8px">
+              <button style="flex:1;background:var(--accent);border:none;border-radius:7px;padding:6px;color:#fff;font-size:.62rem;font-weight:700">Fund</button>
+              <button style="flex:1;background:rgba(255,255,255,.08);border:none;border-radius:7px;padding:6px;color:#fff;font-size:.62rem;font-weight:700">Withdraw</button>
             </div>
-            <div style="display:grid;grid-template-columns:1fr 1fr;gap:8px;margin-bottom:12px">
-              <div style="background:rgba(108,71,255,.2);border-radius:10px;padding:10px;text-align:center">
-                <div style="font-size:1.2rem">📱</div>
-                <div style="font-size:.62rem;color:rgba(255,255,255,.6);margin-top:4px;font-weight:600">Numbers</div>
-              </div>
-              <div style="background:rgba(108,71,255,.2);border-radius:10px;padding:10px;text-align:center">
-                <div style="font-size:1.2rem">📈</div>
-                <div style="font-size:.62rem;color:rgba(255,255,255,.6);margin-top:4px;font-weight:600">Boost</div>
-              </div>
-              <div style="background:rgba(108,71,255,.2);border-radius:10px;padding:10px;text-align:center">
-                <div style="font-size:1.2rem">🎁</div>
-                <div style="font-size:.62rem;color:rgba(255,255,255,.6);margin-top:4px;font-weight:600">Gift Cards</div>
-              </div>
-              <div style="background:rgba(108,71,255,.2);border-radius:10px;padding:10px;text-align:center">
-                <div style="font-size:1.2rem">💡</div>
-                <div style="font-size:.62rem;color:rgba(255,255,255,.6);margin-top:4px;font-weight:600">Bills</div>
-              </div>
-            </div>
-            <div style="background:rgba(255,255,255,.05);border-radius:10px;padding:12px">
-              <div style="font-size:.65rem;color:rgba(255,255,255,.4);font-weight:600;text-transform:uppercase;letter-spacing:.06em;margin-bottom:8px">Recent</div>
-              <div style="display:flex;justify-content:space-between;align-items:center;margin-bottom:7px">
-                <span style="font-size:.72rem;color:rgba(255,255,255,.7)">📱 US Number · SMS</span>
-                <span style="font-size:.72rem;color:#22C55E;font-weight:700">-₦450</span>
-              </div>
-              <div style="display:flex;justify-content:space-between;align-items:center;margin-bottom:7px">
-                <span style="font-size:.72rem;color:rgba(255,255,255,.7)">📈 IG Followers ×500</span>
-                <span style="font-size:.72rem;color:#22C55E;font-weight:700">-₦2,100</span>
-              </div>
-              <div style="display:flex;justify-content:space-between;align-items:center">
-                <span style="font-size:.72rem;color:rgba(255,255,255,.7)">💳 Wallet funded</span>
-                <span style="font-size:.72rem;color:var(--accent-mid);font-weight:700">+₦10,000</span>
-              </div>
-            </div>
+          </div>
+          <div style="display:grid;grid-template-columns:1fr 1fr;gap:6px;margin-bottom:10px">
+            <div style="background:rgba(108,71,255,.25);border-radius:8px;padding:8px;text-align:center"><div style="font-size:1rem">&#x1F4F1;</div><div style="font-size:.58rem;color:rgba(255,255,255,.5);margin-top:3px;font-weight:600">Numbers</div></div>
+            <div style="background:rgba(108,71,255,.25);border-radius:8px;padding:8px;text-align:center"><div style="font-size:1rem">&#x1F4C8;</div><div style="font-size:.58rem;color:rgba(255,255,255,.5);margin-top:3px;font-weight:600">Boost</div></div>
+            <div style="background:rgba(108,71,255,.25);border-radius:8px;padding:8px;text-align:center"><div style="font-size:1rem">&#x1F381;</div><div style="font-size:.58rem;color:rgba(255,255,255,.5);margin-top:3px;font-weight:600">Gift Cards</div></div>
+            <div style="background:rgba(108,71,255,.25);border-radius:8px;padding:8px;text-align:center"><div style="font-size:1rem">&#x1F4A1;</div><div style="font-size:.58rem;color:rgba(255,255,255,.5);margin-top:3px;font-weight:600">Bills</div></div>
+          </div>
+          <div style="background:rgba(255,255,255,.06);border-radius:8px;padding:10px">
+            <div style="font-size:.58rem;color:rgba(255,255,255,.35);font-weight:600;text-transform:uppercase;margin-bottom:7px">Recent</div>
+            <div style="display:flex;justify-content:space-between;margin-bottom:5px"><span style="font-size:.65rem;color:rgba(255,255,255,.6)">&#x1F4F1; US Number</span><span style="font-size:.65rem;color:#22C55E;font-weight:700">-&#8358;450</span></div>
+            <div style="display:flex;justify-content:space-between;margin-bottom:5px"><span style="font-size:.65rem;color:rgba(255,255,255,.6)">&#x1F4C8; IG Followers</span><span style="font-size:.65rem;color:#22C55E;font-weight:700">-&#8358;2,100</span></div>
+            <div style="display:flex;justify-content:space-between"><span style="font-size:.65rem;color:rgba(255,255,255,.6)">&#x1F4B3; Funded</span><span style="font-size:.65rem;color:var(--accent-mid);font-weight:700">+&#8358;10,000</span></div>
           </div>
         </div>
       </div>
-
-      <!-- Right scroll (duplicate left, scrolls opposite) -->
-      <div style="display:flex;flex-direction:column;gap:14px;padding-left:24px" id="showcase-right">
-        <div class="showcase-card">
-          <div class="showcase-icon">💡</div>
-          <div><strong>Make Bill Payments</strong><p>"My electricity token delivers instantly every single time. Very reliable."</p><div class="showcase-author"><img src="https://images.unsplash.com/photo-1438761681033-6461ffad8d80?w=40&h=40&fit=crop" alt=""/>Chisom O.</div></div>
-        </div>
-        <div class="showcase-card">
-          <div class="showcase-icon">₿</div>
-          <div><strong>Convert Crypto</strong><p>"Switching to GBN Market was the best decision I made. Everything in one place."</p><div class="showcase-author"><img src="https://images.unsplash.com/photo-1507003211169-0a1dd7228f2d?w=40&h=40&fit=crop" alt=""/>Daniel T.</div></div>
-        </div>
-        <div class="showcase-card">
-          <div class="showcase-icon">📈</div>
-          <div><strong>Boost & Buy Socials</strong><p>"Bought an Instagram account with 15k followers. Already getting brand deals."</p><div class="showcase-author"><img src="https://images.unsplash.com/photo-1531123897727-8f129e1688ce?w=40&h=40&fit=crop" alt=""/>Janice I.</div></div>
-        </div>
-        <div class="showcase-card">
-          <div class="showcase-icon">🎁</div>
-          <div><strong>Trade Gift Cards</strong><p>"The rates were affordable and payment was instant. That's all I needed."</p><div class="showcase-author"><img src="https://images.unsplash.com/photo-1599566150163-29194dcaad36?w=40&h=40&fit=crop" alt=""/>Kwesi O.</div></div>
-        </div>
-        <div class="showcase-card">
-          <div class="showcase-icon">📱</div>
-          <div><strong>Access Virtual Numbers</strong><p>"Used their US number for Telegram verification. Completely seamless experience."</p><div class="showcase-author"><img src="https://images.unsplash.com/photo-1494790108377-be9c29b29330?w=40&h=40&fit=crop" alt=""/>Nosa A.</div></div>
-        </div>
-        <div class="showcase-card">
-          <div class="showcase-icon">🌐</div>
-          <div><strong>Buy eSIM</strong><p>"I landed in Dubai and activated my eSIM in seconds. No more airport SIM hassle."</p><div class="showcase-author"><img src="https://images.unsplash.com/photo-1633332755192-727a05c4013d?w=40&h=40&fit=crop" alt=""/>Marcus T.</div></div>
-        </div>
-      </div>
-
+      <div class="sc-col-wrap"><div class="sc-col-b">
+        <div class="sc-card"><strong>Make Bill Payments</strong><p>My electricity token delivers instantly every single time. Very reliable platform.</p><div class="sc-author"><img src="https://images.unsplash.com/photo-1438761681033-6461ffad8d80?w=40&h=40&fit=crop" alt=""/><span>Chisom O.</span></div></div>
+        <div class="sc-card"><strong>Convert Crypto</strong><p>Switching to GBN Market was the best decision I made. Everything in one place.</p><div class="sc-author"><img src="https://images.unsplash.com/photo-1507003211169-0a1dd7228f2d?w=40&h=40&fit=crop" alt=""/><span>Daniel T.</span></div></div>
+        <div class="sc-card"><strong>Boost &amp; Buy Socials</strong><p>Bought an Instagram account with 15k followers. Already getting brand deals.</p><div class="sc-author"><img src="https://images.unsplash.com/photo-1531123897727-8f129e1688ce?w=40&h=40&fit=crop" alt=""/><span>Janice I.</span></div></div>
+        <div class="sc-card"><strong>Trade Gift Cards</strong><p>The rates were affordable and payment was instant. That's all I needed.</p><div class="sc-author"><img src="https://images.unsplash.com/photo-1599566150163-29194dcaad36?w=40&h=40&fit=crop" alt=""/><span>Kwesi O.</span></div></div>
+        <div class="sc-card"><strong>Access Virtual Numbers</strong><p>Used their US number for Telegram verification. Completely seamless experience.</p><div class="sc-author"><img src="https://images.unsplash.com/photo-1494790108377-be9c29b29330?w=40&h=40&fit=crop" alt=""/><span>Nosa A.</span></div></div>
+        <div class="sc-card"><strong>Buy eSIM</strong><p>I landed in Dubai and activated my eSIM in seconds. No more airport SIM hassle.</p><div class="sc-author"><img src="https://images.unsplash.com/photo-1633332755192-727a05c4013d?w=40&h=40&fit=crop" alt=""/><span>Marcus T.</span></div></div>
+        <div class="sc-card"><strong>Make Bill Payments</strong><p>My electricity token delivers instantly every single time. Very reliable platform.</p><div class="sc-author"><img src="https://images.unsplash.com/photo-1438761681033-6461ffad8d80?w=40&h=40&fit=crop" alt=""/><span>Chisom O.</span></div></div>
+        <div class="sc-card"><strong>Convert Crypto</strong><p>Switching to GBN Market was the best decision I made. Everything in one place.</p><div class="sc-author"><img src="https://images.unsplash.com/photo-1507003211169-0a1dd7228f2d?w=40&h=40&fit=crop" alt=""/><span>Daniel T.</span></div></div>
+        <div class="sc-card"><strong>Boost &amp; Buy Socials</strong><p>Bought an Instagram account with 15k followers. Already getting brand deals.</p><div class="sc-author"><img src="https://images.unsplash.com/photo-1531123897727-8f129e1688ce?w=40&h=40&fit=crop" alt=""/><span>Janice I.</span></div></div>
+        <div class="sc-card"><strong>Trade Gift Cards</strong><p>The rates were affordable and payment was instant. That's all I needed.</p><div class="sc-author"><img src="https://images.unsplash.com/photo-1599566150163-29194dcaad36?w=40&h=40&fit=crop" alt=""/><span>Kwesi O.</span></div></div>
+        <div class="sc-card"><strong>Access Virtual Numbers</strong><p>Used their US number for Telegram verification. Completely seamless experience.</p><div class="sc-author"><img src="https://images.unsplash.com/photo-1494790108377-be9c29b29330?w=40&h=40&fit=crop" alt=""/><span>Nosa A.</span></div></div>
+        <div class="sc-card"><strong>Buy eSIM</strong><p>I landed in Dubai and activated my eSIM in seconds. No more airport SIM hassle.</p><div class="sc-author"><img src="https://images.unsplash.com/photo-1633332755192-727a05c4013d?w=40&h=40&fit=crop" alt=""/><span>Marcus T.</span></div></div>
+      </div></div>
     </div>
-  </section>
+  </div>
 
+  <!-- SERVICE SHOWCASE ROWS -->
+  <div class="svc-showcase">
+    <div class="svc-row"><div class="svc-img"><img src="https://images.unsplash.com/photo-1512941937669-90a1b58e7e9c?w=800&h=680&fit=crop&q=80" alt="Virtual Numbers"/></div><div class="svc-text"><span class="eyebrow">Virtual Phone Numbers</span><h2>Virtual numbers for fast, global sign-ups</h2><p>Activate instantly and stay connected anywhere. Instant setup with global coverage.</p><div class="svc-tags"><span class="svc-tag">SMS</span><span class="svc-tag">180+ Countries</span><span class="svc-tag">Instant delivery</span></div><button class="btn btn-primary" onclick="goCTA('numbers')">Purchase Virtual Numbers &rarr;</button></div></div>
+    <div class="svc-row svc-row-rev"><div class="svc-img"><img src="https://images.unsplash.com/photo-1488085061387-422e29b40080?w=800&h=680&fit=crop&q=80" alt="eSIM"/></div><div class="svc-text"><span class="eyebrow">eSIM</span><h2>Get mobile data. No physical SIM</h2><p>Activate instantly and stay connected anywhere. Instant setup with global coverage.</p><div class="svc-tags"><span class="svc-tag">Global</span><span class="svc-tag">Instant activation</span><span class="svc-tag">No roaming fees</span></div><button class="btn btn-primary" onclick="goCTA('register')">Buy eSIM &rarr;</button></div></div>
+    <div class="svc-row"><div class="svc-img"><img src="https://images.unsplash.com/photo-1549465220-1a8b9238cd48?w=800&h=680&fit=crop&q=80" alt="Gift Cards"/></div><div class="svc-text"><span class="eyebrow">Gift Cards</span><h2>Buy &amp; Sell Gift Cards with ease today</h2><p>Instant transactions with competitive rates. Fast, secure, and reliable gift card trading.</p><div class="svc-tags"><span class="svc-tag">All brands</span><span class="svc-tag">Instant payout</span><span class="svc-tag">Best NGN rates</span></div><button class="btn btn-primary" onclick="goCTA('register')">Buy &amp; Sell Gift Card &rarr;</button></div></div>
+    <div class="svc-row svc-row-rev"><div class="svc-img"><img src="https://images.unsplash.com/photo-1640340434855-6084b1f4901c?w=800&h=680&fit=crop&q=80" alt="Crypto"/></div><div class="svc-text"><span class="eyebrow">Crypto Trading</span><h2>Convert your Crypto currencies to Naira</h2><p>Convert crypto to naira instantly. Fast crypto-to-naira exchange with seamless withdrawals.</p><div class="svc-tags"><span class="svc-tag">BTC</span><span class="svc-tag">USDT</span><span class="svc-tag">ETH</span><span class="svc-tag">BNB</span></div><button class="btn btn-primary" onclick="goCTA('register')">Convert Crypto &rarr;</button></div></div>
+    <div class="svc-row"><div class="svc-img"><img src="https://images.unsplash.com/photo-1611162617213-7d7a39e9b1d7?w=800&h=680&fit=crop&q=80" alt="Social Media"/></div><div class="svc-text"><span class="eyebrow">Social Media</span><h2>Buy &amp; Boost your social media account</h2><p>Grow your account quickly and safely. Instant boosts for stronger social presence.</p><div class="svc-tags"><span class="svc-tag">Instagram</span><span class="svc-tag">TikTok</span><span class="svc-tag">YouTube</span></div><button class="btn btn-primary" onclick="goCTA('smm')">Boost Socials &rarr;</button></div></div>
+    <div class="svc-row svc-row-rev"><div class="svc-img"><img src="https://images.unsplash.com/photo-1473341304170-971dccb5ac1e?w=800&h=680&fit=crop&q=80" alt="Bills"/></div><div class="svc-text"><span class="eyebrow">Bill Payments</span><h2>Pay electricity, airtime, and TV Cable Sub</h2><p>Settle your bills instantly in one place. Fast and easy utility payments in seconds.</p><div class="svc-tags"><span class="svc-tag">Electricity</span><span class="svc-tag">Cable TV</span><span class="svc-tag">Airtime</span></div><button class="btn btn-primary" onclick="goCTA('register')">Pay Bills &rarr;</button></div></div>
+  </div>
 
-  <!-- ══ CRYPTO CONVERTER ══ -->
-  <section class="section" style="background:var(--surface2);border-top:1px solid var(--border)">
+  <!-- CRYPTO CONVERTER -->
+  <section class="section crypto-section">
     <div class="container">
-      <div style="display:grid;grid-template-columns:1fr 400px;gap:60px;align-items:center">
+      <div class="crypto-grid">
         <div>
           <span class="eyebrow">Crypto Trading</span>
           <h2>Convert Crypto to Naira</h2>
-          <p style="margin-top:.75rem;line-height:1.75;font-size:1.05rem">GBN Market provides mid-market rates, updated in real time. No hidden fees — transparent and reliable currency conversion for users worldwide.</p>
-          <div style="display:flex;gap:20px;margin-top:1.5rem;flex-wrap:wrap">
+          <p style="margin-top:.75rem;line-height:1.75;font-size:1.05rem">GBN Market provides mid-market rates, updated in real time. We ensure there are no hidden fees &mdash; transparent and reliable currency conversion for users worldwide.</p>
+          <div style="display:flex;gap:16px;margin-top:1.5rem;flex-wrap:wrap">
             <div class="stat"><strong style="color:var(--accent)">0.55%</strong><span>Total fees</span></div>
-            <div class="stat"><strong style="color:var(--accent)">&lt;60s</strong><span>Processing time</span></div>
+            <div class="stat"><strong style="color:var(--accent)">&lt;60s</strong><span>Processing</span></div>
             <div class="stat"><strong style="color:var(--accent)">Mid-market</strong><span>Rate used</span></div>
           </div>
         </div>
-        <div style="background:#fff;border:1px solid var(--border);border-radius:20px;padding:28px;box-shadow:var(--shadow)">
-          <div style="margin-bottom:16px">
-            <label style="font-size:.75rem;font-weight:600;text-transform:uppercase;letter-spacing:.08em;color:var(--text-4);display:block;margin-bottom:7px">You Send</label>
-            <div style="display:flex;align-items:center;gap:10px;background:var(--surface);border:1.5px solid var(--border);border-radius:10px;padding:12px 14px">
-              <select id="crypto-select" style="background:none;border:none;font-weight:700;font-size:.95rem;font-family:var(--font);color:var(--text);outline:none;cursor:pointer" onchange="calcCrypto()">
-                <option value="1700000">BTC</option>
-                <option value="1650">USDT</option>
-                <option value="130000">ETH</option>
-                <option value="400">BNB</option>
-              </select>
-              <input type="number" id="crypto-amount" value="1" min="0.001" step="any" style="flex:1;background:none;border:none;font-size:1.1rem;font-weight:700;text-align:right;outline:none;font-family:var(--font);color:var(--text)" oninput="calcCrypto()"/>
-            </div>
+        <div class="crypto-widget">
+          <span class="crypto-label">YOU SEND</span>
+          <div class="crypto-row">
+            <select id="crypto-select" onchange="calcCrypto()"><option value="1700000">BTC</option><option value="1650">USDT</option><option value="130000">ETH</option><option value="400000">BNB</option><option value="1200000">SOL</option></select>
+            <input type="number" id="crypto-amount" value="1" min="0.001" step="any" oninput="calcCrypto()"/>
           </div>
-          <div style="text-align:center;color:var(--text-4);font-size:1.2rem;margin:8px 0">⇅</div>
-          <div style="margin-bottom:20px">
-            <label style="font-size:.75rem;font-weight:600;text-transform:uppercase;letter-spacing:.08em;color:var(--text-4);display:block;margin-bottom:7px">You Receive 🇳🇬 NGN</label>
-            <div style="background:var(--accent-light);border:1.5px solid var(--accent-mid);border-radius:10px;padding:12px 14px">
-              <div style="font-size:1.4rem;font-weight:800;color:var(--accent)" id="ngn-output">₦1,700,000</div>
-            </div>
+          <div style="text-align:center;color:var(--text-4);margin:4px 0;font-size:1.2rem">&#x21C5;</div>
+          <span class="crypto-label">YOU RECEIVE &#x1F1F3;&#x1F1EC; NGN</span>
+          <div class="crypto-out"><div class="amt" id="ngn-output">&#8358;1,690,650</div></div>
+          <div class="crypto-fees-box">
+            <div class="crypto-fee-row"><span>Connected bank account fee</span><span>1,700 NGN</span></div>
+            <div class="crypto-fee-row"><span>Our Fee</span><span>3,780 NGN</span></div>
+            <div class="crypto-fee-total"><span>Total included fees (0.55%)</span><span id="total-fees">5,480 NGN</span></div>
           </div>
-          <div style="border-top:1px solid var(--border);padding-top:14px;font-size:.8rem;color:var(--text-3)">
-            <div style="display:flex;justify-content:space-between;margin-bottom:5px"><span>Network fee</span><span>₦1,700</span></div>
-            <div style="display:flex;justify-content:space-between;margin-bottom:5px"><span>GBN fee</span><span>₦3,780</span></div>
-            <div style="display:flex;justify-content:space-between;font-weight:700;color:var(--text);margin-top:8px;padding-top:8px;border-top:1px solid var(--border)"><span>Total fees (0.55%)</span><span id="total-fees">₦5,480</span></div>
-          </div>
-          <button class="btn btn-primary" style="width:100%;margin-top:16px;padding:13px" onclick="go('register')">Convert Now →</button>
+          <button class="btn btn-primary" style="width:100%;margin-top:16px;padding:13px" onclick="goCTA('register')">Convert Now</button>
         </div>
       </div>
     </div>
@@ -1086,7 +1094,7 @@ footer{background:var(--primary);color:#fff;padding:64px 0 32px}
       <span class="eyebrow" style="color:rgba(255,255,255,.55)">Our goal is to keep you coming back</span>
       <h2>Join us at GBN Market</h2>
       <p>We believe every African should have access to the digital resources that help international businesses succeed. Experience reliable services that take your business beyond borders.</p>
-      <button class="btn btn-white btn-lg" onclick="go('register')">Create Free Account</button>
+      <button class="btn btn-white btn-lg" onclick="goCTA('register')">Create Free Account</button>
     </div>
   </div>
 </div><!-- /page-home -->
@@ -1102,7 +1110,7 @@ footer{background:var(--primary);color:#fff;padding:64px 0 32px}
       <h1 style="max-width:640px;margin-bottom:1.25rem">Virtual numbers for fast, global sign-ups</h1>
       <p class="lead" style="font-size:1.1rem;max-width:540px;margin-bottom:2rem">Get instant SMS verification codes for Telegram, WhatsApp, Google, Facebook and 200+ services. Numbers from over 180 countries, delivered in seconds.</p>
       <div class="hero-ctas">
-        <button class="btn btn-primary btn-lg" onclick="go('register')">Get a Number</button>
+        <button class="btn btn-primary btn-lg" onclick="goCTA('numbers-order')">Get a Number</button>
         <button class="btn btn-ghost btn-lg" onclick="document.getElementById('how-numbers').scrollIntoView({behavior:'smooth'})">How it works</button>
       </div>
     </div>
@@ -1178,7 +1186,7 @@ footer{background:var(--primary);color:#fff;padding:64px 0 32px}
       <span class="eyebrow" style="color:rgba(255,255,255,.55)">Our goal is to keep you coming back</span>
       <h2>Join us at GBN Market</h2>
       <p>We believe every African should have access to the digital resources that help international businesses succeed.</p>
-      <button class="btn btn-white btn-lg" onclick="go('register')">Sign Up Free</button>
+      <button class="btn btn-white btn-lg" onclick="goCTA('register')">Sign Up Free</button>
     </div>
   </div>
 </div><!-- /page-numbers -->
@@ -1194,7 +1202,7 @@ footer{background:var(--primary);color:#fff;padding:64px 0 32px}
       <h1 style="max-width:620px;margin-bottom:1.25rem">Boost your social media accounts</h1>
       <p class="lead" style="font-size:1.1rem;max-width:540px;margin-bottom:2rem">Real followers, likes, views and engagement across Instagram, TikTok, YouTube, Facebook and more. Drip-fed delivery, no drops, full refill warranty.</p>
       <div class="hero-ctas">
-        <button class="btn btn-primary btn-lg" onclick="go('register')">Order a Boost</button>
+        <button class="btn btn-primary btn-lg" onclick="goCTA('smm-order')">Order a Boost</button>
         <button class="btn btn-ghost btn-lg" onclick="document.getElementById('smm-platforms').scrollIntoView({behavior:'smooth'})">View Platforms</button>
       </div>
     </div>
@@ -1246,7 +1254,7 @@ footer{background:var(--primary);color:#fff;padding:64px 0 32px}
       <span class="eyebrow" style="color:rgba(255,255,255,.55)">Our goal is to keep you coming back</span>
       <h2>Join us at GBN Market</h2>
       <p>We believe every African should have access to the digital resources that help international businesses succeed.</p>
-      <button class="btn btn-white btn-lg" onclick="go('register')">Sign Up Free</button>
+      <button class="btn btn-white btn-lg" onclick="goCTA('register')">Sign Up Free</button>
     </div>
   </div>
 </div><!-- /page-smm -->
@@ -1262,7 +1270,7 @@ footer{background:var(--primary);color:#fff;padding:64px 0 32px}
       <h1 style="max-width:640px;margin-bottom:1.25rem">Ready-made social accounts &amp; logins</h1>
       <p class="lead" style="font-size:1.1rem;max-width:540px;margin-bottom:2rem">Skip the grind. Buy aged, warmed-up Instagram, TikTok, Facebook, X and more — with full login credentials, recovery email and verified history. Instant delivery.</p>
       <div class="hero-ctas">
-        <button class="btn btn-primary btn-lg" onclick="go('register')">Browse Accounts</button>
+        <button class="btn btn-primary btn-lg" onclick="goCTA('accounts-order')">Browse Accounts</button>
         <button class="btn btn-ghost btn-lg" onclick="document.getElementById('accounts-stock').scrollIntoView({behavior:'smooth'})">See what's in stock</button>
       </div>
     </div>
@@ -1275,32 +1283,32 @@ footer{background:var(--primary);color:#fff;padding:64px 0 32px}
         <div class="stock-card">
           <div class="stock-card-head"><div class="stock-card-head-left"><span class="stock-icon">📸</span><div><h3>Instagram</h3><small>From 1k–100k followers</small></div></div><span class="badge badge-green"><span class="badge-dot"></span>In stock</span></div>
           <div class="stock-card-body"><ul style="list-style:none"><li>Aged 6 months to 5+ years</li><li>Real followers, posts, story history</li><li>Email + recovery included</li><li>US, UK, EU and NG regions</li></ul></div>
-          <div class="stock-card-foot"><span class="stock-price">From ₦5,000</span><button class="btn btn-primary btn-sm" onclick="go('register')">Buy Now</button></div>
+          <div class="stock-card-foot"><span class="stock-price">From ₦5,000</span><button class="btn btn-primary btn-sm" onclick="goCTA('accounts-order')">Buy Now</button></div>
         </div>
         <div class="stock-card">
           <div class="stock-card-head"><div class="stock-card-head-left"><span class="stock-icon">🎵</span><div><h3>TikTok</h3><small>Viral-ready, niche-tagged</small></div></div><span class="badge badge-green"><span class="badge-dot"></span>In stock</span></div>
           <div class="stock-card-body"><ul style="list-style:none"><li>Verified phone &amp; email</li><li>Region-specific (US, UK, EU, NG)</li><li>Niche tags: comedy, beauty, finance</li><li>Follower counts: 500–50k</li></ul></div>
-          <div class="stock-card-foot"><span class="stock-price">From ₦4,500</span><button class="btn btn-primary btn-sm" onclick="go('register')">Buy Now</button></div>
+          <div class="stock-card-foot"><span class="stock-price">From ₦4,500</span><button class="btn btn-primary btn-sm" onclick="goCTA('accounts-order')">Buy Now</button></div>
         </div>
         <div class="stock-card">
           <div class="stock-card-head"><div class="stock-card-head-left"><span class="stock-icon">📘</span><div><h3>Facebook</h3><small>Profiles, pages &amp; ad accounts</small></div></div><span class="badge badge-green"><span class="badge-dot"></span>In stock</span></div>
           <div class="stock-card-body"><ul style="list-style:none"><li>Aged personal profiles</li><li>BM &amp; ad accounts available</li><li>Cookies + 2FA recovery</li><li>US, UK, EU regions</li></ul></div>
-          <div class="stock-card-foot"><span class="stock-price">From ₦3,500</span><button class="btn btn-primary btn-sm" onclick="go('register')">Buy Now</button></div>
+          <div class="stock-card-foot"><span class="stock-price">From ₦3,500</span><button class="btn btn-primary btn-sm" onclick="goCTA('accounts-order')">Buy Now</button></div>
         </div>
         <div class="stock-card">
           <div class="stock-card-head"><div class="stock-card-head-left"><span class="stock-icon">🐦</span><div><h3>X / Twitter</h3><small>Old &amp; verified handles</small></div></div><span class="badge badge-green"><span class="badge-dot"></span>In stock</span></div>
           <div class="stock-card-body"><ul style="list-style:none"><li>Pre-2015 &amp; pre-2020 handles</li><li>Real follower counts</li><li>Email + recovery included</li><li>Some gold/blue verified</li></ul></div>
-          <div class="stock-card-foot"><span class="stock-price">From ₦6,000</span><button class="btn btn-primary btn-sm" onclick="go('register')">Buy Now</button></div>
+          <div class="stock-card-foot"><span class="stock-price">From ₦6,000</span><button class="btn btn-primary btn-sm" onclick="goCTA('accounts-order')">Buy Now</button></div>
         </div>
         <div class="stock-card">
           <div class="stock-card-head"><div class="stock-card-head-left"><span class="stock-icon">▶️</span><div><h3>YouTube</h3><small>Monetised &amp; aged channels</small></div></div><span class="badge badge-green"><span class="badge-dot"></span>In stock</span></div>
           <div class="stock-card-body"><ul style="list-style:none"><li>Subscriber counts: 1k–500k</li><li>Monetisation-eligible channels</li><li>Watch hours already met</li><li>Email + 2FA recovery</li></ul></div>
-          <div class="stock-card-foot"><span class="stock-price">From ₦12,000</span><button class="btn btn-primary btn-sm" onclick="go('register')">Buy Now</button></div>
+          <div class="stock-card-foot"><span class="stock-price">From ₦12,000</span><button class="btn btn-primary btn-sm" onclick="goCTA('accounts-order')">Buy Now</button></div>
         </div>
         <div class="stock-card">
           <div class="stock-card-head"><div class="stock-card-head-left"><span class="stock-icon">✈️</span><div><h3>Telegram</h3><small>Channels &amp; groups</small></div></div><span class="badge badge-green"><span class="badge-dot"></span>In stock</span></div>
           <div class="stock-card-body"><ul style="list-style:none"><li>Aged accounts &amp; channels</li><li>TDATA / session files included</li><li>Region-tagged (US, UK, NG)</li><li>Member counts: 500–100k</li></ul></div>
-          <div class="stock-card-foot"><span class="stock-price">From ₦3,000</span><button class="btn btn-primary btn-sm" onclick="go('register')">Buy Now</button></div>
+          <div class="stock-card-foot"><span class="stock-price">From ₦3,000</span><button class="btn btn-primary btn-sm" onclick="goCTA('accounts-order')">Buy Now</button></div>
         </div>
       </div>
     </div>
@@ -1337,7 +1345,7 @@ footer{background:var(--primary);color:#fff;padding:64px 0 32px}
       <span class="eyebrow" style="color:rgba(255,255,255,.55)">Our goal is to keep you coming back</span>
       <h2>Join us at GBN Market</h2>
       <p>We believe every African should have access to digital resources that help international businesses succeed. Experience reliable services that take your business beyond borders.</p>
-      <button class="btn btn-white btn-lg" onclick="go('register')">Sign Up Free</button>
+      <button class="btn btn-white btn-lg" onclick="goCTA('register')">Sign Up Free</button>
     </div>
   </div>
 </div><!-- /page-accounts -->
@@ -1367,7 +1375,7 @@ footer{background:var(--primary);color:#fff;padding:64px 0 32px}
         <span class="back-link" onclick="go('home')">← Back to home</span>
         <span class="eyebrow">Sign in</span>
         <h2>Welcome back 👋</h2>
-        <p class="sub">New to GBN Market? <a onclick="go('register')">Create an account</a></p>
+        <p class="sub">New to GBN Market? <a onclick="goCTA('register')">Create an account</a></p>
         <div class="form-group"><label>Email or username</label><input type="text" placeholder="you@example.com"/></div>
         <div class="form-group"><label>Password</label><input type="password" placeholder="Enter your password"/></div>
         <div style="display:flex;align-items:center;justify-content:space-between;margin:14px 0 20px">
@@ -1427,117 +1435,59 @@ footer{background:var(--primary);color:#fff;padding:64px 0 32px}
 </div><!-- /page-register -->
 
 
-
-<!-- ══════════════════════════════════
-     PAGE: DASHBOARD
-══════════════════════════════════ -->
-<div class="page" id="page-dashboard">
-  <div style="min-height:100vh;background:var(--surface2)">
-    <div style="background:#fff;border-bottom:1px solid var(--border);padding:0">
-      <div class="container">
-        <div style="display:flex;align-items:center;justify-content:space-between;height:56px;gap:1rem">
-          <div style="display:flex;gap:4px">
-            <button class="btn btn-ghost btn-sm" style="color:var(--text);background:var(--accent-light);color:var(--accent)" onclick="go('dashboard')">Dashboard</button>
-            <button class="btn btn-ghost btn-sm" style="color:var(--text-3)" onclick="go('numbers')">Numbers</button>
-            <button class="btn btn-ghost btn-sm" style="color:var(--text-3)" onclick="go('smm')">Boosting</button>
-            <button class="btn btn-ghost btn-sm" style="color:var(--text-3)" onclick="go('accounts')">Accounts</button>
-          </div>
-          <div style="display:flex;align-items:center;gap:8px">
-            <div style="background:var(--accent-light);color:var(--accent);font-weight:700;font-size:.8rem;padding:5px 13px;border-radius:100px" id="dash-wallet-badge">Wallet: ₦0.00</div>
-          </div>
-        </div>
-      </div>
-    </div>
-
-    <div class="container" style="padding-top:36px;padding-bottom:60px">
-
-      <!-- Welcome bar -->
-      <div style="margin-bottom:28px">
-        <h2 style="font-size:1.5rem;font-weight:700;letter-spacing:-.02em" id="dash-greeting">Welcome back 👋</h2>
-        <p style="color:var(--text-3);margin-top:3px;font-size:.9rem">Here's what's happening with your account.</p>
-      </div>
-
-      <!-- Stats -->
-      <div style="display:grid;grid-template-columns:repeat(auto-fill,minmax(200px,1fr));gap:16px;margin-bottom:28px">
-        <div style="background:#fff;border:1px solid var(--border);border-radius:14px;padding:20px">
-          <div style="font-size:.75rem;font-weight:600;text-transform:uppercase;letter-spacing:.08em;color:var(--text-4);margin-bottom:8px">Wallet Balance</div>
-          <div style="font-size:1.6rem;font-weight:800;letter-spacing:-.03em;color:var(--text)" id="dash-balance">₦0.00</div>
-          <button class="btn btn-primary btn-sm" style="margin-top:12px;width:100%" onclick="alert('Fund wallet coming soon!')">Fund Wallet</button>
-        </div>
-        <div style="background:#fff;border:1px solid var(--border);border-radius:14px;padding:20px">
-          <div style="font-size:.75rem;font-weight:600;text-transform:uppercase;letter-spacing:.08em;color:var(--text-4);margin-bottom:8px">Total Orders</div>
-          <div style="font-size:1.6rem;font-weight:800;letter-spacing:-.03em;color:var(--text)">0</div>
-          <div style="font-size:.78rem;color:var(--text-4);margin-top:6px">No orders yet</div>
-        </div>
-        <div style="background:#fff;border:1px solid var(--border);border-radius:14px;padding:20px">
-          <div style="font-size:.75rem;font-weight:600;text-transform:uppercase;letter-spacing:.08em;color:var(--text-4);margin-bottom:8px">Active Numbers</div>
-          <div style="font-size:1.6rem;font-weight:800;letter-spacing:-.03em;color:var(--text)">0</div>
-          <div style="font-size:.78rem;color:var(--text-4);margin-top:6px">No active numbers</div>
-        </div>
-        <div style="background:#fff;border:1px solid var(--border);border-radius:14px;padding:20px">
-          <div style="font-size:.75rem;font-weight:600;text-transform:uppercase;letter-spacing:.08em;color:var(--text-4);margin-bottom:8px">Referral Code</div>
-          <div style="font-size:1rem;font-weight:700;color:var(--accent);letter-spacing:.08em;margin-top:4px" id="dash-ref-code">—</div>
-          <div style="font-size:.78rem;color:var(--text-4);margin-top:6px">Share & earn</div>
-        </div>
-      </div>
-
-      <!-- Quick actions -->
-      <div style="margin-bottom:28px">
-        <h3 style="font-size:.85rem;font-weight:600;text-transform:uppercase;letter-spacing:.08em;color:var(--text-4);margin-bottom:14px">Quick Actions</h3>
-        <div style="display:grid;grid-template-columns:repeat(auto-fill,minmax(180px,1fr));gap:12px">
-          <div class="card" style="cursor:pointer;text-align:center;padding:20px" onclick="go('numbers')">
-            <div style="font-size:2rem;margin-bottom:8px">📱</div>
-            <h3 style="font-size:.9rem">Get a Number</h3>
-            <p style="font-size:.78rem">Buy a virtual SMS number</p>
-          </div>
-          <div class="card" style="cursor:pointer;text-align:center;padding:20px" onclick="go('smm')">
-            <div style="font-size:2rem;margin-bottom:8px">📈</div>
-            <h3 style="font-size:.9rem">Boost Socials</h3>
-            <p style="font-size:.78rem">Grow followers & engagement</p>
-          </div>
-          <div class="card" style="cursor:pointer;text-align:center;padding:20px" onclick="go('accounts')">
-            <div style="font-size:2rem;margin-bottom:8px">👤</div>
-            <h3 style="font-size:.9rem">Buy Accounts</h3>
-            <p style="font-size:.78rem">Aged social media logins</p>
-          </div>
-          <div class="card" style="cursor:pointer;text-align:center;padding:20px" onclick="alert('Gift cards coming soon!')">
-            <div style="font-size:2rem;margin-bottom:8px">🎁</div>
-            <h3 style="font-size:.9rem">Gift Cards</h3>
-            <p style="font-size:.78rem">Buy & sell gift cards</p>
-          </div>
-          <div class="card" style="cursor:pointer;text-align:center;padding:20px" onclick="alert('eSIM coming soon!')">
-            <div style="font-size:2rem;margin-bottom:8px">🌐</div>
-            <h3 style="font-size:.9rem">Buy eSIM</h3>
-            <p style="font-size:.78rem">Global eSIM activation</p>
-          </div>
-          <div class="card" style="cursor:pointer;text-align:center;padding:20px" onclick="alert('Bill payments coming soon!')">
-            <div style="font-size:2rem;margin-bottom:8px">💡</div>
-            <h3 style="font-size:.9rem">Pay Bills</h3>
-            <p style="font-size:.78rem">Electricity, airtime, TV</p>
-          </div>
-        </div>
-      </div>
-
-      <!-- Recent orders -->
-      <div>
-        <h3 style="font-size:.85rem;font-weight:600;text-transform:uppercase;letter-spacing:.08em;color:var(--text-4);margin-bottom:14px">Recent Orders</h3>
-        <div style="background:#fff;border:1px solid var(--border);border-radius:14px;overflow:hidden">
-          <div style="padding:48px;text-align:center;color:var(--text-4)">
-            <div style="font-size:2.5rem;margin-bottom:10px">📋</div>
-            <div style="font-weight:600;color:var(--text-3);margin-bottom:4px">No orders yet</div>
-            <div style="font-size:.85rem">Your orders will appear here once you make a purchase.</div>
-            <button class="btn btn-primary btn-sm" style="margin-top:16px" onclick="go('numbers')">Place your first order</button>
-          </div>
-        </div>
-      </div>
-
-    </div>
-  </div>
-</div><!-- /page-dashboard -->
-
 <!-- ══════════════════════════════════
      SHARED FOOTER
 ══════════════════════════════════ -->
+
+<!-- PAGE: DASHBOARD -->
+<div class="page" id="page-dashboard">
+  <div class="dash-wrap">
+    <div class="dash-topbar">
+      <div class="container">
+        <div class="dash-top-inner">
+          <div style="display:flex;gap:4px">
+            <button class="dash-tab active" onclick="go('dashboard')">Dashboard</button>
+            <button class="dash-tab" onclick="go('numbers')">Numbers</button>
+            <button class="dash-tab" onclick="go('smm')">Boosting</button>
+            <button class="dash-tab" onclick="go('accounts')">Accounts</button>
+          </div>
+          <div class="dash-pill" id="dash-wallet-pill">Wallet: &#8358;0.00</div>
+        </div>
+      </div>
+    </div>
+    <div class="container" style="padding-top:36px;padding-bottom:60px">
+      <div style="margin-bottom:28px">
+        <h2 style="font-size:1.5rem;font-weight:700;letter-spacing:-.02em" id="dash-greeting">Welcome back &#x1F44B;</h2>
+        <p style="color:var(--text-3);margin-top:3px;font-size:.9rem">Here's what's happening with your account.</p>
+      </div>
+      <div class="dash-stat-grid">
+        <div class="dash-stat"><div class="dash-stat-label">Wallet Balance</div><div class="dash-stat-val" id="dash-balance">&#8358;0.00</div><button class="btn btn-primary btn-sm" style="margin-top:12px;width:100%" onclick="alert('Wallet funding coming soon!')">Fund Wallet</button></div>
+        <div class="dash-stat"><div class="dash-stat-label">Total Orders</div><div class="dash-stat-val">0</div><div style="font-size:.78rem;color:var(--text-4);margin-top:6px">No orders yet</div></div>
+        <div class="dash-stat"><div class="dash-stat-label">Active Numbers</div><div class="dash-stat-val">0</div><div style="font-size:.78rem;color:var(--text-4);margin-top:6px">None active</div></div>
+        <div class="dash-stat"><div class="dash-stat-label">Referral Code</div><div style="font-size:1rem;font-weight:700;color:var(--accent);margin-top:4px" id="dash-ref">&mdash;</div><div style="font-size:.78rem;color:var(--text-4);margin-top:6px">Share &amp; earn</div></div>
+      </div>
+      <h3 style="font-size:.8rem;font-weight:600;text-transform:uppercase;letter-spacing:.08em;color:var(--text-4);margin-bottom:14px">Quick Actions</h3>
+      <div class="dash-actions">
+        <div class="dash-act" onclick="go('numbers')"><div class="dash-act-icon">&#x1F4F1;</div><h3>Get a Number</h3><p>Virtual SMS number</p></div>
+        <div class="dash-act" onclick="go('smm')"><div class="dash-act-icon">&#x1F4C8;</div><h3>Boost Socials</h3><p>Grow followers</p></div>
+        <div class="dash-act" onclick="go('accounts')"><div class="dash-act-icon">&#x1F464;</div><h3>Buy Accounts</h3><p>Aged social logins</p></div>
+        <div class="dash-act" onclick="alert('Gift cards coming soon!')"><div class="dash-act-icon">&#x1F381;</div><h3>Gift Cards</h3><p>Buy &amp; sell</p></div>
+        <div class="dash-act" onclick="alert('eSIM coming soon!')"><div class="dash-act-icon">&#x1F310;</div><h3>Buy eSIM</h3><p>Global coverage</p></div>
+        <div class="dash-act" onclick="alert('Bill payments coming soon!')"><div class="dash-act-icon">&#x1F4A1;</div><h3>Pay Bills</h3><p>Electricity, TV, data</p></div>
+      </div>
+      <h3 style="font-size:.8rem;font-weight:600;text-transform:uppercase;letter-spacing:.08em;color:var(--text-4);margin-bottom:14px">Recent Orders</h3>
+      <div style="background:#fff;border:1px solid var(--border);border-radius:14px">
+        <div class="dash-empty">
+          <div style="font-size:2.5rem;margin-bottom:10px">&#x1F4CB;</div>
+          <div style="font-weight:600;color:var(--text-3);margin-bottom:4px">No orders yet</div>
+          <div style="font-size:.85rem">Your orders will appear here once you make a purchase.</div>
+          <button class="btn btn-primary btn-sm" style="margin-top:16px" onclick="go('numbers')">Place your first order</button>
+        </div>
+      </div>
+    </div>
+  </div>
+</div>
+
 <footer id="site-footer">
   <div class="container">
     <div class="footer-grid">
@@ -1553,8 +1503,8 @@ footer{background:var(--primary);color:#fff;padding:64px 0 32px}
       </div>
       <div class="footer-col">
         <h4>Product</h4>
-        <span onclick="go('numbers')">Virtual Numbers</span>
-        <span onclick="go('smm')">SMM Boosting</span>
+        <span onclick="goCTA('numbers')">Virtual Numbers</span>
+        <span onclick="goCTA('smm')">SMM Boosting</span>
         <span onclick="go('accounts')">Social Accounts</span>
         <span>eSIMs</span>
         <span>Gift Cards</span>
@@ -1615,6 +1565,20 @@ function go(page, anchor){
   document.title = titles[page] || 'GBN Market';
 }
 
+
+// ── AUTH-AWARE CTA ──
+function goCTA(dest){
+  if(_sb && _currentSession){
+    if(dest === 'register')          go('dashboard');
+    else if(dest === 'numbers-order') go('numbers');
+    else if(dest === 'smm-order')     go('smm');
+    else if(dest === 'accounts-order')go('accounts');
+    else go(dest);
+  } else {
+    go('register');
+  }
+}
+
 // ── MOBILE MENU ──
 function toggleMobile(){
   document.getElementById('mobileMenu').classList.toggle('open');
@@ -1639,6 +1603,7 @@ function copyCode(btn, code){
 const SUPA_URL = 'https://pjcmnbylaitmulcozwaj.supabase.co';
 const SUPA_KEY = 'eyJhbGciOiJIUzI1NiIsInR5cCI6IkpXVCJ9.eyJpc3MiOiJzdXBhYmFzZSIsInJlZiI6InBqY21uYnlsYWl0bXVsY296d2FqIiwicm9sZSI6ImFub24iLCJpYXQiOjE3ODI1Njg4NDcsImV4cCI6MjA5ODE0NDg0N30.FiqhMEOH9QD4_OAlExpujSE9pRhuvCmVoCKE-WFGtA4';
 let _sb = null;
+let _currentSession = null;
 
 function initSupabase(){
   // Dynamically load Supabase so it never blocks page render
@@ -1650,16 +1615,16 @@ function initSupabase(){
       _sb = supabase.createClient(SUPA_URL, SUPA_KEY);
       _sb.auth.onAuthStateChange((event, session) => {
         updateNavForAuth(session);
-        if (session && event === 'SIGNED_IN') {
-          go('dashboard');
-        }
-        if (!session && event === 'SIGNED_OUT') {
-          go('home');
-        }
+        if(event === 'SIGNED_IN' && session) go('dashboard');
+        if(event === 'SIGNED_OUT') go('home');
       });
       (async()=>{
         const { data:{ session } } = await _sb.auth.getSession();
         updateNavForAuth(session);
+        if(session){
+          const active = PAGES.find(p => document.getElementById('page-'+p).classList.contains('active'));
+          if(active === 'login' || active === 'register') go('dashboard');
+        }
       })();
     } catch(e){ console.warn('Supabase init failed:', e); }
   };
@@ -1739,7 +1704,7 @@ async function handleLogin(btn){
     toast(error.message, false);
   } else {
     toast('✅ Welcome back!');
-    setTimeout(()=> go('dashboard'), 1500);
+    // onAuthStateChange handles redirect
   }
   btn.textContent = 'Sign in';
   btn.disabled = false;
@@ -1755,38 +1720,41 @@ async function handleLogout(){
 
 // ── UPDATE NAV BASED ON AUTH STATE ──
 function updateNavForAuth(session){
+  _currentSession = session;
   const navRight = document.querySelector('.nav-right');
   if(session){
-    const email = session.user.email;
-    const name  = session.user.user_metadata?.full_name || email;
-    // Update dashboard greeting & wallet badge
+    const name = session.user.user_metadata?.full_name || session.user.email;
+    const first = name.split(' ')[0];
+    const refEl = document.getElementById('dash-ref');
+    if(refEl) refEl.textContent = session.user.email.split('@')[0].toUpperCase().slice(0,10);
     const greetEl = document.getElementById('dash-greeting');
-    if(greetEl) greetEl.textContent = 'Welcome back, ' + name.split(' ')[0] + ' 👋';
-    const refEl = document.getElementById('dash-ref-code');
-    if(refEl) refEl.textContent = email.split('@')[0].toUpperCase().slice(0,8);
+    if(greetEl) greetEl.textContent = 'Welcome back, ' + first + ' 👋';
     navRight.innerHTML = `
-      <button class="btn btn-outline btn-sm" onclick="go('dashboard')" style="color:var(--accent);border-color:var(--accent)">Dashboard</button>
-      <span style="font-size:.8rem;color:var(--text-3);font-weight:500;max-width:120px;overflow:hidden;text-overflow:ellipsis;white-space:nowrap">${name}</span>
+      <button class="btn btn-outline btn-sm" style="color:var(--accent);border-color:var(--accent)" onclick="go('dashboard')">Dashboard</button>
+      <span style="font-size:.8rem;color:var(--text-3);font-weight:500;max-width:110px;overflow:hidden;text-overflow:ellipsis;white-space:nowrap">${first}</span>
       <button class="btn btn-outline btn-sm" onclick="handleLogout()">Sign Out</button>
     `;
   } else {
     navRight.innerHTML = `
       <button class="btn btn-outline btn-sm" onclick="go('login')">Sign In</button>
-      <button class="btn btn-primary btn-sm" onclick="go('register')">Sign Up</button>
+      <button class="btn btn-primary btn-sm" onclick="goCTA('register')">Sign Up</button>
     `;
   }
 }
 
 
-// ── CRYPTO CALC ──
+// ---- CRYPTO CALC ----
 function calcCrypto(){
-  const rate = parseFloat(document.getElementById('crypto-select').value) || 1700000;
-  const amt  = parseFloat(document.getElementById('crypto-amount').value) || 1;
-  const gross = rate * amt;
-  const fee   = gross * 0.0055;
-  const net   = gross - fee;
-  document.getElementById('ngn-output').textContent = '₦' + Math.round(net).toLocaleString();
-  document.getElementById('total-fees').textContent = '₦' + Math.round(fee).toLocaleString();
+  const rates = {BTC:1700000,USDT:1650,ETH:130000,BNB:400000,SOL:1200000};
+  const sel  = document.getElementById('crypto-select');
+  const coin = sel.options[sel.selectedIndex].text;
+  const rate = rates[coin]||1700000;
+  const amt  = parseFloat(document.getElementById('crypto-amount').value)||1;
+  const gross = rate*amt;
+  const fee   = Math.round(gross*0.0055);
+  const net   = Math.round(gross-fee);
+  document.getElementById('ngn-output').textContent = '₦'+net.toLocaleString();
+  document.getElementById('total-fees').textContent = fee.toLocaleString()+' NGN';
 }
 
 // ── TYPEWRITER ──
