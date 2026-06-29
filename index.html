@@ -898,181 +898,6 @@ footer{background:var(--primary);color:#fff;padding:64px 0 32px}
   .mobile-menu{padding:68px 4% 32px}
   .mobile-menu span,.mobile-menu a{font-size:.92rem;padding:12px 0}
 }
-
-/* ═══════════════════════════════════════════
-   RESPONSIVE — MOBILE FIRST COMPLETE OVERHAUL
-   ═══════════════════════════════════════════ */
-
-/* --- TABLET (max 1024px) --- */
-@media(max-width:1024px){
-  .home-hero{grid-template-columns:1fr;gap:40px;padding:56px 0 40px}
-  .hero-visual{justify-content:flex-start}
-  .sms-phone{width:100%;max-width:340px}
-  .vn-grid{grid-template-columns:1fr}
-  .crypto-grid{grid-template-columns:1fr}
-  .for-grid{grid-template-columns:repeat(2,1fr)}
-  .app-grid{grid-template-columns:1fr;padding:48px 0}
-  .app-img{display:none}
-  .footer-grid{grid-template-columns:2fr 1fr 1fr}
-  .footer-grid>div:nth-child(4),.footer-grid>div:nth-child(5){display:none}
-  .auth-wrap{grid-template-columns:1fr}
-  .auth-left,.auth-left-new{display:none}
-  .auth-right,.auth-right-new{min-height:100vh}
-  .dash-main-grid{grid-template-columns:1fr}
-  .deposit-layout{grid-template-columns:1fr}
-  .dep-summary{margin-top:0}
-  .app-content{padding:22px 20px}
-  .svc-row,.svc-row-rev{grid-template-columns:1fr;direction:ltr}
-  .svc-img{height:220px}
-  .svc-text{padding:28px 24px}
-  .showcase-inner{grid-template-columns:1fr 240px 1fr}
-  .section{padding:60px 0}
-  .cta-band{padding:56px 0}
-}
-
-/* --- MOBILE (max 768px) --- */
-@media(max-width:768px){
-  :root{--section-pad:40px}
-  h1{font-size:1.9rem!important}
-  h2{font-size:1.5rem!important}
-  .section{padding:44px 0}
-  .cta-band{padding:48px 0}
-
-  /* NAV */
-  .nav-links,.nav-right{display:none}
-  .hamburger{display:flex}
-
-  /* HERO */
-  .home-hero{padding:40px 0 32px;gap:32px}
-  .hero-lead{font-size:.95rem}
-  .hero-ctas{flex-direction:column;gap:8px}
-  .hero-ctas .btn{width:100%;justify-content:center}
-  .hero-stats{gap:1.25rem}
-  .stat strong{font-size:1.3rem}
-  .hero-social-proof{flex-direction:column;align-items:flex-start;gap:10px}
-  .float-badge,.float-badge2{display:none}
-  .sms-phone{width:100%;max-width:100%}
-
-  /* MARQUEE */
-  .marquee-item{font-size:.78rem;padding:5px 14px}
-
-  /* FEATURES */
-  .feat-grid{grid-template-columns:1fr}
-  .feat-card{padding:20px}
-
-  /* VN SECTION */
-  .vn-grid{grid-template-columns:1fr;gap:32px}
-  .country-pills{gap:6px}
-  .country-pill{font-size:.75rem;padding:5px 11px}
-  .platform-badges{grid-template-columns:repeat(3,1fr);gap:8px}
-  .platform-badge{padding:11px 6px;font-size:.72rem}
-
-  /* TESTIMONIALS */
-  .showcase-inner{grid-template-columns:1fr}
-  .sc-col-wrap{display:none}
-  .sc-phone{width:100%;max-width:280px;margin:0 auto}
-
-  /* SERVICE ROWS */
-  .svc-row,.svc-row-rev{grid-template-columns:1fr;direction:ltr}
-  .svc-img{height:180px}
-  .svc-text{padding:24px 20px}
-  .svc-text h2{font-size:1.25rem!important}
-
-  /* CRYPTO */
-  .crypto-grid{grid-template-columns:1fr}
-
-  /* FOR EVERYONE */
-  .for-grid{grid-template-columns:1fr}
-  .for-card-avatar{width:64px;height:64px;font-size:2rem}
-
-  /* FAQ */
-  .faq-q{font-size:.9rem}
-
-  /* FOOTER */
-  .footer-grid{grid-template-columns:1fr}
-  .footer-bottom{flex-direction:column;text-align:center;gap:8px}
-
-  /* AUTH */
-  .auth-left,.auth-left-new{display:none}
-  .auth-right{padding:32px 24px!important}
-  .auth-form-inner{padding:24px!important}
-  .auth-foot{padding:0 24px 20px!important}
-  .auth-top-row{padding:16px 24px 0!important}
-  .auth-wrap{grid-template-columns:1fr}
-
-  /* DASHBOARD */
-  .app-topbar{padding:0 14px}
-  .wallet-chips{display:none}
-  .app-content{padding:16px 14px}
-  .stat-row{grid-template-columns:repeat(2,1fr);gap:10px}
-  .stat-c-val{font-size:1.3rem}
-  .qa-grid{grid-template-columns:repeat(4,1fr);gap:8px}
-  .qa-circle{width:40px;height:40px;font-size:1.05rem}
-  .qa-btn span{font-size:.65rem}
-  .pg-head{flex-direction:column}
-  .pg-head-btns{width:100%;flex-direction:column}
-  .pg-head-btns .btn{width:100%}
-  .dash-main-grid{grid-template-columns:1fr}
-  .deposit-layout{grid-template-columns:1fr}
-  .quick-amts{gap:6px}
-  .q-amt{font-size:.72rem;padding:5px 9px}
-
-  /* ACCOUNTS LISTING */
-  .acct-item{flex-wrap:wrap;gap:10px}
-  .acct-item-info{min-width:0;flex:1}
-  .acct-title{font-size:.8rem}
-  .view-btn,.oos-btn{width:100%;justify-content:center;margin-top:4px}
-
-  /* WELCOME PAGE */
-  .welcome-card,.wc-checks + *,.welcome-card > *{padding:28px 20px!important}
-  .wc-checks{grid-template-columns:1fr}
-  .wc-stats{gap:16px}
-
-  /* COUNTRY TABLE */
-  .country-table th:nth-child(2),.country-table td:nth-child(2){display:none}
-
-  /* TRANSACTIONS */
-  .txn-tbl th:nth-child(3),.txn-tbl td:nth-child(3){display:none}
-}
-
-/* --- SMALL MOBILE (max 480px) --- */
-@media(max-width:480px){
-  .container{padding:0 4%}
-  h1{font-size:1.65rem!important}
-  h2{font-size:1.3rem!important}
-  .section{padding:36px 0}
-  .stat-row{grid-template-columns:1fr 1fr}
-  .hero-stats{flex-direction:row;flex-wrap:wrap;gap:1rem}
-  .for-grid{grid-template-columns:1fr}
-  .wc-stats{gap:10px}
-  .wc-stat strong{font-size:1.1rem}
-  .welcome-card{padding:28px 18px!important;border-radius:16px}
-  .btn-lg{padding:12px 20px;font-size:.9rem}
-  .app-content{padding:12px 10px}
-  .stat-row{grid-template-columns:1fr 1fr}
-  .stat-c-val{font-size:1.2rem}
-  .stat-c{padding:15px}
-  .panel{padding:16px}
-  .dep-summary{padding:16px}
-}
-
-/* --- SIDEBAR MOBILE OVERLAY --- */
-@media(max-width:900px){
-  .sidebar{display:none!important}
-  #service-sidebar{display:none!important}
-  .app-body{flex-direction:column}
-}
-
-/* --- SIDEBAR TOGGLE (mobile hamburger inside dashboard) --- */
-.dash-hamburger{display:none;background:none;border:none;cursor:pointer;padding:6px;flex-direction:column;gap:4px}
-.dash-hamburger span{width:20px;height:2px;background:var(--text);border-radius:2px;display:block}
-@media(max-width:900px){
-  .dash-hamburger{display:flex}
-  .sidebar-overlay{position:fixed;inset:0;background:rgba(0,0,0,.4);z-index:299;display:none}
-  .sidebar-overlay.open{display:block}
-  .sidebar.mobile-open{display:flex!important;position:fixed;left:0;top:0;bottom:0;z-index:300;box-shadow:4px 0 20px rgba(0,0,0,.15);width:240px}
-}
-
 </style>
 </head>
 <body>
@@ -1451,36 +1276,6 @@ footer{background:var(--primary);color:#fff;padding:64px 0 32px}
      PAGE: PHONE NUMBERS
 ══════════════════════════════════ -->
 <div class="page" id="page-numbers">
-  <!-- Service app-topbar (shown when logged in) -->
-  <div class="tg-banner" id="svc-tg-banner" style="display:none"><div class="tg-inner">&#x1F680; Join our Telegram for updates and exclusive offers <button class="tg-banner-btn" onclick="window.open('https://t.me/gbnmarket','_blank')">Click Here</button></div></div>
-  <div class="app-topbar" id="svc-topbar" style="display:none">
-    <div class="app-logo" onclick="go('home')"><div class="app-logo-mark">G</div>GBN Market</div>
-    <div class="app-topbar-right">
-      <div class="wallet-chips"><div class="wallet-chip">NGN <span id="svc-ngn-bal">&#8358;0.00</span></div><div class="wallet-chip">USD <span>$0.00</span></div></div>
-      <div class="notif-btn">&#x1F514;</div>
-      <div class="avatar-btn">&#x1F464;</div>
-    </div>
-  </div>
-  <div class="app-body" id="svc-app-body">
-    <div style="flex:1;overflow:auto">
-            <div class="sidebar" id="service-sidebar" style="display:none">
-        <div class="sb-label">MAIN</div>
-        <div class="nav-item" onclick="go('dashboard')"><span class="ni">&#x229E;</span>Dashboard</div>
-        <div class="sb-label">SERVICES</div>
-        <div class="nav-item active" id="sb-numbers" onclick="go('numbers')"><span class="ni">&#x1F4F1;</span>Virtual Numbers<span class="nb">SMS</span></div>
-        <div class="nav-item" id="sb-smm" onclick="go('smm')"><span class="ni">&#x2197;</span>New Order<span class="nb">SMM</span></div>
-        <div class="nav-item" onclick="showDashTab('orders',null);go('dashboard')"><span class="ni">&#x1F4CB;</span>My Orders</div>
-        <div class="nav-item" id="sb-accounts" onclick="go('accounts')"><span class="ni">&#x1F465;</span>Social Accounts</div>
-        <div class="sb-label">WALLET</div>
-        <div class="nav-item" onclick="showDashTab('deposit',null);go('dashboard')"><span class="ni">&#x1F4B3;</span>Deposit Funds</div>
-        <div class="nav-item" onclick="showDashTab('transactions',null);go('dashboard')"><span class="ni">&#x1F504;</span>Transactions</div>
-        <div class="sb-label">ACCOUNT</div>
-        <div class="nav-item" onclick="showDashTab('purchases',null);go('dashboard')"><span class="ni">&#x1F6CD;</span>My Purchases</div>
-        <div class="sb-bottom">
-          <div class="nav-item" style="color:#DC2626;padding-left:0" onclick="handleLogout()"><span class="ni">&#x2190;</span>Sign Out</div>
-        </div>
-      </div>
-      <div style="flex:1;overflow:auto">
   <div class="hero-dark">
     <div class="container">
       <span class="eyebrow">Virtual Phone Numbers</span>
@@ -1566,9 +1361,6 @@ footer{background:var(--primary);color:#fff;padding:64px 0 32px}
       <button class="btn btn-white btn-lg" onclick="goCTA('register')">Sign Up Free</button>
     </div>
   </div>
-      </div><!-- /flex content -->
-    </div><!-- /flex wrap -->
-  </div><!-- /app-body -->
 </div><!-- /page-numbers -->
 
 
@@ -1576,36 +1368,6 @@ footer{background:var(--primary);color:#fff;padding:64px 0 32px}
      PAGE: SMM
 ══════════════════════════════════ -->
 <div class="page" id="page-smm">
-  <!-- Service app-topbar (shown when logged in) -->
-  <div class="tg-banner" id="svc-tg-banner-smm" style="display:none"><div class="tg-inner">&#x1F680; Join our Telegram for updates and exclusive offers <button class="tg-banner-btn" onclick="window.open('https://t.me/gbnmarket','_blank')">Click Here</button></div></div>
-  <div class="app-topbar" id="svc-topbar-smm" style="display:none">
-    <div class="app-logo" onclick="go('home')"><div class="app-logo-mark">G</div>GBN Market</div>
-    <div class="app-topbar-right">
-      <div class="wallet-chips"><div class="wallet-chip">NGN <span id="svc-ngn-bal-smm">&#8358;0.00</span></div><div class="wallet-chip">USD <span>$0.00</span></div></div>
-      <div class="notif-btn">&#x1F514;</div>
-      <div class="avatar-btn">&#x1F464;</div>
-    </div>
-  </div>
-  <div class="app-body" id="svc-app-body-smm">
-    <div style="flex:1;overflow:auto">
-            <div class="sidebar" id="service-sidebar" style="display:none">
-        <div class="sb-label">MAIN</div>
-        <div class="nav-item" onclick="go('dashboard')"><span class="ni">&#x229E;</span>Dashboard</div>
-        <div class="sb-label">SERVICES</div>
-        <div class="nav-item active" id="sb-numbers-smm" onclick="go('numbers')"><span class="ni">&#x1F4F1;</span>Virtual Numbers<span class="nb">SMS</span></div>
-        <div class="nav-item" id="sb-smm" style="background:var(--accent);color:#fff" onclick="go('smm')"><span class="ni">&#x2197;</span>New Order<span class="nb">SMM</span></div>
-        <div class="nav-item" onclick="showDashTab('orders',null);go('dashboard')"><span class="ni">&#x1F4CB;</span>My Orders</div>
-        <div class="nav-item" id="sb-accounts-smm" onclick="go('accounts')"><span class="ni">&#x1F465;</span>Social Accounts</div>
-        <div class="sb-label">WALLET</div>
-        <div class="nav-item" onclick="showDashTab('deposit',null);go('dashboard')"><span class="ni">&#x1F4B3;</span>Deposit Funds</div>
-        <div class="nav-item" onclick="showDashTab('transactions',null);go('dashboard')"><span class="ni">&#x1F504;</span>Transactions</div>
-        <div class="sb-label">ACCOUNT</div>
-        <div class="nav-item" onclick="showDashTab('purchases',null);go('dashboard')"><span class="ni">&#x1F6CD;</span>My Purchases</div>
-        <div class="sb-bottom">
-          <div class="nav-item" style="color:#DC2626;padding-left:0" onclick="handleLogout()"><span class="ni">&#x2190;</span>Sign Out</div>
-        </div>
-      </div>
-      <div style="flex:1;overflow:auto">
   <div class="hero-dark">
     <div class="container">
       <span class="eyebrow">SMM Boosting</span>
@@ -1667,9 +1429,6 @@ footer{background:var(--primary);color:#fff;padding:64px 0 32px}
       <button class="btn btn-white btn-lg" onclick="goCTA('register')">Sign Up Free</button>
     </div>
   </div>
-      </div>
-    </div>
-  </div>
 </div><!-- /page-smm -->
 
 
@@ -1677,36 +1436,6 @@ footer{background:var(--primary);color:#fff;padding:64px 0 32px}
      PAGE: SOCIAL ACCOUNTS
 ══════════════════════════════════ -->
 <div class="page" id="page-accounts">
-  <!-- Service app-topbar (shown when logged in) -->
-  <div class="tg-banner" id="svc-tg-banner-accts" style="display:none"><div class="tg-inner">&#x1F680; Join our Telegram for updates and exclusive offers <button class="tg-banner-btn" onclick="window.open('https://t.me/gbnmarket','_blank')">Click Here</button></div></div>
-  <div class="app-topbar" id="svc-topbar-accts" style="display:none">
-    <div class="app-logo" onclick="go('home')"><div class="app-logo-mark">G</div>GBN Market</div>
-    <div class="app-topbar-right">
-      <div class="wallet-chips"><div class="wallet-chip">NGN <span id="svc-ngn-bal-accts">&#8358;0.00</span></div><div class="wallet-chip">USD <span>$0.00</span></div></div>
-      <div class="notif-btn">&#x1F514;</div>
-      <div class="avatar-btn">&#x1F464;</div>
-    </div>
-  </div>
-  <div class="app-body" id="svc-app-body-accts">
-    <div style="flex:1;overflow:auto">
-            <div class="sidebar" id="service-sidebar" style="display:none">
-        <div class="sb-label">MAIN</div>
-        <div class="nav-item" onclick="go('dashboard')"><span class="ni">&#x229E;</span>Dashboard</div>
-        <div class="sb-label">SERVICES</div>
-        <div class="nav-item active" id="sb-numbers-accts" onclick="go('numbers')"><span class="ni">&#x1F4F1;</span>Virtual Numbers<span class="nb">SMS</span></div>
-        <div class="nav-item" id="sb-smm-accts" onclick="go('smm')"><span class="ni">&#x2197;</span>New Order<span class="nb">SMM</span></div>
-        <div class="nav-item" onclick="showDashTab('orders',null);go('dashboard')"><span class="ni">&#x1F4CB;</span>My Orders</div>
-        <div class="nav-item" id="sb-accounts" style="background:var(--accent);color:#fff" onclick="go('accounts')"><span class="ni">&#x1F465;</span>Social Accounts</div>
-        <div class="sb-label">WALLET</div>
-        <div class="nav-item" onclick="showDashTab('deposit',null);go('dashboard')"><span class="ni">&#x1F4B3;</span>Deposit Funds</div>
-        <div class="nav-item" onclick="showDashTab('transactions',null);go('dashboard')"><span class="ni">&#x1F504;</span>Transactions</div>
-        <div class="sb-label">ACCOUNT</div>
-        <div class="nav-item" onclick="showDashTab('purchases',null);go('dashboard')"><span class="ni">&#x1F6CD;</span>My Purchases</div>
-        <div class="sb-bottom">
-          <div class="nav-item" style="color:#DC2626;padding-left:0" onclick="handleLogout()"><span class="ni">&#x2190;</span>Sign Out</div>
-        </div>
-      </div>
-      <div style="flex:1;overflow:auto">
   <div class="hero-dark">
     <div class="container">
       <span class="eyebrow">Social Media Account Logs</span>
@@ -1777,9 +1506,6 @@ footer{background:var(--primary);color:#fff;padding:64px 0 32px}
       <h2>Join us at GBN Market</h2>
       <p>We believe every African should have access to digital resources that help international businesses succeed. Experience reliable services that take your business beyond borders.</p>
       <button class="btn btn-white btn-lg" onclick="goCTA('register')">Sign Up Free</button>
-    </div>
-  </div>
-      </div>
     </div>
   </div>
 </div><!-- /page-accounts -->
@@ -2297,7 +2023,6 @@ async function handleLogout(){
 function updateNavForAuth(session){
   _currentSession = session;
   const navRight = document.querySelector('.nav-right');
-  updateServiceSidebars(session);
   if(session){
     const name = session.user.user_metadata?.full_name || session.user.email;
     const first = name.split(' ')[0];
@@ -2319,39 +2044,6 @@ function updateNavForAuth(session){
   }
 }
 
-
-
-
-// ---- MOBILE SIDEBAR ----
-function toggleMobileSidebar(){
-  var sb = document.querySelector('#page-dashboard .sidebar');
-  var ov = document.getElementById('sb-overlay');
-  if(!sb) return;
-  var open = sb.classList.toggle('mobile-open');
-  if(ov) ov.classList.toggle('open', open);
-}
-function closeMobileSidebar(){
-  var sb = document.querySelector('#page-dashboard .sidebar');
-  var ov = document.getElementById('sb-overlay');
-  if(sb) sb.classList.remove('mobile-open');
-  if(ov) ov.classList.remove('open');
-}
-
-// ---- SERVICE PAGE SIDEBAR ----
-function updateServiceSidebars(session){
-  const show = !!session;
-  // All service topbars/sidebars
-  ['','smm','accts'].forEach(function(suffix){
-    var s = suffix ? '-'+suffix : '';
-    var tb  = document.getElementById('svc-topbar'+s);
-    var tgb = document.getElementById('svc-tg-banner'+s);
-    var ab  = document.getElementById('svc-app-body'+s);
-    var sb  = ab ? ab.querySelector('.sidebar') : null;
-    if(tb)  tb.style.display  = show ? 'flex' : 'none';
-    if(tgb) tgb.style.display = show ? 'block' : 'none';
-    if(sb)  sb.style.display  = show ? 'flex' : 'none';
-  });
-}
 
 // ---- DASHBOARD TAB SWITCHER ----
 function showDashTab(tab, navEl){
