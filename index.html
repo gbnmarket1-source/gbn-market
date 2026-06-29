@@ -278,6 +278,178 @@ footer{background:var(--primary);color:#fff;padding:64px 0 32px}
 .back-link:hover{color:var(--accent)}
 
 
+/* ══ TELEGRAM BANNER ══ */
+.tg-banner{background:var(--accent);color:#fff;padding:10px 0;font-size:.82rem;font-weight:500}
+.tg-banner .tg-inner{display:flex;align-items:center;justify-content:space-between;padding:0 20px;max-width:100%}
+.tg-banner-btn{background:#fff;color:var(--accent);font-size:.75rem;font-weight:700;padding:5px 16px;border-radius:6px;border:none;cursor:pointer;font-family:var(--font)}
+/* ══ APP SHELL ══ */
+.app-shell{min-height:100vh;background:#F5F7FA;display:flex;flex-direction:column}
+.app-topbar{background:#fff;border-bottom:1px solid var(--border);height:60px;display:flex;align-items:center;justify-content:space-between;padding:0 28px;flex-shrink:0}
+.app-logo{display:flex;align-items:center;gap:9px;font-weight:800;font-size:1.05rem;color:var(--primary);cursor:pointer}
+.app-logo-mark{width:32px;height:32px;background:var(--accent);border-radius:8px;display:flex;align-items:center;justify-content:center;color:#fff;font-weight:800;font-size:14px}
+.app-topbar-right{display:flex;align-items:center;gap:14px}
+.wallet-chips{display:flex;align-items:center;gap:8px}
+.wallet-chip{background:var(--surface);border:1px solid var(--border);border-radius:8px;padding:5px 12px;font-size:.8rem;font-weight:700;color:var(--text)}
+.wallet-chip span{color:var(--accent)}
+.notif-btn{width:36px;height:36px;border-radius:50%;background:var(--surface);border:1px solid var(--border);display:flex;align-items:center;justify-content:center;cursor:pointer}
+.avatar-btn{width:36px;height:36px;border-radius:50%;background:var(--accent-light);display:flex;align-items:center;justify-content:center;font-size:1.1rem;cursor:pointer}
+/* ══ SIDEBAR ══ */
+.app-body{display:flex;flex:1;min-height:0}
+.sidebar{width:240px;background:#fff;border-right:1px solid var(--border);display:flex;flex-direction:column;padding:16px 0;flex-shrink:0;overflow-y:auto}
+.sb-label{font-size:.68rem;font-weight:600;text-transform:uppercase;letter-spacing:.1em;color:var(--text-4);padding:0 20px;margin:14px 0 5px}
+.sb-label:first-child{margin-top:0}
+.nav-item{display:flex;align-items:center;gap:10px;padding:9px 20px;font-size:.875rem;font-weight:500;color:var(--text-3);cursor:pointer;transition:all .15s}
+.nav-item:hover{background:var(--surface);color:var(--text)}
+.nav-item.active{background:var(--accent);color:#fff;font-weight:600}
+.nav-item.active .nb{background:rgba(255,255,255,.25);color:#fff}
+.nb{background:var(--accent-light);color:var(--accent);font-size:.62rem;font-weight:700;padding:2px 7px;border-radius:100px;margin-left:auto}
+.ni{font-size:1rem;width:18px;text-align:center;flex-shrink:0}
+.sb-bottom{margin-top:auto;padding:14px 20px;border-top:1px solid var(--border)}
+.mode-toggle{display:flex;align-items:center;justify-content:space-between;font-size:.82rem;color:var(--text-3);padding:4px 0}
+.toggle-sw{width:36px;height:20px;background:var(--border);border-radius:100px;position:relative;cursor:pointer;transition:background .2s;flex-shrink:0}
+.toggle-sw.on{background:var(--accent)}
+.toggle-sw::after{content:'';width:14px;height:14px;border-radius:50%;background:#fff;position:absolute;top:3px;left:3px;transition:left .2s}
+.toggle-sw.on::after{left:19px}
+/* ══ CONTENT AREA ══ */
+.app-content{flex:1;overflow:auto;padding:30px 32px}
+/* ══ DASHBOARD CONTENT ══ */
+.pg-head{display:flex;align-items:flex-start;justify-content:space-between;margin-bottom:24px;gap:12px;flex-wrap:wrap}
+.pg-head h1{font-size:1.75rem;font-weight:800;letter-spacing:-.03em;margin-bottom:3px}
+.pg-head p{font-size:.875rem;color:var(--text-3)}
+.pg-head-btns{display:flex;gap:10px}
+.stat-row{display:grid;grid-template-columns:repeat(auto-fill,minmax(200px,1fr));gap:14px;margin-bottom:24px}
+.stat-c{background:#fff;border:1px solid var(--border);border-radius:14px;padding:20px}
+.stat-c-icon{width:34px;height:34px;border-radius:8px;background:var(--accent-light);display:flex;align-items:center;justify-content:center;font-size:.85rem;margin-bottom:12px}
+.stat-c-lbl{font-size:.75rem;font-weight:500;color:var(--text-3);margin-bottom:6px}
+.stat-c-val{font-size:1.7rem;font-weight:800;letter-spacing:-.03em}
+.dash-main-grid{display:grid;grid-template-columns:1fr 360px;gap:20px}
+.panel{background:#fff;border:1px solid var(--border);border-radius:14px;padding:22px}
+.panel h3{font-size:.95rem;font-weight:600;margin-bottom:16px}
+.qa-grid{display:grid;grid-template-columns:repeat(4,1fr);gap:10px}
+.qa-btn{display:flex;flex-direction:column;align-items:center;gap:6px;cursor:pointer;padding:10px 6px;border-radius:9px;transition:background .15s}
+.qa-btn:hover{background:var(--surface)}
+.qa-circle{width:46px;height:46px;border-radius:50%;border:1.5px solid var(--border);display:flex;align-items:center;justify-content:center;font-size:1.2rem;background:#fff}
+.qa-btn span{font-size:.7rem;color:var(--text-3);font-weight:500;text-align:center;line-height:1.3}
+.promo-card-inner{background:var(--accent);border-radius:12px;padding:20px;color:#fff;display:flex;align-items:center;justify-content:space-between;gap:10px}
+.promo-card-inner h4{font-size:1rem;font-weight:700;line-height:1.4;margin-bottom:5px}
+.promo-card-inner p{font-size:.78rem;opacity:.7;line-height:1.5}
+.hist-empty{text-align:center;padding:36px 16px;color:var(--text-4)}
+.hist-empty-icon{width:48px;height:48px;background:var(--surface);border-radius:50%;margin:0 auto 10px;display:flex;align-items:center;justify-content:center;font-size:1.3rem}
+/* ══ ACCOUNTS LISTING ══ */
+.cat-header{background:var(--primary);color:#fff;border-radius:10px;padding:12px 16px;display:flex;align-items:center;gap:10px;margin-top:18px}
+.cat-header:first-child{margin-top:0}
+.cat-icon-wrap{width:28px;height:28px;border-radius:6px;background:rgba(255,255,255,.15);display:flex;align-items:center;justify-content:center;font-size:.9rem}
+.cat-name{font-weight:700;font-size:.85rem;flex:1;text-transform:uppercase;letter-spacing:.04em}
+.cat-count{font-size:.72rem;opacity:.5}
+.acct-item{background:#fff;border:1px solid var(--border);border-bottom:none;display:flex;align-items:center;gap:12px;padding:14px 16px;transition:background .15s}
+.acct-item:last-of-type{border-bottom:1px solid var(--border);border-radius:0 0 8px 8px}
+.acct-item:hover{background:var(--surface2)}
+.acct-item-ico{width:34px;height:34px;border-radius:50%;background:var(--accent-light);display:flex;align-items:center;justify-content:center;font-size:1rem;flex-shrink:0}
+.acct-item-info{flex:1;min-width:0}
+.acct-title{font-size:.83rem;font-weight:600;color:var(--accent);margin-bottom:2px;white-space:nowrap;overflow:hidden;text-overflow:ellipsis;cursor:pointer}
+.acct-title:hover{text-decoration:underline}
+.acct-meta{font-size:.74rem;color:var(--text-3)}
+.acct-price{font-size:.74rem;color:var(--text-2)}
+.acct-price strong{color:var(--text)}
+.view-btn{background:var(--primary);color:#fff;border:none;border-radius:7px;padding:7px 14px;font-size:.76rem;font-weight:600;cursor:pointer;font-family:var(--font);display:inline-flex;align-items:center;gap:5px;flex-shrink:0;white-space:nowrap}
+.view-btn:hover{background:#222}
+.oos-btn{background:var(--surface);color:var(--text-4);border:1px solid var(--border);border-radius:7px;padding:7px 14px;font-size:.76rem;font-weight:600;font-family:var(--font);display:inline-flex;align-items:center;gap:5px;flex-shrink:0;cursor:default}
+/* ══ ORDERS ══ */
+.orders-pg-head{display:flex;align-items:flex-start;justify-content:space-between;margin-bottom:22px;gap:12px;flex-wrap:wrap}
+.orders-eyebrow{font-size:.72rem;font-weight:700;text-transform:uppercase;letter-spacing:.08em;color:var(--accent);margin-bottom:5px;display:block}
+.filter-sel{background:#fff;border:1.5px solid var(--border);border-radius:9px;padding:8px 32px 8px 12px;font-size:.85rem;font-family:var(--font);color:var(--text);outline:none;cursor:pointer;appearance:none;background-image:url("data:image/svg+xml,%3Csvg xmlns='http://www.w3.org/2000/svg' viewBox='0 0 24 24' fill='none' stroke='%2371717A' stroke-width='2'%3E%3Cpath d='m6 9 6 6 6-6'/%3E%3C/svg%3E");background-repeat:no-repeat;background-position:right 8px center;background-size:16px;margin-bottom:18px}
+.empty-state{background:#fff;border:1px solid var(--border);border-radius:14px;padding:72px 20px;text-align:center}
+.empty-icon{width:60px;height:60px;border-radius:50%;background:var(--surface);margin:0 auto 14px;display:flex;align-items:center;justify-content:center;font-size:1.5rem}
+/* ══ DEPOSIT ══ */
+.deposit-layout{display:grid;grid-template-columns:1fr 340px;gap:20px;align-items:start}
+.method-card{background:#fff;border:2px solid var(--border);border-radius:12px;padding:16px 18px;cursor:pointer;transition:all .18s;display:flex;align-items:center;gap:12px;margin-bottom:10px}
+.method-card:hover{border-color:var(--accent-mid)}
+.method-card.selected{border-color:var(--accent);background:var(--accent-light)}
+.method-card .mi{font-size:1.4rem;flex-shrink:0}
+.method-card h4{font-size:.875rem;font-weight:600;margin-bottom:2px}
+.method-card p{font-size:.76rem;color:var(--text-3)}
+.method-check{width:20px;height:20px;border-radius:50%;border:2px solid var(--border);margin-left:auto;flex-shrink:0;display:flex;align-items:center;justify-content:center;font-size:.7rem;color:#fff}
+.method-card.selected .method-check{background:var(--accent);border-color:var(--accent)}
+.dep-summary{background:#fff;border:1px solid var(--border);border-radius:14px;padding:22px}
+.dep-summary h3{font-size:.95rem;font-weight:600;margin-bottom:16px}
+.dep-label{font-size:.76rem;font-weight:600;color:var(--text-4);display:block;margin-bottom:5px}
+.amt-wrap{position:relative;margin-bottom:12px}
+.amt-wrap .cur{position:absolute;left:13px;top:50%;transform:translateY(-50%);font-weight:700;color:var(--text-3)}
+.amt-wrap input{width:100%;padding:12px 14px 12px 30px;border:1.5px solid var(--border);border-radius:9px;font-size:1.15rem;font-weight:700;font-family:var(--font);color:var(--text);outline:none}
+.amt-wrap input:focus{border-color:var(--accent)}
+.quick-amts{display:flex;gap:7px;flex-wrap:wrap;margin-bottom:14px}
+.q-amt{background:var(--surface);border:1px solid var(--border);border-radius:7px;padding:5px 11px;font-size:.76rem;font-weight:600;cursor:pointer;transition:all .15s}
+.q-amt:hover,.q-amt.on{background:var(--accent-light);border-color:var(--accent);color:var(--accent)}
+.fee-box{background:var(--surface2);border-radius:8px;padding:12px;font-size:.8rem;margin-bottom:14px}
+.fee-r{display:flex;justify-content:space-between;margin-bottom:5px;color:var(--text-3)}
+.fee-r.tot{font-weight:700;color:var(--text);border-top:1px solid var(--border);padding-top:7px;margin-top:4px}
+/* ══ TRANSACTIONS ══ */
+.txn-tbl{width:100%;border-collapse:collapse;background:#fff;border-radius:14px;overflow:hidden;border:1px solid var(--border)}
+.txn-tbl th{text-align:left;padding:11px 16px;font-size:.74rem;font-weight:600;text-transform:uppercase;letter-spacing:.06em;color:var(--text-4);border-bottom:2px solid var(--border);background:var(--surface2)}
+.txn-tbl td{padding:13px 16px;border-bottom:1px solid var(--border);font-size:.875rem;color:var(--text-2);vertical-align:middle}
+.txn-tbl tr:last-child td{border-bottom:none}
+.txn-tbl tr:hover td{background:var(--surface2)}
+/* ══ WELCOME PAGE ══ */
+.welcome-wrap{min-height:100vh;background:linear-gradient(135deg,#F0ECFF 0%,#EBF4FF 100%);display:flex;align-items:center;justify-content:center;padding:40px 20px}
+.welcome-card{background:#fff;border-radius:24px;padding:44px 36px;max-width:500px;width:100%;text-align:center;box-shadow:0 20px 60px rgba(108,71,255,.12)}
+.wc-trophy{width:76px;height:76px;border-radius:50%;background:var(--accent);display:flex;align-items:center;justify-content:center;font-size:2rem;margin:0 auto 18px}
+.wc-badge{display:inline-flex;align-items:center;gap:6px;background:var(--accent-light);color:var(--accent);font-size:.72rem;font-weight:700;padding:4px 13px;border-radius:100px;margin-bottom:14px}
+.welcome-card h1{font-size:1.85rem;font-weight:800;letter-spacing:-.03em;margin-bottom:8px;line-height:1.25}
+.welcome-card h1 span{color:var(--accent)}
+.welcome-card .wc-sub{font-size:.9rem;color:var(--text-3);margin-bottom:24px;line-height:1.65}
+.wc-stats{display:flex;justify-content:center;gap:28px;padding:18px 0;border-top:1px solid var(--border);border-bottom:1px solid var(--border);margin-bottom:22px}
+.wc-stat strong{display:block;font-size:1.25rem;font-weight:800;color:var(--accent)}
+.wc-stat span{font-size:.7rem;color:var(--text-4);margin-top:2px;display:block}
+.wc-checks{display:grid;grid-template-columns:1fr 1fr;gap:9px;margin-bottom:22px}
+.wc-check{background:var(--surface2);border:1px solid var(--border);border-radius:9px;padding:11px 12px;display:flex;align-items:center;gap:9px;font-size:.83rem;font-weight:500;text-align:left}
+.wc-check-ico{width:26px;height:26px;border-radius:6px;background:var(--accent-light);display:flex;align-items:center;justify-content:center;font-size:.8rem;flex-shrink:0}
+.wc-full{grid-column:1/-1}
+/* ══ AUTH REDESIGN ══ */
+.auth-left-new{background:var(--accent);padding:0;display:flex;flex-direction:column}
+.auth-globe-area{flex:1;display:flex;flex-direction:column;align-items:center;justify-content:center;padding:32px 40px}
+.auth-globe-emoji{font-size:7rem;line-height:1;margin-bottom:24px;position:relative}
+.auth-phone-bubble{position:absolute;background:rgba(255,255,255,.18);border-radius:9px;padding:7px 12px;font-size:.72rem;font-weight:600;color:#fff;white-space:nowrap;backdrop-filter:blur(4px)}
+.auth-slide-text h3{font-size:1.2rem;font-weight:700;color:#fff;margin-bottom:7px;text-align:center}
+.auth-slide-text p{font-size:.85rem;color:rgba(255,255,255,.65);line-height:1.6;text-align:center}
+.auth-carousel-dots{display:flex;gap:6px;justify-content:center;margin-top:18px}
+.auth-dot{height:7px;border-radius:100px;background:rgba(255,255,255,.35);transition:all .3s}
+.auth-dot.on{background:#fff;width:22px}
+.auth-dot:not(.on){width:7px}
+.auth-stats-bar{display:flex;gap:24px;padding:0 40px 32px}
+.auth-s strong{display:block;font-size:1.35rem;font-weight:800;color:#fff}
+.auth-s span{font-size:.72rem;color:rgba(255,255,255,.45)}
+.auth-right-new{padding:0;display:flex;flex-direction:column;background:#fff;min-height:100vh}
+.auth-top-row{display:flex;justify-content:flex-end;padding:22px 40px 0}
+.auth-form-inner{flex:1;display:flex;flex-direction:column;justify-content:center;padding:0 52px 32px}
+.auth-pill{display:inline-block;background:var(--accent-light);color:var(--accent);font-size:.7rem;font-weight:700;padding:3px 11px;border-radius:100px;margin-bottom:12px;text-transform:uppercase;letter-spacing:.05em}
+.sign-btn{width:100%;padding:13px;font-size:.95rem;border-radius:10px;background:var(--accent);color:#fff;border:none;font-weight:700;cursor:pointer;font-family:var(--font);display:flex;align-items:center;justify-content:center;gap:8px;transition:all .18s;margin-top:4px}
+.sign-btn:hover{background:var(--accent-hover);transform:translateY(-1px)}
+.i-wrap{position:relative}
+.i-ico{position:absolute;left:12px;top:50%;transform:translateY(-50%);color:var(--text-4);font-size:.85rem}
+.i-wrap input{padding-left:34px}
+.i-eye{position:absolute;right:12px;top:50%;transform:translateY(-50%);color:var(--text-4);cursor:pointer;font-size:.85rem}
+.auth-foot{padding:0 52px 24px;display:flex;justify-content:space-between;align-items:center;font-size:.74rem;color:var(--text-4)}
+/* ══ RESPONSIVE ══ */
+@media(max-width:1100px){
+  .dash-main-grid{grid-template-columns:1fr}
+  .deposit-layout{grid-template-columns:1fr}
+  .app-content{padding:22px 18px}
+}
+@media(max-width:900px){
+  .sidebar{display:none}
+}
+@media(max-width:768px){
+  .app-topbar{padding:0 14px}
+  .wallet-chips{display:none}
+  .stat-row{grid-template-columns:repeat(2,1fr)}
+  .qa-grid{grid-template-columns:repeat(4,1fr)}
+  .auth-right-new{padding:0}
+  .auth-form-inner{padding:0 24px 24px}
+  .auth-foot{padding:0 24px 16px}
+  .auth-top-row{padding:16px 24px 0}
+  .wc-checks{grid-template-columns:1fr}
+}
+
 /* ---- SCROLLING SHOWCASE ---- */
 .showcase-section{background:var(--primary);padding:80px 0;overflow:hidden}
 .showcase-inner{display:grid;grid-template-columns:1fr 290px 1fr;gap:28px;align-items:center;max-width:1160px;margin:0 auto;padding:0 5%}
@@ -1276,70 +1448,58 @@ footer{background:var(--primary);color:#fff;padding:64px 0 32px}
     </div>
   </div>
 
-  <section class="section" id="accounts-stock">
-    <div class="container">
-      <div class="section-head"><span class="eyebrow">Vetted, aged and ready</span><h2>Accounts in stock</h2></div>
-      <div class="stock-grid">
-        <div class="stock-card">
-          <div class="stock-card-head"><div class="stock-card-head-left"><span class="stock-icon">📸</span><div><h3>Instagram</h3><small>From 1k–100k followers</small></div></div><span class="badge badge-green"><span class="badge-dot"></span>In stock</span></div>
-          <div class="stock-card-body"><ul style="list-style:none"><li>Aged 6 months to 5+ years</li><li>Real followers, posts, story history</li><li>Email + recovery included</li><li>US, UK, EU and NG regions</li></ul></div>
-          <div class="stock-card-foot"><span class="stock-price">From ₦5,000</span><button class="btn btn-primary btn-sm" onclick="goCTA('accounts-order')">Buy Now</button></div>
-        </div>
-        <div class="stock-card">
-          <div class="stock-card-head"><div class="stock-card-head-left"><span class="stock-icon">🎵</span><div><h3>TikTok</h3><small>Viral-ready, niche-tagged</small></div></div><span class="badge badge-green"><span class="badge-dot"></span>In stock</span></div>
-          <div class="stock-card-body"><ul style="list-style:none"><li>Verified phone &amp; email</li><li>Region-specific (US, UK, EU, NG)</li><li>Niche tags: comedy, beauty, finance</li><li>Follower counts: 500–50k</li></ul></div>
-          <div class="stock-card-foot"><span class="stock-price">From ₦4,500</span><button class="btn btn-primary btn-sm" onclick="goCTA('accounts-order')">Buy Now</button></div>
-        </div>
-        <div class="stock-card">
-          <div class="stock-card-head"><div class="stock-card-head-left"><span class="stock-icon">📘</span><div><h3>Facebook</h3><small>Profiles, pages &amp; ad accounts</small></div></div><span class="badge badge-green"><span class="badge-dot"></span>In stock</span></div>
-          <div class="stock-card-body"><ul style="list-style:none"><li>Aged personal profiles</li><li>BM &amp; ad accounts available</li><li>Cookies + 2FA recovery</li><li>US, UK, EU regions</li></ul></div>
-          <div class="stock-card-foot"><span class="stock-price">From ₦3,500</span><button class="btn btn-primary btn-sm" onclick="goCTA('accounts-order')">Buy Now</button></div>
-        </div>
-        <div class="stock-card">
-          <div class="stock-card-head"><div class="stock-card-head-left"><span class="stock-icon">🐦</span><div><h3>X / Twitter</h3><small>Old &amp; verified handles</small></div></div><span class="badge badge-green"><span class="badge-dot"></span>In stock</span></div>
-          <div class="stock-card-body"><ul style="list-style:none"><li>Pre-2015 &amp; pre-2020 handles</li><li>Real follower counts</li><li>Email + recovery included</li><li>Some gold/blue verified</li></ul></div>
-          <div class="stock-card-foot"><span class="stock-price">From ₦6,000</span><button class="btn btn-primary btn-sm" onclick="goCTA('accounts-order')">Buy Now</button></div>
-        </div>
-        <div class="stock-card">
-          <div class="stock-card-head"><div class="stock-card-head-left"><span class="stock-icon">▶️</span><div><h3>YouTube</h3><small>Monetised &amp; aged channels</small></div></div><span class="badge badge-green"><span class="badge-dot"></span>In stock</span></div>
-          <div class="stock-card-body"><ul style="list-style:none"><li>Subscriber counts: 1k–500k</li><li>Monetisation-eligible channels</li><li>Watch hours already met</li><li>Email + 2FA recovery</li></ul></div>
-          <div class="stock-card-foot"><span class="stock-price">From ₦12,000</span><button class="btn btn-primary btn-sm" onclick="goCTA('accounts-order')">Buy Now</button></div>
-        </div>
-        <div class="stock-card">
-          <div class="stock-card-head"><div class="stock-card-head-left"><span class="stock-icon">✈️</span><div><h3>Telegram</h3><small>Channels &amp; groups</small></div></div><span class="badge badge-green"><span class="badge-dot"></span>In stock</span></div>
-          <div class="stock-card-body"><ul style="list-style:none"><li>Aged accounts &amp; channels</li><li>TDATA / session files included</li><li>Region-tagged (US, UK, NG)</li><li>Member counts: 500–100k</li></ul></div>
-          <div class="stock-card-foot"><span class="stock-price">From ₦3,000</span><button class="btn btn-primary btn-sm" onclick="goCTA('accounts-order')">Buy Now</button></div>
-        </div>
-      </div>
-    </div>
-  </section>
+  <!-- ACCOUNTS LISTING (KS Store style) -->
+  <div style="background:#F5F7FA;padding-bottom:60px">
+    <div class="tg-banner"><div class="tg-inner">&#x1F680; Join our Telegram for updates and exclusive offers <button class="tg-banner-btn">Click Here</button></div></div>
+    <div class="container" style="padding-top:28px">
 
-  <section class="section" style="background:var(--surface2);border-top:1px solid var(--border)">
-    <div class="container">
-      <div class="section-head"><span class="eyebrow">Skip the grind</span><h2>Why buy logins from us</h2></div>
-      <div class="grid-3">
-        <div class="card"><div class="card-icon">🔎</div><h3>Vetted &amp; tested</h3><p>Every account is logged in and tested before listing. Nothing locked, nothing dead on arrival.</p></div>
-        <div class="card"><div class="card-icon">🔑</div><h3>Full credentials</h3><p>Username, password, recovery email and 2FA backup — everything you need to take full ownership.</p></div>
-        <div class="card"><div class="card-icon">⚡</div><h3>Instant delivery</h3><p>Pay and credentials hit your dashboard immediately. No waiting, no emails, no delays.</p></div>
-        <div class="card"><div class="card-icon">🔄</div><h3>24h replacement</h3><p>If an account fails to log in within 24 hours of purchase, we replace it free of charge.</p></div>
-        <div class="card"><div class="card-icon">🌍</div><h3>Regional targeting</h3><p>Pick by region — US, UK, NG, EU. Perfect for running ads and niche audience outreach.</p></div>
-        <div class="card"><div class="card-icon">📦</div><h3>Wholesale tiers</h3><p>Bulk discounts on 10+ accounts. Reseller pricing available on request via Telegram.</p></div>
-      </div>
-    </div>
-  </section>
+      <div class="cat-header"><div class="cat-icon-wrap">&#x1F4F8;</div><div class="cat-name">INSTAGRAM <small style="opacity:.45;font-size:.6rem;font-weight:400">US</small></div><div class="cat-count">6 item(s)</div></div>
+      <div class="acct-item"><div class="acct-item-ico">&#x1F4F8;</div><div class="acct-item-info"><div class="acct-title" onclick="goCTA('accounts-order')">INSTAGRAM (0-50 FOLLOWERS) 3-8yrs | With 2fa</div><div class="acct-meta">In Stock: <strong>14 qty.</strong></div><div class="acct-price">Per Quantity: <strong>&#8358;1,700.00</strong></div></div><button class="view-btn" onclick="goCTA('accounts-order')">&#x1F441; View account</button></div>
+      <div class="acct-item"><div class="acct-item-ico">&#x1F4F8;</div><div class="acct-item-info"><div class="acct-title" onclick="goCTA('accounts-order')">INSTAGRAM (100+ FOLLOWERS) 3-8yrs | With 2fa</div><div class="acct-meta">In Stock: <strong>14 qty.</strong></div><div class="acct-price">Per Quantity: <strong>&#8358;3,000.00</strong></div></div><button class="view-btn" onclick="goCTA('accounts-order')">&#x1F441; View account</button></div>
+      <div class="acct-item"><div class="acct-item-ico">&#x1F4F8;</div><div class="acct-item-info"><div class="acct-title" onclick="goCTA('accounts-order')">INSTAGRAM (500 FOLLOWERS) 3-8yrs | With 2fa</div><div class="acct-meta">In Stock: <strong>4 qty.</strong></div><div class="acct-price">Per Quantity: <strong>&#8358;4,500.00</strong></div></div><button class="view-btn" onclick="goCTA('accounts-order')">&#x1F441; View account</button></div>
+      <div class="acct-item"><div class="acct-item-ico">&#x1F4F8;</div><div class="acct-item-info"><div class="acct-title">INSTAGRAM (1,000 FOLLOWERS) 3-8yrs | With 2fa</div><div class="acct-meta">In Stock: <strong>0 qty.</strong></div><div class="acct-price">Per Quantity: <strong>&#8358;6,000.00</strong></div></div><button class="oos-btn">&#x1F6D2; Out of stock</button></div>
+      <div class="acct-item"><div class="acct-item-ico">&#x1F4F8;</div><div class="acct-item-info"><div class="acct-title">INSTAGRAM (2,000 FOLLOWERS) 3-8yrs | With 2fa</div><div class="acct-meta">In Stock: <strong>0 qty.</strong></div><div class="acct-price">Per Quantity: <strong>&#8358;8,500.00</strong></div></div><button class="oos-btn">&#x1F6D2; Out of stock</button></div>
+      <div class="acct-item"><div class="acct-item-ico">&#x1F4F8;</div><div class="acct-item-info"><div class="acct-title" onclick="goCTA('accounts-order')">INSTAGRAM (5,000 FOLLOWERS) 3-8yrs | With 2fa</div><div class="acct-meta">In Stock: <strong>2 qty.</strong></div><div class="acct-price">Per Quantity: <strong>&#8358;12,000.00</strong></div></div><button class="view-btn" onclick="goCTA('accounts-order')">&#x1F441; View account</button></div>
+      <a class="view-all-link" style="display:inline-flex;align-items:center;gap:4px;font-size:.82rem;color:var(--accent);font-weight:600;padding:10px 0 0;cursor:pointer">View all 6 &rarr;</a>
 
-  <section class="section">
-    <div class="container">
-      <div class="section-head"><span class="eyebrow">Four simple steps</span><h2>Buy in 4 steps</h2></div>
-      <div class="steps">
-        <div class="step"><h3>Browse stock</h3><p>Filter by platform, age, follower count and region from your dashboard.</p></div>
-        <div class="step"><h3>Pick &amp; pay</h3><p>Add to cart and pay from your GBN Market wallet. Instant deduction, no waiting.</p></div>
-        <div class="step"><h3>Get credentials</h3><p>Login details and recovery info delivered directly to your dashboard in seconds.</p></div>
-        <div class="step"><h3>Take ownership</h3><p>Change password, add your 2FA, update recovery email — the account is yours.</p></div>
-      </div>
-    </div>
-  </section>
+      <div class="cat-header"><div class="cat-icon-wrap">&#x1F4D8;</div><div class="cat-name">USA FACEBOOK <small style="opacity:.45;font-size:.6rem;font-weight:400">US</small></div><div class="cat-count">2 item(s)</div></div>
+      <div class="acct-item"><div class="acct-item-ico">&#x1F4D8;</div><div class="acct-item-info"><div class="acct-title" onclick="goCTA('accounts-order')">USA FACEBOOK (30+ friend)(YEAR 2012-2026)(ALL HAVE CREATED PAGES)(LOGIN WITH U...</div><div class="acct-meta">In Stock: <strong>999 qty.</strong></div><div class="acct-price">Per Quantity: <strong>&#8358;4,000.00</strong></div></div><button class="view-btn" onclick="goCTA('accounts-order')">&#x1F441; View account</button></div>
+      <div class="acct-item"><div class="acct-item-ico">&#x1F4D8;</div><div class="acct-item-info"><div class="acct-title" onclick="goCTA('accounts-order')">USA FB (0-1000 FRIENDS)(CAN CREATE PAGE) YEAR 2020-2025 (MOST OF THE ACCOUNTS HA...</div><div class="acct-meta">In Stock: <strong>197 qty.</strong></div><div class="acct-price">Per Quantity: <strong>&#8358;5,000.00</strong></div></div><button class="view-btn" onclick="goCTA('accounts-order')">&#x1F441; View account</button></div>
 
+      <div class="cat-header"><div class="cat-icon-wrap">&#x1F4D8;</div><div class="cat-name">COUNTRIES FACEBOOK <small style="opacity:.45;font-size:.6rem;font-weight:400">GB/ID/US</small></div><div class="cat-count">4 item(s)</div></div>
+      <div class="acct-item"><div class="acct-item-ico">&#x1F4D8;</div><div class="acct-item-info"><div class="acct-title" onclick="goCTA('accounts-order')">UKRAINA COUNTRY FB (0-30 Friends) (OPENED 2FA)</div><div class="acct-meta">In Stock: <strong>200 qty.</strong></div><div class="acct-price">Per Quantity: <strong>&#8358;4,000.00</strong></div></div><button class="view-btn" onclick="goCTA('accounts-order')">&#x1F441; View account</button></div>
+      <div class="acct-item"><div class="acct-item-ico">&#x1F4D8;</div><div class="acct-item-info"><div class="acct-title" onclick="goCTA('accounts-order')">Random country FB (0-30 friend). YEAR 2023. THE MAJORITY OF ACCOUNTS ARE LOCATION IN...</div><div class="acct-meta">In Stock: <strong>88 qty.</strong></div><div class="acct-price">Per Quantity: <strong>&#8358;3,500.00</strong></div></div><button class="view-btn" onclick="goCTA('accounts-order')">&#x1F441; View account</button></div>
+      <div class="acct-item"><div class="acct-item-ico">&#x1F4D8;</div><div class="acct-item-info"><div class="acct-title" onclick="goCTA('accounts-order')">PURE INDONESIA ID ADS FACEBOOK (ALL CAN CREATE PAGE) 30-800 friends (no2fa)</div><div class="acct-meta">In Stock: <strong>17 qty.</strong></div><div class="acct-price">Per Quantity: <strong>&#8358;3,500.00</strong></div></div><button class="view-btn" onclick="goCTA('accounts-order')">&#x1F441; View account</button></div>
+      <div class="acct-item"><div class="acct-item-ico">&#x1F4D8;</div><div class="acct-item-info"><div class="acct-title" onclick="goCTA('accounts-order')">UK FACEBOOK ACCOUNTS (50-200 FRIENDS) YEAR 2018-2023 (WITH 2FA)</div><div class="acct-meta">In Stock: <strong>45 qty.</strong></div><div class="acct-price">Per Quantity: <strong>&#8358;5,500.00</strong></div></div><button class="view-btn" onclick="goCTA('accounts-order')">&#x1F441; View account</button></div>
+
+      <div class="cat-header"><div class="cat-icon-wrap">&#x1F3B5;</div><div class="cat-name">EMPTY TIKTOK</div><div class="cat-count">3 item(s)</div></div>
+      <div class="acct-item"><div class="acct-item-ico">&#x1F3B5;</div><div class="acct-item-info"><div class="acct-title" onclick="goCTA('accounts-order')">Brazil BR</div><div class="acct-meta">In Stock: <strong>40 qty.</strong></div><div class="acct-price">Per Quantity: <strong>&#8358;1,000.00</strong></div></div><button class="view-btn" onclick="goCTA('accounts-order')">&#x1F441; View account</button></div>
+      <div class="acct-item"><div class="acct-item-ico">&#x1F3B5;</div><div class="acct-item-info"><div class="acct-title" onclick="goCTA('accounts-order')">France FR</div><div class="acct-meta">In Stock: <strong>31 qty.</strong></div><div class="acct-price">Per Quantity: <strong>&#8358;1,000.00</strong></div></div><button class="view-btn" onclick="goCTA('accounts-order')">&#x1F441; View account</button></div>
+      <div class="acct-item"><div class="acct-item-ico">&#x1F3B5;</div><div class="acct-item-info"><div class="acct-title" onclick="goCTA('accounts-order')">Germany DE</div><div class="acct-meta">In Stock: <strong>13 qty.</strong></div><div class="acct-price">Per Quantity: <strong>&#8358;1,000.00</strong></div></div><button class="view-btn" onclick="goCTA('accounts-order')">&#x1F441; View account</button></div>
+
+      <div class="cat-header"><div class="cat-icon-wrap">&#x1F3B5;</div><div class="cat-name">RANDOM TIKTOK</div><div class="cat-count">1 item(s)</div></div>
+      <div class="acct-item"><div class="acct-item-ico">&#x1F3B5;</div><div class="acct-item-info"><div class="acct-title" onclick="goCTA('accounts-order')">Random Country TikTok 0-100 followers</div><div class="acct-meta">In Stock: <strong>1 qty.</strong></div><div class="acct-price">Per Quantity: <strong>&#8358;1,500.00</strong></div></div><button class="view-btn" onclick="goCTA('accounts-order')">&#x1F441; View account</button></div>
+
+      <div class="cat-header"><div class="cat-icon-wrap">&#x1F426;</div><div class="cat-name">X / TWITTER</div><div class="cat-count">2 item(s)</div></div>
+      <div class="acct-item"><div class="acct-item-ico">&#x1F426;</div><div class="acct-item-info"><div class="acct-title" onclick="goCTA('accounts-order')">USA TWITTER (YEAR 2009-2015) - OLD VERIFIED HANDLES</div><div class="acct-meta">In Stock: <strong>22 qty.</strong></div><div class="acct-price">Per Quantity: <strong>&#8358;6,000.00</strong></div></div><button class="view-btn" onclick="goCTA('accounts-order')">&#x1F441; View account</button></div>
+      <div class="acct-item"><div class="acct-item-ico">&#x1F426;</div><div class="acct-item-info"><div class="acct-title" onclick="goCTA('accounts-order')">RANDOM TWITTER ACCOUNTS (0-100 FOLLOWERS)(YEAR 2015-2022)</div><div class="acct-meta">In Stock: <strong>55 qty.</strong></div><div class="acct-price">Per Quantity: <strong>&#8358;3,000.00</strong></div></div><button class="view-btn" onclick="goCTA('accounts-order')">&#x1F441; View account</button></div>
+
+      <div class="cat-header"><div class="cat-icon-wrap">&#x25B6;</div><div class="cat-name">YOUTUBE</div><div class="cat-count">2 item(s)</div></div>
+      <div class="acct-item"><div class="acct-item-ico">&#x25B6;</div><div class="acct-item-info"><div class="acct-title" onclick="goCTA('accounts-order')">MONETIZED YOUTUBE CHANNEL (1K-10K SUBSCRIBERS)(WATCH HOURS MET)</div><div class="acct-meta">In Stock: <strong>8 qty.</strong></div><div class="acct-price">Per Quantity: <strong>&#8358;12,000.00</strong></div></div><button class="view-btn" onclick="goCTA('accounts-order')">&#x1F441; View account</button></div>
+      <div class="acct-item"><div class="acct-item-ico">&#x25B6;</div><div class="acct-item-info"><div class="acct-title" onclick="goCTA('accounts-order')">YOUTUBE CHANNEL (100-500 SUBSCRIBERS) AGED 2-5YRS</div><div class="acct-meta">In Stock: <strong>15 qty.</strong></div><div class="acct-price">Per Quantity: <strong>&#8358;5,000.00</strong></div></div><button class="view-btn" onclick="goCTA('accounts-order')">&#x1F441; View account</button></div>
+
+      <div class="cat-header"><div class="cat-icon-wrap">&#x1F512;</div><div class="cat-name">VPN &#x1F4F1;</div><div class="cat-count">4 item(s)</div></div>
+      <div class="acct-item"><div class="acct-item-ico">&#x1F512;</div><div class="acct-item-info"><div class="acct-title" onclick="goCTA('accounts-order')">HMA VPN 1-6MONTHS || Premium vpn</div><div class="acct-meta">In Stock: <strong>5 qty.</strong></div><div class="acct-price">Per Quantity: <strong>&#8358;2,000.00</strong></div></div><button class="view-btn" onclick="goCTA('accounts-order')">&#x1F441; View account</button></div>
+      <div class="acct-item"><div class="acct-item-ico">&#x1F512;</div><div class="acct-item-info"><div class="acct-title" onclick="goCTA('accounts-order')">Nord VPN 1-6MONTHS || Premium vpn</div><div class="acct-meta">In Stock: <strong>5 qty.</strong></div><div class="acct-price">Per Quantity: <strong>&#8358;2,000.00</strong></div></div><button class="view-btn" onclick="goCTA('accounts-order')">&#x1F441; View account</button></div>
+      <div class="acct-item"><div class="acct-item-ico">&#x1F512;</div><div class="acct-item-info"><div class="acct-title" onclick="goCTA('accounts-order')">Express VPN 1-6MONTHS || Premium vpn</div><div class="acct-meta">In Stock: <strong>2 qty.</strong></div><div class="acct-price">Per Quantity: <strong>&#8358;2,000.00</strong></div></div><button class="view-btn" onclick="goCTA('accounts-order')">&#x1F441; View account</button></div>
+      <div class="acct-item"><div class="acct-item-ico">&#x1F512;</div><div class="acct-item-info"><div class="acct-title" onclick="goCTA('accounts-order')">PIA VPN 1-6MONTHS || Premium vpn</div><div class="acct-meta">In Stock: <strong>2 qty.</strong></div><div class="acct-price">Per Quantity: <strong>&#8358;2,000.00</strong></div></div><button class="view-btn" onclick="goCTA('accounts-order')">&#x1F441; View account</button></div>
+
+      <div class="cat-header"><div class="cat-icon-wrap">&#x2708;</div><div class="cat-name">TELEGRAM</div><div class="cat-count">2 item(s)</div></div>
+      <div class="acct-item"><div class="acct-item-ico">&#x2708;</div><div class="acct-item-info"><div class="acct-title" onclick="goCTA('accounts-order')">AGED TELEGRAM ACCOUNTS (TDATA) US/UK/NG REGIONS</div><div class="acct-meta">In Stock: <strong>30 qty.</strong></div><div class="acct-price">Per Quantity: <strong>&#8358;3,000.00</strong></div></div><button class="view-btn" onclick="goCTA('accounts-order')">&#x1F441; View account</button></div>
+      <div class="acct-item"><div class="acct-item-ico">&#x2708;</div><div class="acct-item-info"><div class="acct-title" onclick="goCTA('accounts-order')">TELEGRAM CHANNELS (500-10K MEMBERS)</div><div class="acct-meta">In Stock: <strong>12 qty.</strong></div><div class="acct-price">Per Quantity: <strong>&#8358;5,000.00</strong></div></div><button class="view-btn" onclick="goCTA('accounts-order')">&#x1F441; View account</button></div>
+
+    </div>
+  </div>
   <div class="cta-band">
     <div class="container">
       <span class="eyebrow" style="color:rgba(255,255,255,.55)">Our goal is to keep you coming back</span>
@@ -1441,49 +1601,188 @@ footer{background:var(--primary);color:#fff;padding:64px 0 32px}
 
 <!-- PAGE: DASHBOARD -->
 <div class="page" id="page-dashboard">
-  <div class="dash-wrap">
-    <div class="dash-topbar">
-      <div class="container">
-        <div class="dash-top-inner">
-          <div style="display:flex;gap:4px">
-            <button class="dash-tab active" onclick="go('dashboard')">Dashboard</button>
-            <button class="dash-tab" onclick="go('numbers')">Numbers</button>
-            <button class="dash-tab" onclick="go('smm')">Boosting</button>
-            <button class="dash-tab" onclick="go('accounts')">Accounts</button>
-          </div>
-          <div class="dash-pill" id="dash-wallet-pill">Wallet: &#8358;0.00</div>
+  <div class="tg-banner"><div class="tg-inner">&#x1F680; Join our Telegram for updates and exclusive offers <button class="tg-banner-btn" onclick="window.open('https://t.me/gbnmarket','_blank')">Click Here</button></div></div>
+  <div class="app-shell">
+    <div class="app-topbar">
+      <div class="app-logo" onclick="go('home')"><div class="app-logo-mark">G</div>GBN Market</div>
+      <div class="app-topbar-right">
+        <div class="wallet-chips">
+          <div class="wallet-chip">NGN <span id="dash-ngn-bal">&#8358;0.00</span></div>
+          <div class="wallet-chip">USD <span>$0.00</span></div>
         </div>
+        <div class="notif-btn">&#x1F514;</div>
+        <div class="avatar-btn">&#x1F464;</div>
       </div>
     </div>
-    <div class="container" style="padding-top:36px;padding-bottom:60px">
-      <div style="margin-bottom:28px">
-        <h2 style="font-size:1.5rem;font-weight:700;letter-spacing:-.02em" id="dash-greeting">Welcome back &#x1F44B;</h2>
-        <p style="color:var(--text-3);margin-top:3px;font-size:.9rem">Here's what's happening with your account.</p>
-      </div>
-      <div class="dash-stat-grid">
-        <div class="dash-stat"><div class="dash-stat-label">Wallet Balance</div><div class="dash-stat-val" id="dash-balance">&#8358;0.00</div><button class="btn btn-primary btn-sm" style="margin-top:12px;width:100%" onclick="alert('Wallet funding coming soon!')">Fund Wallet</button></div>
-        <div class="dash-stat"><div class="dash-stat-label">Total Orders</div><div class="dash-stat-val">0</div><div style="font-size:.78rem;color:var(--text-4);margin-top:6px">No orders yet</div></div>
-        <div class="dash-stat"><div class="dash-stat-label">Active Numbers</div><div class="dash-stat-val">0</div><div style="font-size:.78rem;color:var(--text-4);margin-top:6px">None active</div></div>
-        <div class="dash-stat"><div class="dash-stat-label">Referral Code</div><div style="font-size:1rem;font-weight:700;color:var(--accent);margin-top:4px" id="dash-ref">&mdash;</div><div style="font-size:.78rem;color:var(--text-4);margin-top:6px">Share &amp; earn</div></div>
-      </div>
-      <h3 style="font-size:.8rem;font-weight:600;text-transform:uppercase;letter-spacing:.08em;color:var(--text-4);margin-bottom:14px">Quick Actions</h3>
-      <div class="dash-actions">
-        <div class="dash-act" onclick="go('numbers')"><div class="dash-act-icon">&#x1F4F1;</div><h3>Get a Number</h3><p>Virtual SMS number</p></div>
-        <div class="dash-act" onclick="go('smm')"><div class="dash-act-icon">&#x1F4C8;</div><h3>Boost Socials</h3><p>Grow followers</p></div>
-        <div class="dash-act" onclick="go('accounts')"><div class="dash-act-icon">&#x1F464;</div><h3>Buy Accounts</h3><p>Aged social logins</p></div>
-        <div class="dash-act" onclick="alert('Gift cards coming soon!')"><div class="dash-act-icon">&#x1F381;</div><h3>Gift Cards</h3><p>Buy &amp; sell</p></div>
-        <div class="dash-act" onclick="alert('eSIM coming soon!')"><div class="dash-act-icon">&#x1F310;</div><h3>Buy eSIM</h3><p>Global coverage</p></div>
-        <div class="dash-act" onclick="alert('Bill payments coming soon!')"><div class="dash-act-icon">&#x1F4A1;</div><h3>Pay Bills</h3><p>Electricity, TV, data</p></div>
-      </div>
-      <h3 style="font-size:.8rem;font-weight:600;text-transform:uppercase;letter-spacing:.08em;color:var(--text-4);margin-bottom:14px">Recent Orders</h3>
-      <div style="background:#fff;border:1px solid var(--border);border-radius:14px">
-        <div class="dash-empty">
-          <div style="font-size:2.5rem;margin-bottom:10px">&#x1F4CB;</div>
-          <div style="font-weight:600;color:var(--text-3);margin-bottom:4px">No orders yet</div>
-          <div style="font-size:.85rem">Your orders will appear here once you make a purchase.</div>
-          <button class="btn btn-primary btn-sm" style="margin-top:16px" onclick="go('numbers')">Place your first order</button>
+    <div class="app-body">
+      <div class="sidebar">
+        <div class="sb-label">MAIN</div>
+        <div class="nav-item active" data-tab="main" onclick="showDashTab('main',this)"><span class="ni">&#x229E;</span>Dashboard</div>
+        <div class="sb-label">SERVICES</div>
+        <div class="nav-item" onclick="goCTA('numbers')"><span class="ni">&#x1F4F1;</span>Virtual Numbers<span class="nb">SMS</span></div>
+        <div class="nav-item" onclick="goCTA('smm')"><span class="ni">&#x2197;</span>New Order<span class="nb">SMM</span></div>
+        <div class="nav-item" data-tab="orders" onclick="showDashTab('orders',this)"><span class="ni">&#x1F4CB;</span>My Orders</div>
+        <div class="nav-item" onclick="goCTA('accounts')"><span class="ni">&#x1F465;</span>Social Accounts</div>
+        <div class="sb-label">WALLET</div>
+        <div class="nav-item" data-tab="deposit" onclick="showDashTab('deposit',this)"><span class="ni">&#x1F4B3;</span>Deposit Funds</div>
+        <div class="nav-item" data-tab="transactions" onclick="showDashTab('transactions',this)"><span class="ni">&#x1F504;</span>Transactions</div>
+        <div class="sb-label">ACCOUNT</div>
+        <div class="nav-item" data-tab="purchases" onclick="showDashTab('purchases',this)"><span class="ni">&#x1F6CD;</span>My Purchases</div>
+        <div class="sb-bottom">
+          <div class="mode-toggle"><span>&#x2600; Light Mode</span><div class="toggle-sw" onclick="this.classList.toggle('on')"></div></div>
+          <div class="nav-item" style="color:#DC2626;padding-left:0;margin-top:8px" onclick="handleLogout()"><span class="ni">&#x2190;</span>Sign Out</div>
         </div>
       </div>
+      <div class="app-content">
+
+        <!-- TAB: MAIN -->
+        <div id="dashtab-main">
+          <div class="pg-head">
+            <div><h1 id="dash-greeting">Hello &#x1F44B;</h1><p>Here's an overview of your account's recent activities.</p></div>
+            <div class="pg-head-btns">
+              <button class="btn btn-primary" onclick="showDashTab('deposit',document.querySelector('[data-tab=deposit]'))">Fund Account</button>
+              <button class="btn btn-outline" onclick="alert('Currency conversion coming soon!')">Convert Currency</button>
+            </div>
+          </div>
+          <div class="stat-row">
+            <div class="stat-c"><div class="stat-c-icon">&#x1F4B0;</div><div class="stat-c-lbl">USD Balance</div><div class="stat-c-val">$0.00</div></div>
+            <div class="stat-c"><div class="stat-c-icon">&#x1F1F3;&#x1F1EC;</div><div class="stat-c-lbl">NGN Balance</div><div class="stat-c-val" id="dash-ngn-main">&#8358;0</div></div>
+            <div class="stat-c"><div class="stat-c-icon">&#x1F4F1;</div><div class="stat-c-lbl">Purchased Numbers</div><div class="stat-c-val">0</div></div>
+            <div class="stat-c"><div class="stat-c-icon">&#x1F465;</div><div class="stat-c-lbl">Purchased Accounts</div><div class="stat-c-val">0</div></div>
+          </div>
+          <div class="dash-main-grid">
+            <div>
+              <div class="panel" style="margin-bottom:18px">
+                <h3>Quick Actions</h3>
+                <div class="qa-grid">
+                  <div class="qa-btn" onclick="goCTA('numbers')"><div class="qa-circle">&#x1F4F1;</div><span>Numbers</span></div>
+                  <div class="qa-btn" onclick="goCTA('smm')"><div class="qa-circle">&#x26A1;</div><span>SMM</span></div>
+                  <div class="qa-btn" onclick="goCTA('accounts')"><div class="qa-circle">&#x1F464;</div><span>Accounts</span></div>
+                  <div class="qa-btn" onclick="showDashTab('deposit',document.querySelector('[data-tab=deposit]'))"><div class="qa-circle">&#x2795;</div><span>Deposit</span></div>
+                </div>
+              </div>
+              <div class="panel">
+                <h3>History</h3>
+                <div class="hist-empty">
+                  <div class="hist-empty-icon">&#x1F4CB;</div>
+                  <p style="font-weight:600;color:var(--text-3);margin-bottom:3px">No activity yet</p>
+                  <p style="font-size:.83rem">Your transactions will appear here.</p>
+                </div>
+              </div>
+            </div>
+            <div>
+              <div class="panel">
+                <div style="display:flex;align-items:center;justify-content:space-between;margin-bottom:14px">
+                  <h3 style="margin:0">Promos &amp; Offers</h3>
+                  <a style="font-size:.78rem;color:var(--accent);cursor:pointer">View all &rsaquo;</a>
+                </div>
+                <div class="promo-card-inner">
+                  <div><h4>Your One-Stop Shop for All Digital Services</h4><p>Virtual Numbers, Social Accounts &amp; SMM Boosting &mdash; all in one place.</p></div>
+                  <div style="font-size:2.5rem;flex-shrink:0">&#x1F4F1;</div>
+                </div>
+              </div>
+            </div>
+          </div>
+        </div>
+
+        <!-- TAB: ORDERS -->
+        <div id="dashtab-orders" style="display:none">
+          <div class="orders-pg-head">
+            <div>
+              <span class="orders-eyebrow">SMM BOOST</span>
+              <h1 style="font-size:1.75rem;font-weight:800;letter-spacing:-.03em;margin-bottom:4px">My orders</h1>
+              <p style="font-size:.875rem;color:var(--text-3)">Every boost you've placed &mdash; track status, refill, and cancel from one place.</p>
+            </div>
+            <button class="btn btn-primary" onclick="goCTA('smm')">+ New order</button>
+          </div>
+          <select class="filter-sel"><option>All statuses</option><option>Pending</option><option>Processing</option><option>Completed</option><option>Cancelled</option></select>
+          <div class="empty-state">
+            <div class="empty-icon">&#x1F4CB;</div>
+            <p style="font-weight:600;color:var(--text-3);margin-bottom:6px;font-size:1rem">No orders yet</p>
+            <p style="font-size:.875rem;color:var(--text-4);margin-bottom:20px">Place your first order and it'll show up here.</p>
+            <button class="btn btn-primary" onclick="goCTA('smm')">+ Place an order</button>
+          </div>
+        </div>
+
+        <!-- TAB: DEPOSIT -->
+        <div id="dashtab-deposit" style="display:none">
+          <div class="pg-head"><div><h1>Deposit Funds</h1><p>Add funds to your GBN Market wallet.</p></div></div>
+          <div class="deposit-layout">
+            <div>
+              <div style="font-size:.8rem;font-weight:600;text-transform:uppercase;letter-spacing:.07em;color:var(--text-4);margin-bottom:12px">Select payment method</div>
+              <div class="method-card selected" onclick="selectMethod(this)"><div class="mi">&#x20BF;</div><div><h4>Cryptocurrency</h4><p>Pay with BTC, USDT, ETH, BNB or SOL</p></div><div class="method-check" style="background:var(--accent);border-color:var(--accent);color:#fff">&#x2713;</div></div>
+              <div class="method-card" onclick="selectMethod(this)"><div class="mi">&#x1F3E6;</div><div><h4>Bank Transfer</h4><p>NGN bank transfer via Paystack</p></div><div class="method-check"></div></div>
+              <div class="method-card" onclick="selectMethod(this)"><div class="mi">&#x1F4B3;</div><div><h4>Debit / Credit Card</h4><p>Visa, Mastercard accepted</p></div><div class="method-check"></div></div>
+            </div>
+            <div class="dep-summary">
+              <h3>Deposit Amount</h3>
+              <span class="dep-label">Amount (NGN)</span>
+              <div class="amt-wrap"><span class="cur">&#8358;</span><input type="number" id="deposit-amount" placeholder="0.00" min="500" oninput="updateDepFee()"/></div>
+              <div class="quick-amts">
+                <span class="q-amt" onclick="setAmt(1000,this)">&#8358;1,000</span>
+                <span class="q-amt" onclick="setAmt(5000,this)">&#8358;5,000</span>
+                <span class="q-amt" onclick="setAmt(10000,this)">&#8358;10,000</span>
+                <span class="q-amt" onclick="setAmt(50000,this)">&#8358;50,000</span>
+              </div>
+              <div class="fee-box">
+                <div class="fee-r"><span>Deposit amount</span><span id="dep-amt">&#8358;0.00</span></div>
+                <div class="fee-r"><span>Processing fee (1.5%)</span><span id="dep-fee">&#8358;0.00</span></div>
+                <div class="fee-r tot"><span>You'll receive</span><span id="dep-net">&#8358;0.00</span></div>
+              </div>
+              <button class="btn btn-primary" style="width:100%;padding:13px" onclick="alert('Payment gateway coming soon! Contact support to fund your wallet.')">Proceed to Pay</button>
+              <p style="text-align:center;font-size:.74rem;color:var(--text-4);margin-top:10px">&#x1F512; Secured by SSL encryption</p>
+            </div>
+          </div>
+        </div>
+
+        <!-- TAB: TRANSACTIONS -->
+        <div id="dashtab-transactions" style="display:none">
+          <div class="pg-head"><div><h1>Transactions</h1><p>A full history of all your wallet activity.</p></div></div>
+          <table class="txn-tbl">
+            <thead><tr><th>Description</th><th>Date</th><th>Amount</th><th>Status</th></tr></thead>
+            <tbody><tr><td colspan="4" style="text-align:center;padding:60px 20px;color:var(--text-4)">
+              <div style="font-size:1.5rem;margin-bottom:8px">&#x1F4C4;</div>
+              <div style="font-weight:600;color:var(--text-3);margin-bottom:3px">No transactions yet</div>
+              <div style="font-size:.85rem">Fund your wallet to get started.</div>
+            </td></tr></tbody>
+          </table>
+        </div>
+
+        <!-- TAB: MY PURCHASES -->
+        <div id="dashtab-purchases" style="display:none">
+          <div class="pg-head"><div><h1>My Purchases</h1><p>All account credentials you've purchased.</p></div></div>
+          <div class="empty-state">
+            <div class="empty-icon">&#x1F6CD;</div>
+            <p style="font-weight:600;color:var(--text-3);margin-bottom:6px;font-size:1rem">No purchases yet</p>
+            <p style="font-size:.875rem;color:var(--text-4);margin-bottom:20px">Buy a social media account to see it here.</p>
+            <button class="btn btn-primary" onclick="goCTA('accounts')">Browse Accounts</button>
+          </div>
+        </div>
+
+      </div>
+    </div>
+  </div>
+</div>
+
+<!-- PAGE: WELCOME -->
+<div class="page" id="page-welcome">
+  <div class="welcome-wrap">
+    <div class="welcome-card">
+      <div class="wc-trophy">&#x1F3C6;</div>
+      <div class="wc-badge">&#x2B50; YOU'RE OFFICIALLY IN</div>
+      <h1>Welcome aboard, <span id="welcome-name">GBN</span>! &#x1F389;</h1>
+      <p class="wc-sub">Your GBN Market account is ready. You just unlocked virtual numbers, SMM boosting, aged accounts and more.</p>
+      <div class="wc-stats">
+        <div class="wc-stat"><strong>50k+</strong><span>Users</span></div>
+        <div class="wc-stat"><strong>180+</strong><span>Countries</span></div>
+        <div class="wc-stat"><strong>99.7%</strong><span>Success rate</span></div>
+      </div>
+      <div class="wc-checks">
+        <div class="wc-check"><div class="wc-check-ico">&#x2713;</div>Account ready</div>
+        <div class="wc-check"><div class="wc-check-ico">&#x26A1;</div>Instant access</div>
+        <div class="wc-check wc-full"><div class="wc-check-ico">&#x1F680;</div>Let's set up your dashboard in 60 seconds</div>
+      </div>
+      <button class="btn btn-primary btn-lg" style="width:100%;padding:15px" onclick="go('dashboard')">Let's get started &rarr;</button>
     </div>
   </div>
 </div>
@@ -1540,8 +1839,8 @@ footer{background:var(--primary);color:#fff;padding:64px 0 32px}
 
 <script>
 // ── ROUTER ──
-const PAGES = ['home','numbers','smm','accounts','login','register','dashboard'];
-const NO_FOOTER = ['login','register','dashboard'];
+const PAGES = ['home','numbers','smm','accounts','login','register','dashboard','welcome'];
+const NO_FOOTER = ['login','register','dashboard','welcome'];
 
 function go(page, anchor){
   PAGES.forEach(p => document.getElementById('page-'+p).classList.remove('active'));
@@ -1689,8 +1988,10 @@ async function handleRegister(btn){
 // ── LOGIN ──
 async function handleLogin(btn){
   const wrap  = document.getElementById('page-login');
-  const email = wrap.querySelector('input[type="text"]').value.trim();
-  const pwd   = wrap.querySelector('input[type="password"]').value;
+  const emailEl = document.getElementById('login-email') || wrap.querySelector('input[type="text"]');
+  const pwdEl   = document.getElementById('login-pwd')    || wrap.querySelector('input[type="password"]');
+  const email = emailEl.value.trim();
+  const pwd   = pwdEl.value;
 
   if(!email || !pwd){ toast('Please enter your email and password.', false); return; }
 
@@ -1728,7 +2029,8 @@ function updateNavForAuth(session){
     const refEl = document.getElementById('dash-ref');
     if(refEl) refEl.textContent = session.user.email.split('@')[0].toUpperCase().slice(0,10);
     const greetEl = document.getElementById('dash-greeting');
-    if(greetEl) greetEl.textContent = 'Welcome back, ' + first + ' 👋';
+    if(greetEl) greetEl.textContent = 'Hello, ' + first + ' 👋';
+    setWelcomeName(first);
     navRight.innerHTML = `
       <button class="btn btn-outline btn-sm" style="color:var(--accent);border-color:var(--accent)" onclick="go('dashboard')">Dashboard</button>
       <span style="font-size:.8rem;color:var(--text-3);font-weight:500;max-width:110px;overflow:hidden;text-overflow:ellipsis;white-space:nowrap">${first}</span>
@@ -1742,6 +2044,63 @@ function updateNavForAuth(session){
   }
 }
 
+
+// ---- DASHBOARD TAB SWITCHER ----
+function showDashTab(tab, navEl){
+  document.querySelectorAll('[id^="dashtab-"]').forEach(el=>el.style.display='none');
+  const t=document.getElementById('dashtab-'+tab);
+  if(t) t.style.display='block';
+  document.querySelectorAll('#page-dashboard .nav-item').forEach(el=>el.classList.remove('active'));
+  if(navEl) navEl.classList.add('active');
+  else {
+    document.querySelectorAll('#page-dashboard .nav-item').forEach(el=>{
+      if(el.getAttribute('data-tab')===tab) el.classList.add('active');
+    });
+  }
+}
+
+// ---- TOGGLE PASSWORD ----
+function togglePwd(id,icon){
+  const el=document.getElementById(id);
+  if(!el) return;
+  if(el.type==='password'){el.type='text';icon.textContent='\u{1F648}';}
+  else{el.type='password';icon.textContent='\u{1F441}';}
+}
+
+// ---- DEPOSIT HELPERS ----
+function setAmt(v,btn){
+  const el=document.getElementById('deposit-amount');
+  if(el){el.value=v;updateDepFee();}
+  document.querySelectorAll('.q-amt').forEach(b=>b.classList.remove('on'));
+  if(btn) btn.classList.add('on');
+}
+function updateDepFee(){
+  const el=document.getElementById('deposit-amount');
+  const amt=parseFloat(el?.value)||0;
+  const fee=Math.round(amt*0.015);
+  const net=amt-fee;
+  const f=n=>'\u20a6'+n.toLocaleString('en-NG',{minimumFractionDigits:2,maximumFractionDigits:2});
+  const s=(id,v)=>{const e=document.getElementById(id);if(e)e.textContent=v;};
+  s('dep-amt',f(amt));s('dep-fee',f(fee));s('dep-net',f(net));
+}
+
+// ---- SELECT PAYMENT METHOD ----
+function selectMethod(card){
+  document.querySelectorAll('.method-card').forEach(c=>{
+    c.classList.remove('selected');
+    const ch=c.querySelector('.method-check');
+    if(ch){ch.textContent='';Object.assign(ch.style,{background:'',borderColor:'',color:''});}
+  });
+  card.classList.add('selected');
+  const ch=card.querySelector('.method-check');
+  if(ch){ch.textContent='\u2713';Object.assign(ch.style,{background:'var(--accent)',borderColor:'var(--accent)',color:'#fff'});}
+}
+
+// ---- WELCOME PAGE NAME ----
+function setWelcomeName(name){
+  const el=document.getElementById('welcome-name');
+  if(el) el.textContent=name;
+}
 
 // ---- CRYPTO CALC ----
 function calcCrypto(){
